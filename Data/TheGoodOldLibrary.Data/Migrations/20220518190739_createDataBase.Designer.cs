@@ -10,7 +10,7 @@ using TheGoodOldLibrary.Data;
 namespace TheGoodOldLibrary.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220518164130_createDataBase")]
+    [Migration("20220518190739_createDataBase")]
     partial class createDataBase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -355,11 +355,17 @@ namespace TheGoodOldLibrary.Data.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<int>("AuthorId")
+                        .HasColumnType("int");
+
                     b.Property<int>("BookId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("Extension")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("ModifiedOn")
                         .HasColumnType("datetime2");
@@ -368,6 +374,8 @@ namespace TheGoodOldLibrary.Data.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("AuthorId");
 
                     b.HasIndex("BookId");
 
@@ -573,6 +581,12 @@ namespace TheGoodOldLibrary.Data.Migrations
 
             modelBuilder.Entity("TheGoodOldLibrary.Data.Models.Image", b =>
                 {
+                    b.HasOne("TheGoodOldLibrary.Data.Models.Author", "Author")
+                        .WithMany()
+                        .HasForeignKey("AuthorId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.HasOne("TheGoodOldLibrary.Data.Models.Book", "Books")
                         .WithMany("Images")
                         .HasForeignKey("BookId")
@@ -584,6 +598,8 @@ namespace TheGoodOldLibrary.Data.Migrations
                         .HasForeignKey("PeriodicalId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+
+                    b.Navigation("Author");
 
                     b.Navigation("Books");
 

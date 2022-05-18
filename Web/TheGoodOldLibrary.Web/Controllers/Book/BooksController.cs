@@ -32,7 +32,7 @@
         {
             await this.bookService.CreateAsync(model, this.author.Id, $"{this.environment.WebRootPath}/images");
 
-           
+             return this.RedirectToAction("All");
         }
     }
 }

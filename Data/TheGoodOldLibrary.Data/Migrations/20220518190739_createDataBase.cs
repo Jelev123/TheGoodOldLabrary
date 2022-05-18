@@ -199,12 +199,20 @@ namespace TheGoodOldLibrary.Data.Migrations
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     BookId = table.Column<int>(type: "int", nullable: false),
                     PeriodicalId = table.Column<int>(type: "int", nullable: false),
+                    Extension = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    AuthorId = table.Column<int>(type: "int", nullable: false),
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Images", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Images_Authors_AuthorId",
+                        column: x => x.AuthorId,
+                        principalTable: "Authors",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Images_Books_BookId",
                         column: x => x.BookId,
@@ -414,6 +422,11 @@ namespace TheGoodOldLibrary.Data.Migrations
                 name: "IX_Genres_IsDeleted",
                 table: "Genres",
                 column: "IsDeleted");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Images_AuthorId",
+                table: "Images",
+                column: "AuthorId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Images_BookId",
