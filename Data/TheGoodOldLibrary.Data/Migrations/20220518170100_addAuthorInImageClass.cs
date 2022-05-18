@@ -2,25 +2,25 @@
 
 namespace TheGoodOldLibrary.Data.Migrations
 {
-    public partial class createDataBase2 : Migration
+    public partial class addAuthorInImageClass : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AddColumn<int>(
                 name: "AuthorId",
-                table: "Periodicals",
+                table: "Images",
                 type: "int",
                 nullable: false,
                 defaultValue: 0);
 
             migrationBuilder.CreateIndex(
-                name: "IX_Periodicals_AuthorId",
-                table: "Periodicals",
+                name: "IX_Images_AuthorId",
+                table: "Images",
                 column: "AuthorId");
 
             migrationBuilder.AddForeignKey(
-                name: "FK_Periodicals_Authors_AuthorId",
-                table: "Periodicals",
+                name: "FK_Images_Authors_AuthorId",
+                table: "Images",
                 column: "AuthorId",
                 principalTable: "Authors",
                 principalColumn: "Id",
@@ -30,16 +30,16 @@ namespace TheGoodOldLibrary.Data.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropForeignKey(
-                name: "FK_Periodicals_Authors_AuthorId",
-                table: "Periodicals");
+                name: "FK_Images_Authors_AuthorId",
+                table: "Images");
 
             migrationBuilder.DropIndex(
-                name: "IX_Periodicals_AuthorId",
-                table: "Periodicals");
+                name: "IX_Images_AuthorId",
+                table: "Images");
 
             migrationBuilder.DropColumn(
                 name: "AuthorId",
-                table: "Periodicals");
+                table: "Images");
         }
     }
 }

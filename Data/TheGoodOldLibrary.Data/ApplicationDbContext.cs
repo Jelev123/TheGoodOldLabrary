@@ -33,6 +33,7 @@
 
         public DbSet<Periodical> Periodicals { get; set; }
 
+        public DbSet<Image> Images { get; set; }
 
         public override int SaveChanges() => this.SaveChanges(true);
 

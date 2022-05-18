@@ -77,3 +77,5 @@ C:\Users\Owner\Desktop\Global Consulting\Tests\Sandbox\obj\Debug\net5.0\ref\Sand
 C:\Users\Owner\Desktop\Global Consulting\Tests\Sandbox\bin\Debug\net5.0\Microsoft.AspNetCore.Http.Features.dll
 C:\Users\Owner\Desktop\Global Consulting\Tests\Sandbox\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
 C:\Users\Owner\Desktop\Global Consulting\Tests\Sandbox\bin\Debug\net5.0\System.IO.Pipelines.dll
+C:\Users\Owner\Desktop\Global Consulting\Tests\Sandbox\bin\Debug\net5.0\TheGoodOldLibrary.Web.ViewModels.dll
+C:\Users\Owner\Desktop\Global Consulting\Tests\Sandbox\bin\Debug\net5.0\TheGoodOldLibrary.Web.ViewModels.pdb

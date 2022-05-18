@@ -1903,7 +1903,8 @@
         "dependencies": {
           "TheGoodOldLibrary.Data.Common": "1.0.0",
           "TheGoodOldLibrary.Data.Models": "1.0.0",
-          "TheGoodOldLibrary.Services.Mapping": "1.0.0"
+          "TheGoodOldLibrary.Services.Mapping": "1.0.0",
+          "TheGoodOldLibrary.Web.ViewModels": "1.0.0"
         },
         "compile": {
           "bin/placeholder/TheGoodOldLibrary.Services.Data.dll": {}
@@ -1936,6 +1937,20 @@
         },
         "runtime": {
           "bin/placeholder/TheGoodOldLibrary.Services.Messaging.dll": {}
+        }
+      },
+      "TheGoodOldLibrary.Web.ViewModels/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "TheGoodOldLibrary.Data.Models": "1.0.0",
+          "TheGoodOldLibrary.Services.Mapping": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/TheGoodOldLibrary.Web.ViewModels.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TheGoodOldLibrary.Web.ViewModels.dll": {}
         }
       }
     }
@@ -6789,6 +6804,11 @@
       "type": "project",
       "path": "../../Services/TheGoodOldLibrary.Services.Messaging/TheGoodOldLibrary.Services.Messaging.csproj",
       "msbuildProject": "../../Services/TheGoodOldLibrary.Services.Messaging/TheGoodOldLibrary.Services.Messaging.csproj"
+    },
+    "TheGoodOldLibrary.Web.ViewModels/1.0.0": {
+      "type": "project",
+      "path": "../../Web/TheGoodOldLibrary.Web.ViewModels/TheGoodOldLibrary.Web.ViewModels.csproj",
+      "msbuildProject": "../../Web/TheGoodOldLibrary.Web.ViewModels/TheGoodOldLibrary.Web.ViewModels.csproj"
     }
   },
   "projectFileDependencyGroups": {

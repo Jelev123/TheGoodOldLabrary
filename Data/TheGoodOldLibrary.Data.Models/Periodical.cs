@@ -18,5 +18,7 @@
         public Author Author { get; set; }
 
         public ICollection<Reader> Readers { get; set; } = new HashSet<Reader>();
+
+        public ICollection<Image> Images { get; set; } = new HashSet<Image>();
     }
 }

@@ -422,6 +422,20 @@
         "runtime": {
           "bin/placeholder/TheGoodOldLibrary.Services.Mapping.dll": {}
         }
+      },
+      "TheGoodOldLibrary.Web.ViewModels/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "TheGoodOldLibrary.Data.Models": "1.0.0",
+          "TheGoodOldLibrary.Services.Mapping": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/TheGoodOldLibrary.Web.ViewModels.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TheGoodOldLibrary.Web.ViewModels.dll": {}
+        }
       }
     }
   },
@@ -1312,6 +1326,11 @@
       "type": "project",
       "path": "../TheGoodOldLibrary.Services.Mapping/TheGoodOldLibrary.Services.Mapping.csproj",
       "msbuildProject": "../TheGoodOldLibrary.Services.Mapping/TheGoodOldLibrary.Services.Mapping.csproj"
+    },
+    "TheGoodOldLibrary.Web.ViewModels/1.0.0": {
+      "type": "project",
+      "path": "../../Web/TheGoodOldLibrary.Web.ViewModels/TheGoodOldLibrary.Web.ViewModels.csproj",
+      "msbuildProject": "../../Web/TheGoodOldLibrary.Web.ViewModels/TheGoodOldLibrary.Web.ViewModels.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -1319,7 +1338,8 @@
       "StyleCop.Analyzers >= 1.2.0-beta.312",
       "TheGoodOldLibrary.Data.Common >= 1.0.0",
       "TheGoodOldLibrary.Data.Models >= 1.0.0",
-      "TheGoodOldLibrary.Services.Mapping >= 1.0.0"
+      "TheGoodOldLibrary.Services.Mapping >= 1.0.0",
+      "TheGoodOldLibrary.Web.ViewModels >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -1362,6 +1382,9 @@
             },
             "C:\\Users\\Owner\\Desktop\\Global Consulting\\Services\\TheGoodOldLibrary.Services.Mapping\\TheGoodOldLibrary.Services.Mapping.csproj": {
               "projectPath": "C:\\Users\\Owner\\Desktop\\Global Consulting\\Services\\TheGoodOldLibrary.Services.Mapping\\TheGoodOldLibrary.Services.Mapping.csproj"
+            },
+            "C:\\Users\\Owner\\Desktop\\Global Consulting\\Web\\TheGoodOldLibrary.Web.ViewModels\\TheGoodOldLibrary.Web.ViewModels.csproj": {
+              "projectPath": "C:\\Users\\Owner\\Desktop\\Global Consulting\\Web\\TheGoodOldLibrary.Web.ViewModels\\TheGoodOldLibrary.Web.ViewModels.csproj"
             }
           }
         }

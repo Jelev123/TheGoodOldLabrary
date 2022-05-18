@@ -12,7 +12,8 @@
           "StyleCop.Analyzers": "1.2.0-beta.312",
           "TheGoodOldLibrary.Data.Common": "1.0.0",
           "TheGoodOldLibrary.Data.Models": "1.0.0",
-          "TheGoodOldLibrary.Services.Mapping": "1.0.0"
+          "TheGoodOldLibrary.Services.Mapping": "1.0.0",
+          "TheGoodOldLibrary.Web.ViewModels": "1.0.0"
         },
         "runtime": {
           "TheGoodOldLibrary.Services.Data.dll": {}
@@ -375,6 +376,15 @@
         "runtime": {
           "TheGoodOldLibrary.Services.Mapping.dll": {}
         }
+      },
+      "TheGoodOldLibrary.Web.ViewModels/1.0.0": {
+        "dependencies": {
+          "TheGoodOldLibrary.Data.Models": "1.0.0",
+          "TheGoodOldLibrary.Services.Mapping": "1.0.0"
+        },
+        "runtime": {
+          "TheGoodOldLibrary.Web.ViewModels.dll": {}
+        }
       }
     }
   },
@@ -626,6 +636,11 @@
       "sha512": ""
     },
     "TheGoodOldLibrary.Services.Mapping/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TheGoodOldLibrary.Web.ViewModels/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

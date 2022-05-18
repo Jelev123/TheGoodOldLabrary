@@ -15,3 +15,5 @@ C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Dat
 C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Data\obj\Debug\netstandard2.1\TheGoodOldLibrary.Services.Data.csproj.CopyComplete
 C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Data\obj\Debug\netstandard2.1\TheGoodOldLibrary.Services.Data.dll
 C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Data\obj\Debug\netstandard2.1\TheGoodOldLibrary.Services.Data.pdb
+C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Data\bin\Debug\netstandard2.1\TheGoodOldLibrary.Web.ViewModels.dll
+C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Data\bin\Debug\netstandard2.1\TheGoodOldLibrary.Web.ViewModels.pdb
