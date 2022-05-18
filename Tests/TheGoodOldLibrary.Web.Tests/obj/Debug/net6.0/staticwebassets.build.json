@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "zmgFZenxKQa6IxFSn8A3v7bnXOWLRHJ6rvcmAEtBafQ=",
+  "Hash": "v5fQInV/rVml2c50OIthTiwNOlSvfMLScC6cal7XdJ8=",
   "Source": "TheGoodOldLibrary.Web.Tests",
   "BasePath": "_content/TheGoodOldLibrary.Web.Tests",
   "Mode": "Default",
@@ -690,6 +690,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\Owner\\Desktop\\Global Consulting\\Web\\TheGoodOldLibrary.Web\\wwwroot\\images\\recipes\\0cb0b53c-7dfa-4d4f-9e63-7f0190ebd4b6.jpg",
+      "SourceId": "TheGoodOldLibrary.Web",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\Owner\\Desktop\\Global Consulting\\Web\\TheGoodOldLibrary.Web\\wwwroot\\",
+      "BasePath": "_content/TheGoodOldLibrary.Web",
+      "RelativePath": "images/recipes/0cb0b53c-7dfa-4d4f-9e63-7f0190ebd4b6.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\recipes\\0cb0b53c-7dfa-4d4f-9e63-7f0190ebd4b6.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Owner\\Desktop\\Global Consulting\\Web\\TheGoodOldLibrary.Web\\wwwroot\\images\\recipes\\1f131a7c-0d43-4f33-8817-e63a7b530fbc.jpg",
+      "SourceId": "TheGoodOldLibrary.Web",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\Owner\\Desktop\\Global Consulting\\Web\\TheGoodOldLibrary.Web\\wwwroot\\",
+      "BasePath": "_content/TheGoodOldLibrary.Web",
+      "RelativePath": "images/recipes/1f131a7c-0d43-4f33-8817-e63a7b530fbc.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\recipes\\1f131a7c-0d43-4f33-8817-e63a7b530fbc.jpg"
     },
     {
       "Identity": "C:\\Users\\Owner\\Desktop\\Global Consulting\\Web\\TheGoodOldLibrary.Web\\wwwroot\\js\\site.js",

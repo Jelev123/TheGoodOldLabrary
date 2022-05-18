@@ -296,9 +296,6 @@ namespace TheGoodOldLibrary.Data.Migrations
                     b.Property<int?>("GenreId")
                         .HasColumnType("int");
 
-                    b.Property<string>("Image")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 

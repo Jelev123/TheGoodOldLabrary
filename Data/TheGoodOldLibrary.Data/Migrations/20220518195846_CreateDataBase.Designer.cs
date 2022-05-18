@@ -10,7 +10,7 @@ using TheGoodOldLibrary.Data;
 namespace TheGoodOldLibrary.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220518195420_CreateDataBase")]
+    [Migration("20220518195846_CreateDataBase")]
     partial class CreateDataBase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -297,9 +297,6 @@ namespace TheGoodOldLibrary.Data.Migrations
 
                     b.Property<int?>("GenreId")
                         .HasColumnType("int");
-
-                    b.Property<string>("Image")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");

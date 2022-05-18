@@ -7,5 +7,7 @@
     public interface IBookService
     {
         Task CreateAsync(CreateBooksViewModel model, string imagePath);
+
+
     }
 }
