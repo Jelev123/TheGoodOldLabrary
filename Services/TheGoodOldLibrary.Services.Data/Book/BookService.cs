@@ -25,7 +25,7 @@
             {
                 Name = model.Name,
                 GenreId = model.GenreId,
-                AuthorId = model.AuthorId,
+                AuthorId = authorId,
 
             };
 

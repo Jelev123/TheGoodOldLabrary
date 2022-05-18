@@ -10,11 +10,11 @@
 
     public class BooksController : Controller
     {
-        private readonly BookService bookService;
+        private readonly IBookService bookService;
         private readonly Author author;
         private readonly IWebHostEnvironment environment;
 
-        public BooksController(BookService bookService, Author author, IWebHostEnvironment environment)
+        public BooksController(IBookService bookService, Author author, IWebHostEnvironment environment)
         {
             this.bookService = bookService;
             this.author = author;
