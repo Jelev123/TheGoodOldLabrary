@@ -7,7 +7,7 @@
     {
         public Image()
         {
-            this.Id = new Guid().ToString();
+            this.Id = Guid.NewGuid().ToString();
         }
 
         public int BookId { get; set; }
@@ -20,9 +20,7 @@
 
         public string Extension { get; set; }
 
-        public int AuthorId { get; set; }
-
-        public Author Author { get; set; }
+      
 
     }
 }

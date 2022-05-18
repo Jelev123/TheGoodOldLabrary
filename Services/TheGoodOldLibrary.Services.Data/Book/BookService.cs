@@ -19,17 +19,16 @@
             this.bookRepository = bookRepository;
         }
 
-        public async Task CreateAsync(CreateBooksViewModel model, int authorId, string imagePath)
+        public async Task CreateAsync(CreateBooksViewModel model, string imagePath)
         {
             var book = new Book
             {
                 Name = model.Name,
                 GenreId = model.GenreId,
-                AuthorId = authorId,
-
             };
 
             Directory.CreateDirectory($"{imagePath}/books/");
+
             foreach (var image in model.Image)
             {
                 var extension = Path.GetExtension(image.FileName).TrimStart('.');
@@ -42,7 +41,7 @@
                 var dbImage = new Image
                 {
                     Extension = extension,
-                    AuthorId = authorId,
+                   
                 };
                 book.Images.Add(dbImage);
 

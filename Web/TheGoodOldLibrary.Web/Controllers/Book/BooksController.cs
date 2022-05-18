@@ -11,13 +11,11 @@
     public class BooksController : Controller
     {
         private readonly IBookService bookService;
-        private readonly Author author;
         private readonly IWebHostEnvironment environment;
 
-        public BooksController(IBookService bookService, Author author, IWebHostEnvironment environment)
+        public BooksController(IBookService bookService,  IWebHostEnvironment environment)
         {
             this.bookService = bookService;
-            this.author = author;
             this.environment = environment;
         }
 
@@ -30,9 +28,9 @@
         [HttpPost]
         public async Task<IActionResult> Create(CreateBooksViewModel model)
         {
-            await this.bookService.CreateAsync(model, this.author.Id, $"{this.environment.WebRootPath}/images");
+            await this.bookService.CreateAsync(model, $"{this.environment.WebRootPath}/images");
 
-             return this.RedirectToAction("All");
+            return this.RedirectToAction("All");
         }
     }
 }
