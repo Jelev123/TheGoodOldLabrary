@@ -24,7 +24,6 @@
             var book = new Book
             {
                 Name = model.Name,
-                GenreId = model.GenreId,
             };
 
             Directory.CreateDirectory($"{imagePath}/books/");
@@ -41,7 +40,6 @@
                 var dbImage = new Image
                 {
                     Extension = extension,
-                   
                 };
                 book.Images.Add(dbImage);
 

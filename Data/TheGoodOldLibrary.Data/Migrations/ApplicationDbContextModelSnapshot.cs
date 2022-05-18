@@ -284,7 +284,7 @@ namespace TheGoodOldLibrary.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("AuthorId")
+                    b.Property<int?>("AuthorId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedOn")
@@ -293,7 +293,7 @@ namespace TheGoodOldLibrary.Data.Migrations
                     b.Property<DateTime?>("DeletedOn")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("GenreId")
+                    b.Property<int?>("GenreId")
                         .HasColumnType("int");
 
                     b.Property<string>("Image")
@@ -353,9 +353,6 @@ namespace TheGoodOldLibrary.Data.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<int>("AuthorId")
-                        .HasColumnType("int");
-
                     b.Property<int>("BookId")
                         .HasColumnType("int");
 
@@ -368,12 +365,10 @@ namespace TheGoodOldLibrary.Data.Migrations
                     b.Property<DateTime?>("ModifiedOn")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("PeriodicalId")
+                    b.Property<int?>("PeriodicalId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("AuthorId");
 
                     b.HasIndex("BookId");
 
@@ -389,7 +384,7 @@ namespace TheGoodOldLibrary.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("AuthorId")
+                    b.Property<int?>("AuthorId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedOn")
@@ -560,59 +555,35 @@ namespace TheGoodOldLibrary.Data.Migrations
 
             modelBuilder.Entity("TheGoodOldLibrary.Data.Models.Book", b =>
                 {
-                    b.HasOne("TheGoodOldLibrary.Data.Models.Author", "Author")
+                    b.HasOne("TheGoodOldLibrary.Data.Models.Author", null)
                         .WithMany("Books")
-                        .HasForeignKey("AuthorId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .HasForeignKey("AuthorId");
 
-                    b.HasOne("TheGoodOldLibrary.Data.Models.Genre", "Genre")
+                    b.HasOne("TheGoodOldLibrary.Data.Models.Genre", null)
                         .WithMany("Books")
-                        .HasForeignKey("GenreId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("Author");
-
-                    b.Navigation("Genre");
+                        .HasForeignKey("GenreId");
                 });
 
             modelBuilder.Entity("TheGoodOldLibrary.Data.Models.Image", b =>
                 {
-                    b.HasOne("TheGoodOldLibrary.Data.Models.Author", "Author")
-                        .WithMany()
-                        .HasForeignKey("AuthorId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
                     b.HasOne("TheGoodOldLibrary.Data.Models.Book", "Books")
                         .WithMany("Images")
                         .HasForeignKey("BookId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("TheGoodOldLibrary.Data.Models.Periodical", "Periodical")
+                    b.HasOne("TheGoodOldLibrary.Data.Models.Periodical", null)
                         .WithMany("Images")
-                        .HasForeignKey("PeriodicalId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("Author");
+                        .HasForeignKey("PeriodicalId");
 
                     b.Navigation("Books");
-
-                    b.Navigation("Periodical");
                 });
 
             modelBuilder.Entity("TheGoodOldLibrary.Data.Models.Periodical", b =>
                 {
-                    b.HasOne("TheGoodOldLibrary.Data.Models.Author", "Author")
+                    b.HasOne("TheGoodOldLibrary.Data.Models.Author", null)
                         .WithMany("Periodicals")
-                        .HasForeignKey("AuthorId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("Author");
+                        .HasForeignKey("AuthorId");
                 });
 
             modelBuilder.Entity("TheGoodOldLibrary.Data.Models.Reader", b =>

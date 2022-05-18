@@ -12,11 +12,7 @@
 
         public int BookId { get; set; }
 
-        public Book Books { get; set; }
-
-        public int PeriodicalId { get; set; }
-
-        public Periodical Periodical { get; set; }
+        public virtual Book Books { get; set; }
 
         public string Extension { get; set; }
 
