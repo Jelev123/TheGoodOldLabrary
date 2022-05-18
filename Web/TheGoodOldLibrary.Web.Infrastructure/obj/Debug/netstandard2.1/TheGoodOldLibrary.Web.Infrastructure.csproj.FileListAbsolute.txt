@@ -1,0 +1,10 @@
+C:\Users\Owner\Desktop\Global Consulting\Web\TheGoodOldLibrary.Web.Infrastructure\bin\Debug\netstandard2.1\TheGoodOldLibrary.Web.Infrastructure.deps.json
+C:\Users\Owner\Desktop\Global Consulting\Web\TheGoodOldLibrary.Web.Infrastructure\bin\Debug\netstandard2.1\TheGoodOldLibrary.Web.Infrastructure.dll
+C:\Users\Owner\Desktop\Global Consulting\Web\TheGoodOldLibrary.Web.Infrastructure\bin\Debug\netstandard2.1\TheGoodOldLibrary.Web.Infrastructure.pdb
+C:\Users\Owner\Desktop\Global Consulting\Web\TheGoodOldLibrary.Web.Infrastructure\obj\Debug\netstandard2.1\TheGoodOldLibrary.Web.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\Owner\Desktop\Global Consulting\Web\TheGoodOldLibrary.Web.Infrastructure\obj\Debug\netstandard2.1\TheGoodOldLibrary.Web.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Owner\Desktop\Global Consulting\Web\TheGoodOldLibrary.Web.Infrastructure\obj\Debug\netstandard2.1\TheGoodOldLibrary.Web.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Owner\Desktop\Global Consulting\Web\TheGoodOldLibrary.Web.Infrastructure\obj\Debug\netstandard2.1\TheGoodOldLibrary.Web.Infrastructure.AssemblyInfo.cs
+C:\Users\Owner\Desktop\Global Consulting\Web\TheGoodOldLibrary.Web.Infrastructure\obj\Debug\netstandard2.1\TheGoodOldLibrary.Web.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Owner\Desktop\Global Consulting\Web\TheGoodOldLibrary.Web.Infrastructure\obj\Debug\netstandard2.1\TheGoodOldLibrary.Web.Infrastructure.dll
+C:\Users\Owner\Desktop\Global Consulting\Web\TheGoodOldLibrary.Web.Infrastructure\obj\Debug\netstandard2.1\TheGoodOldLibrary.Web.Infrastructure.pdb

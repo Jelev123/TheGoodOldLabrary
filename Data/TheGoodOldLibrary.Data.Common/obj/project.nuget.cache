@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "YC0fEtcm1GJ7MY5ux/6ptR7tre0+oxhjGAGP/ltxPmgGaRRTHQsqBgpN4yX0fZ8/LkvakOb9sboAi3MPh4YyHQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Owner\\Desktop\\Global Consulting\\Data\\TheGoodOldLibrary.Data.Common\\TheGoodOldLibrary.Data.Common.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Owner\\.nuget\\packages\\stylecop.analyzers\\1.2.0-beta.312\\stylecop.analyzers.1.2.0-beta.312.nupkg.sha512",
+    "C:\\Users\\Owner\\.nuget\\packages\\stylecop.analyzers.unstable\\1.2.0.312\\stylecop.analyzers.unstable.1.2.0.312.nupkg.sha512",
+    "C:\\Users\\Owner\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

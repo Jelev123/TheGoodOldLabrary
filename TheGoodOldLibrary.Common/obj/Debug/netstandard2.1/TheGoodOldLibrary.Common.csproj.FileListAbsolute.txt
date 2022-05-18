@@ -1,0 +1,10 @@
+C:\Users\Owner\Desktop\Global Consulting\TheGoodOldLibrary.Common\bin\Debug\netstandard2.1\TheGoodOldLibrary.Common.deps.json
+C:\Users\Owner\Desktop\Global Consulting\TheGoodOldLibrary.Common\bin\Debug\netstandard2.1\TheGoodOldLibrary.Common.dll
+C:\Users\Owner\Desktop\Global Consulting\TheGoodOldLibrary.Common\bin\Debug\netstandard2.1\TheGoodOldLibrary.Common.pdb
+C:\Users\Owner\Desktop\Global Consulting\TheGoodOldLibrary.Common\obj\Debug\netstandard2.1\TheGoodOldLibrary.Common.csproj.AssemblyReference.cache
+C:\Users\Owner\Desktop\Global Consulting\TheGoodOldLibrary.Common\obj\Debug\netstandard2.1\TheGoodOldLibrary.Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Owner\Desktop\Global Consulting\TheGoodOldLibrary.Common\obj\Debug\netstandard2.1\TheGoodOldLibrary.Common.AssemblyInfoInputs.cache
+C:\Users\Owner\Desktop\Global Consulting\TheGoodOldLibrary.Common\obj\Debug\netstandard2.1\TheGoodOldLibrary.Common.AssemblyInfo.cs
+C:\Users\Owner\Desktop\Global Consulting\TheGoodOldLibrary.Common\obj\Debug\netstandard2.1\TheGoodOldLibrary.Common.csproj.CoreCompileInputs.cache
+C:\Users\Owner\Desktop\Global Consulting\TheGoodOldLibrary.Common\obj\Debug\netstandard2.1\TheGoodOldLibrary.Common.dll
+C:\Users\Owner\Desktop\Global Consulting\TheGoodOldLibrary.Common\obj\Debug\netstandard2.1\TheGoodOldLibrary.Common.pdb

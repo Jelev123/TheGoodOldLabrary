@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "1JOc1lrhKrPXE3N3Aywd3C6QDsrDuQjolWdZvW2puUlErW5+583nqLzECg0xI5n3yzo7hAfe6qpquya+x/scbw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Owner\\Desktop\\Global Consulting\\Services\\TheGoodOldLibrary.Services.Mapping\\TheGoodOldLibrary.Services.Mapping.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Owner\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
+    "C:\\Users\\Owner\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\Owner\\.nuget\\packages\\stylecop.analyzers\\1.2.0-beta.312\\stylecop.analyzers.1.2.0-beta.312.nupkg.sha512",
+    "C:\\Users\\Owner\\.nuget\\packages\\stylecop.analyzers.unstable\\1.2.0.312\\stylecop.analyzers.unstable.1.2.0.312.nupkg.sha512",
+    "C:\\Users\\Owner\\.nuget\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}

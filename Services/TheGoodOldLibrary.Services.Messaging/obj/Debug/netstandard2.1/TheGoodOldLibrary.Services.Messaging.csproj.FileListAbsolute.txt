@@ -1,0 +1,10 @@
+C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Messaging\bin\Debug\netstandard2.1\TheGoodOldLibrary.Services.Messaging.deps.json
+C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Messaging\bin\Debug\netstandard2.1\TheGoodOldLibrary.Services.Messaging.dll
+C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Messaging\bin\Debug\netstandard2.1\TheGoodOldLibrary.Services.Messaging.pdb
+C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Messaging\obj\Debug\netstandard2.1\TheGoodOldLibrary.Services.Messaging.csproj.AssemblyReference.cache
+C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Messaging\obj\Debug\netstandard2.1\TheGoodOldLibrary.Services.Messaging.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Messaging\obj\Debug\netstandard2.1\TheGoodOldLibrary.Services.Messaging.AssemblyInfoInputs.cache
+C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Messaging\obj\Debug\netstandard2.1\TheGoodOldLibrary.Services.Messaging.AssemblyInfo.cs
+C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Messaging\obj\Debug\netstandard2.1\TheGoodOldLibrary.Services.Messaging.csproj.CoreCompileInputs.cache
+C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Messaging\obj\Debug\netstandard2.1\TheGoodOldLibrary.Services.Messaging.dll
+C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Messaging\obj\Debug\netstandard2.1\TheGoodOldLibrary.Services.Messaging.pdb

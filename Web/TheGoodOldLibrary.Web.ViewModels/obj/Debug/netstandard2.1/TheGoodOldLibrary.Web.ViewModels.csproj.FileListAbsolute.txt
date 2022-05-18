@@ -1,0 +1,17 @@
+C:\Users\Owner\Desktop\Global Consulting\Web\TheGoodOldLibrary.Web.ViewModels\bin\Debug\netstandard2.1\TheGoodOldLibrary.Web.ViewModels.deps.json
+C:\Users\Owner\Desktop\Global Consulting\Web\TheGoodOldLibrary.Web.ViewModels\bin\Debug\netstandard2.1\TheGoodOldLibrary.Web.ViewModels.dll
+C:\Users\Owner\Desktop\Global Consulting\Web\TheGoodOldLibrary.Web.ViewModels\bin\Debug\netstandard2.1\TheGoodOldLibrary.Web.ViewModels.pdb
+C:\Users\Owner\Desktop\Global Consulting\Web\TheGoodOldLibrary.Web.ViewModels\bin\Debug\netstandard2.1\TheGoodOldLibrary.Data.Common.dll
+C:\Users\Owner\Desktop\Global Consulting\Web\TheGoodOldLibrary.Web.ViewModels\bin\Debug\netstandard2.1\TheGoodOldLibrary.Data.Models.dll
+C:\Users\Owner\Desktop\Global Consulting\Web\TheGoodOldLibrary.Web.ViewModels\bin\Debug\netstandard2.1\TheGoodOldLibrary.Services.Mapping.dll
+C:\Users\Owner\Desktop\Global Consulting\Web\TheGoodOldLibrary.Web.ViewModels\bin\Debug\netstandard2.1\TheGoodOldLibrary.Data.Models.pdb
+C:\Users\Owner\Desktop\Global Consulting\Web\TheGoodOldLibrary.Web.ViewModels\bin\Debug\netstandard2.1\TheGoodOldLibrary.Services.Mapping.pdb
+C:\Users\Owner\Desktop\Global Consulting\Web\TheGoodOldLibrary.Web.ViewModels\bin\Debug\netstandard2.1\TheGoodOldLibrary.Data.Common.pdb
+C:\Users\Owner\Desktop\Global Consulting\Web\TheGoodOldLibrary.Web.ViewModels\obj\Debug\netstandard2.1\TheGoodOldLibrary.Web.ViewModels.csproj.AssemblyReference.cache
+C:\Users\Owner\Desktop\Global Consulting\Web\TheGoodOldLibrary.Web.ViewModels\obj\Debug\netstandard2.1\TheGoodOldLibrary.Web.ViewModels.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Owner\Desktop\Global Consulting\Web\TheGoodOldLibrary.Web.ViewModels\obj\Debug\netstandard2.1\TheGoodOldLibrary.Web.ViewModels.AssemblyInfoInputs.cache
+C:\Users\Owner\Desktop\Global Consulting\Web\TheGoodOldLibrary.Web.ViewModels\obj\Debug\netstandard2.1\TheGoodOldLibrary.Web.ViewModels.AssemblyInfo.cs
+C:\Users\Owner\Desktop\Global Consulting\Web\TheGoodOldLibrary.Web.ViewModels\obj\Debug\netstandard2.1\TheGoodOldLibrary.Web.ViewModels.csproj.CoreCompileInputs.cache
+C:\Users\Owner\Desktop\Global Consulting\Web\TheGoodOldLibrary.Web.ViewModels\obj\Debug\netstandard2.1\TheGoodOldLibrary.Web.ViewModels.csproj.CopyComplete
+C:\Users\Owner\Desktop\Global Consulting\Web\TheGoodOldLibrary.Web.ViewModels\obj\Debug\netstandard2.1\TheGoodOldLibrary.Web.ViewModels.dll
+C:\Users\Owner\Desktop\Global Consulting\Web\TheGoodOldLibrary.Web.ViewModels\obj\Debug\netstandard2.1\TheGoodOldLibrary.Web.ViewModels.pdb

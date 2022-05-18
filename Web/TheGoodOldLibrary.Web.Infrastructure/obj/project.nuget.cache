@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "QhFyssVouYvtVCuAWLbZ7MwzwRRWQXuXH0YDpUnvWIlfkeqKd4x8KOvq6c9LPNbdx1rx7XdD6nOrEzu8b+XjnA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Owner\\Desktop\\Global Consulting\\Web\\TheGoodOldLibrary.Web.Infrastructure\\TheGoodOldLibrary.Web.Infrastructure.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Owner\\.nuget\\packages\\stylecop.analyzers\\1.2.0-beta.312\\stylecop.analyzers.1.2.0-beta.312.nupkg.sha512",
+    "C:\\Users\\Owner\\.nuget\\packages\\stylecop.analyzers.unstable\\1.2.0.312\\stylecop.analyzers.unstable.1.2.0.312.nupkg.sha512"
+  ],
+  "logs": []
+}

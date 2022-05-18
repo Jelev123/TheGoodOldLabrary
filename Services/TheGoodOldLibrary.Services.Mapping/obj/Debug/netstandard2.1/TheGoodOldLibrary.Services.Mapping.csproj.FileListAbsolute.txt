@@ -1,0 +1,10 @@
+C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Mapping\bin\Debug\netstandard2.1\TheGoodOldLibrary.Services.Mapping.deps.json
+C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Mapping\bin\Debug\netstandard2.1\TheGoodOldLibrary.Services.Mapping.dll
+C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Mapping\bin\Debug\netstandard2.1\TheGoodOldLibrary.Services.Mapping.pdb
+C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Mapping\obj\Debug\netstandard2.1\TheGoodOldLibrary.Services.Mapping.csproj.AssemblyReference.cache
+C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Mapping\obj\Debug\netstandard2.1\TheGoodOldLibrary.Services.Mapping.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Mapping\obj\Debug\netstandard2.1\TheGoodOldLibrary.Services.Mapping.AssemblyInfoInputs.cache
+C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Mapping\obj\Debug\netstandard2.1\TheGoodOldLibrary.Services.Mapping.AssemblyInfo.cs
+C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Mapping\obj\Debug\netstandard2.1\TheGoodOldLibrary.Services.Mapping.csproj.CoreCompileInputs.cache
+C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Mapping\obj\Debug\netstandard2.1\TheGoodOldLibrary.Services.Mapping.dll
+C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Mapping\obj\Debug\netstandard2.1\TheGoodOldLibrary.Services.Mapping.pdb

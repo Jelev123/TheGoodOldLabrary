@@ -1,0 +1,17 @@
+C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Data\bin\Debug\netstandard2.1\TheGoodOldLibrary.Services.Data.deps.json
+C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Data\bin\Debug\netstandard2.1\TheGoodOldLibrary.Services.Data.dll
+C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Data\bin\Debug\netstandard2.1\TheGoodOldLibrary.Services.Data.pdb
+C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Data\bin\Debug\netstandard2.1\TheGoodOldLibrary.Data.Common.dll
+C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Data\bin\Debug\netstandard2.1\TheGoodOldLibrary.Data.Models.dll
+C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Data\bin\Debug\netstandard2.1\TheGoodOldLibrary.Services.Mapping.dll
+C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Data\bin\Debug\netstandard2.1\TheGoodOldLibrary.Data.Common.pdb
+C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Data\bin\Debug\netstandard2.1\TheGoodOldLibrary.Data.Models.pdb
+C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Data\bin\Debug\netstandard2.1\TheGoodOldLibrary.Services.Mapping.pdb
+C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Data\obj\Debug\netstandard2.1\TheGoodOldLibrary.Services.Data.csproj.AssemblyReference.cache
+C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Data\obj\Debug\netstandard2.1\TheGoodOldLibrary.Services.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Data\obj\Debug\netstandard2.1\TheGoodOldLibrary.Services.Data.AssemblyInfoInputs.cache
+C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Data\obj\Debug\netstandard2.1\TheGoodOldLibrary.Services.Data.AssemblyInfo.cs
+C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Data\obj\Debug\netstandard2.1\TheGoodOldLibrary.Services.Data.csproj.CoreCompileInputs.cache
+C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Data\obj\Debug\netstandard2.1\TheGoodOldLibrary.Services.Data.csproj.CopyComplete
+C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Data\obj\Debug\netstandard2.1\TheGoodOldLibrary.Services.Data.dll
+C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Data\obj\Debug\netstandard2.1\TheGoodOldLibrary.Services.Data.pdb
