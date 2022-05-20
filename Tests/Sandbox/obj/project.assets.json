@@ -1878,7 +1878,8 @@
         "dependencies": {
           "Microsoft.AspNetCore.Http.Features": "5.0.17",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "5.0.6",
-          "TheGoodOldLibrary.Data.Common": "1.0.0"
+          "TheGoodOldLibrary.Data.Common": "1.0.0",
+          "TheGoodOldLibrary.Services.Mapping": "1.0.0"
         },
         "compile": {
           "bin/placeholder/TheGoodOldLibrary.Data.Models.dll": {}
@@ -1944,6 +1945,7 @@
         "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
           "TheGoodOldLibrary.Data.Models": "1.0.0",
+          "TheGoodOldLibrary.Services": "1.0.0",
           "TheGoodOldLibrary.Services.Mapping": "1.0.0"
         },
         "compile": {

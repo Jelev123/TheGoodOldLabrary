@@ -365,6 +365,9 @@ namespace TheGoodOldLibrary.Data.Migrations
                     b.Property<int>("PeriodicalId")
                         .HasColumnType("int");
 
+                    b.Property<string>("RemoteImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("BookId");

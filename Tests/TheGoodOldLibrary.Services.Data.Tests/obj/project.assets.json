@@ -2760,13 +2760,24 @@
         "dependencies": {
           "Microsoft.AspNetCore.Http.Features": "5.0.17",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "5.0.6",
-          "TheGoodOldLibrary.Data.Common": "1.0.0"
+          "TheGoodOldLibrary.Data.Common": "1.0.0",
+          "TheGoodOldLibrary.Services.Mapping": "1.0.0"
         },
         "compile": {
           "bin/placeholder/TheGoodOldLibrary.Data.Models.dll": {}
         },
         "runtime": {
           "bin/placeholder/TheGoodOldLibrary.Data.Models.dll": {}
+        }
+      },
+      "TheGoodOldLibrary.Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "compile": {
+          "bin/placeholder/TheGoodOldLibrary.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TheGoodOldLibrary.Services.dll": {}
         }
       },
       "TheGoodOldLibrary.Services.Data/1.0.0": {
@@ -2803,6 +2814,7 @@
         "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
           "TheGoodOldLibrary.Data.Models": "1.0.0",
+          "TheGoodOldLibrary.Services": "1.0.0",
           "TheGoodOldLibrary.Services.Mapping": "1.0.0"
         },
         "compile": {
@@ -9113,6 +9125,11 @@
       "type": "project",
       "path": "../../Data/TheGoodOldLibrary.Data.Models/TheGoodOldLibrary.Data.Models.csproj",
       "msbuildProject": "../../Data/TheGoodOldLibrary.Data.Models/TheGoodOldLibrary.Data.Models.csproj"
+    },
+    "TheGoodOldLibrary.Services/1.0.0": {
+      "type": "project",
+      "path": "../../Services/TheGoodOldLibrary.Services/TheGoodOldLibrary.Services.csproj",
+      "msbuildProject": "../../Services/TheGoodOldLibrary.Services/TheGoodOldLibrary.Services.csproj"
     },
     "TheGoodOldLibrary.Services.Data/1.0.0": {
       "type": "project",

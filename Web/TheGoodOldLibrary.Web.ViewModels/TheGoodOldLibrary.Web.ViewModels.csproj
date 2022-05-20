@@ -21,6 +21,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Data\TheGoodOldLibrary.Data.Models\TheGoodOldLibrary.Data.Models.csproj" />
     <ProjectReference Include="..\..\Services\TheGoodOldLibrary.Services.Mapping\TheGoodOldLibrary.Services.Mapping.csproj" />
+    <ProjectReference Include="..\..\Services\TheGoodOldLibrary.Services\TheGoodOldLibrary.Services.csproj" />
   </ItemGroup>
 
 </Project>

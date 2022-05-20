@@ -104,6 +104,9 @@
             "projectReferences": {
               "C:\\Users\\Owner\\Desktop\\Global Consulting\\Data\\TheGoodOldLibrary.Data.Common\\TheGoodOldLibrary.Data.Common.csproj": {
                 "projectPath": "C:\\Users\\Owner\\Desktop\\Global Consulting\\Data\\TheGoodOldLibrary.Data.Common\\TheGoodOldLibrary.Data.Common.csproj"
+              },
+              "C:\\Users\\Owner\\Desktop\\Global Consulting\\Services\\TheGoodOldLibrary.Services.Mapping\\TheGoodOldLibrary.Services.Mapping.csproj": {
+                "projectPath": "C:\\Users\\Owner\\Desktop\\Global Consulting\\Services\\TheGoodOldLibrary.Services.Mapping\\TheGoodOldLibrary.Services.Mapping.csproj"
               }
             }
           }
@@ -702,6 +705,9 @@
               },
               "C:\\Users\\Owner\\Desktop\\Global Consulting\\Services\\TheGoodOldLibrary.Services.Mapping\\TheGoodOldLibrary.Services.Mapping.csproj": {
                 "projectPath": "C:\\Users\\Owner\\Desktop\\Global Consulting\\Services\\TheGoodOldLibrary.Services.Mapping\\TheGoodOldLibrary.Services.Mapping.csproj"
+              },
+              "C:\\Users\\Owner\\Desktop\\Global Consulting\\Services\\TheGoodOldLibrary.Services\\TheGoodOldLibrary.Services.csproj": {
+                "projectPath": "C:\\Users\\Owner\\Desktop\\Global Consulting\\Services\\TheGoodOldLibrary.Services\\TheGoodOldLibrary.Services.csproj"
               }
             }
           }

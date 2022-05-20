@@ -533,7 +533,6 @@ C:\Users\Owner\Desktop\Global Consulting\Tests\TheGoodOldLibrary.Web.Tests\obj\D
 C:\Users\Owner\Desktop\Global Consulting\Tests\TheGoodOldLibrary.Web.Tests\obj\Debug\net6.0\TheGoodOldLibrary.Web.Tests.AssemblyInfoInputs.cache
 C:\Users\Owner\Desktop\Global Consulting\Tests\TheGoodOldLibrary.Web.Tests\obj\Debug\net6.0\TheGoodOldLibrary.Web.Tests.AssemblyInfo.cs
 C:\Users\Owner\Desktop\Global Consulting\Tests\TheGoodOldLibrary.Web.Tests\obj\Debug\net6.0\TheGoodOldLibrary.Web.Tests.csproj.CoreCompileInputs.cache
-C:\Users\Owner\Desktop\Global Consulting\Tests\TheGoodOldLibrary.Web.Tests\obj\Debug\net6.0\TheGoodOldLibrary.Web.Tests.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Owner\Desktop\Global Consulting\Tests\TheGoodOldLibrary.Web.Tests\obj\Debug\net6.0\TheGoodOldLibrary.Web.Tests.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Owner\Desktop\Global Consulting\Tests\TheGoodOldLibrary.Web.Tests\obj\Debug\net6.0\staticwebassets.build.json
 C:\Users\Owner\Desktop\Global Consulting\Tests\TheGoodOldLibrary.Web.Tests\obj\Debug\net6.0\staticwebassets.development.json

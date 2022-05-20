@@ -11,6 +11,7 @@
         "dependencies": {
           "StyleCop.Analyzers": "1.2.0-beta.312",
           "TheGoodOldLibrary.Data.Models": "1.0.0",
+          "TheGoodOldLibrary.Services": "1.0.0",
           "TheGoodOldLibrary.Services.Mapping": "1.0.0"
         },
         "runtime": {
@@ -361,10 +362,16 @@
         "dependencies": {
           "Microsoft.AspNetCore.Http.Features": "5.0.17",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "5.0.6",
-          "TheGoodOldLibrary.Data.Common": "1.0.0"
+          "TheGoodOldLibrary.Data.Common": "1.0.0",
+          "TheGoodOldLibrary.Services.Mapping": "1.0.0"
         },
         "runtime": {
           "TheGoodOldLibrary.Data.Models.dll": {}
+        }
+      },
+      "TheGoodOldLibrary.Services/1.0.0": {
+        "runtime": {
+          "TheGoodOldLibrary.Services.dll": {}
         }
       },
       "TheGoodOldLibrary.Services.Mapping/1.0.0": {
@@ -620,6 +627,11 @@
       "sha512": ""
     },
     "TheGoodOldLibrary.Data.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TheGoodOldLibrary.Services/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

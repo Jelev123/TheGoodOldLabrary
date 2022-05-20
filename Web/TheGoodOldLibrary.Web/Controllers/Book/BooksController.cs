@@ -4,6 +4,7 @@
 
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Mvc;
+    using TheGoodOldLibrary.Data.Models.ViewModel;
     using TheGoodOldLibrary.Services.Data.Book;
     using TheGoodOldLibrary.Services.Data.Genre;
     using TheGoodOldLibrary.Web.ViewModels.Books;
@@ -34,6 +35,25 @@
             await this.bookService.CreateAsync(model, $"{this.environment.WebRootPath}/images");
 
             return this.RedirectToAction("All");
+        }
+
+        public IActionResult All(int id = 1)
+        {
+            if (id <= 0)
+            {
+                return this.NotFound();
+            }
+
+            const int ItemsPerPage = 9;
+
+            var viewModel = new BookListViewModel()
+            {
+                ItemsPerPage = ItemsPerPage,
+                PageNumber = id,
+                BooksCount = this.bookService.GetCount(),
+                Books = this.bookService.GetAll<BookInListViewModel>(id, ItemsPerPage),
+            };
+            return this.View(viewModel);
         }
     }
 }
