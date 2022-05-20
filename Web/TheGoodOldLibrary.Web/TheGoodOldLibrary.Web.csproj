@@ -36,4 +36,9 @@
     <ProjectReference Include="..\TheGoodOldLibrary.Web.Infrastructure\TheGoodOldLibrary.Web.Infrastructure.csproj" />
     <ProjectReference Include="..\TheGoodOldLibrary.Web.ViewModels\TheGoodOldLibrary.Web.ViewModels.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\images\book\" />
+    <Folder Include="wwwroot\images\periodical\" />
+  </ItemGroup>
 </Project>

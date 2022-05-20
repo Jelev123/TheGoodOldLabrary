@@ -24,6 +24,7 @@
             var book = new Book
             {
                 Name = model.Name,
+                GenreId = model.GenreId,
             };
 
             Directory.CreateDirectory($"{imagePath}/books/");
@@ -46,7 +47,7 @@
                 await this.bookRepository.AddAsync(book);
                 await this.bookRepository.SaveChangesAsync();
 
-                var physicalPath = $"{imagePath}/recipes/{dbImage.Id}.{extension}";
+                var physicalPath = $"{imagePath}/book/{dbImage.Id}.{extension}";
                 using Stream fileStream = new FileStream(physicalPath, FileMode.Create);
                 await image.CopyToAsync(fileStream);
             }

@@ -18,6 +18,9 @@
     using TheGoodOldLibrary.Data.Seeding;
     using TheGoodOldLibrary.Services.Data;
     using TheGoodOldLibrary.Services.Data.Book;
+    using TheGoodOldLibrary.Services.Data.Genre;
+    using TheGoodOldLibrary.Services.Data.Periodical;
+    using TheGoodOldLibrary.Services.Data.Type;
     using TheGoodOldLibrary.Services.Mapping;
     using TheGoodOldLibrary.Services.Messaging;
     using TheGoodOldLibrary.Web.ViewModels;
@@ -66,6 +69,9 @@
             services.AddTransient<IEmailSender, NullMessageSender>();
             services.AddTransient<ISettingsService, SettingsService>();
             services.AddTransient<IBookService, BookService>();
+            services.AddTransient<IPeriodicalService, PeriodicalService>();
+            services.AddTransient<IGenreService, GenreService>();
+            services.AddTransient<ITypeService, TypeService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

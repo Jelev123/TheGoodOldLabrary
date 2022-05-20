@@ -16,6 +16,7 @@
             }
 
             await dbContext.Genres.AddAsync(new Models.Genre { Name = "Horror" });
+            await dbContext.Genres.AddAsync(new Models.Genre { Name = "Comedy" });
 
             await dbContext.SaveChangesAsync();
         }

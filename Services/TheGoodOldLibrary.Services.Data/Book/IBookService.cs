@@ -8,6 +8,5 @@
     {
         Task CreateAsync(CreateBooksViewModel model, string imagePath);
 
-
     }
 }

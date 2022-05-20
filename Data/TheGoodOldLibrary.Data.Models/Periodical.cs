@@ -9,12 +9,14 @@
     {
         public string Name { get; set; }
 
-        public string Type { get; set; }
-
         public DateTime PublicDate { get; set; }
 
-        public ICollection<Reader> Readers { get; set; } = new HashSet<Reader>();
+        public int TypeId { get; set; }
 
-        public ICollection<Image> Images { get; set; } = new HashSet<Image>();
+        public Types Type { get; set; }
+
+        public virtual ICollection<Reader> Readers { get; set; } = new HashSet<Reader>();
+
+        public virtual ICollection<Image> Images { get; set; } = new HashSet<Image>();
     }
 }

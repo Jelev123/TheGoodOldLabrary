@@ -8,8 +8,8 @@
     {
         public string Name { get; set; }
 
-        public ICollection<Book> Books { get; set; } = new HashSet<Book>();
+        public virtual ICollection<Book> Books { get; set; } = new HashSet<Book>();
 
-        public ICollection<Periodical> Periodicals { get; set; } = new HashSet<Periodical>();
+        public virtual ICollection<Periodical> Periodicals { get; set; } = new HashSet<Periodical>();
     }
 }

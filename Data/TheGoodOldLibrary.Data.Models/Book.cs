@@ -8,8 +8,12 @@
     {
         public string Name { get; set; }
 
-        public ICollection<Reader> Readers { get; set; } = new HashSet<Reader>();
+        public int GenreId { get; set; }
 
-        public ICollection<Image> Images { get; set; } = new HashSet<Image>();
+        public Genre Genre { get; set; }
+
+        public virtual ICollection<Reader> Readers { get; set; } = new HashSet<Reader>();
+
+        public virtual ICollection<Image> Images { get; set; } = new HashSet<Image>();
     }
 }
