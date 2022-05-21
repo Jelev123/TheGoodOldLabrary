@@ -1,24 +1,19 @@
 ﻿namespace TheGoodOldLibrary.Web.Controllers.Book
 {
     using System.Threading.Tasks;
-
-    using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Mvc;
-    using TheGoodOldLibrary.Data.Models.ViewModel;
+    using TheGoodOldLibrary.Data.Models.ViewModel.Book;
     using TheGoodOldLibrary.Services.Data.Book;
     using TheGoodOldLibrary.Services.Data.Genre;
-    using TheGoodOldLibrary.Web.ViewModels.Books;
 
     public class BooksController : Controller
     {
         private readonly IBookService bookService;
         private readonly IGenreService genreService;
-        private readonly IWebHostEnvironment environment;
 
-        public BooksController(IBookService bookService,  IWebHostEnvironment environment, IGenreService genreService)
+        public BooksController(IBookService bookService, IGenreService genreService)
         {
             this.bookService = bookService;
-            this.environment = environment;
             this.genreService = genreService;
         }
 
@@ -32,12 +27,12 @@
         [HttpPost]
         public async Task<IActionResult> Create(CreateBooksViewModel model)
         {
-            await this.bookService.CreateAsync(model, $"{this.environment.WebRootPath}/images");
+            await this.bookService.CreateAsync(model);
 
             return this.RedirectToAction("All");
         }
 
-        public IActionResult All(int id = 1)
+        public async Task<IActionResult> All(int id = 1)
         {
             if (id <= 0)
             {
@@ -51,7 +46,7 @@
                 ItemsPerPage = ItemsPerPage,
                 PageNumber = id,
                 BooksCount = this.bookService.GetCount(),
-                Books = this.bookService.GetAll<BookInListViewModel>(id, ItemsPerPage),
+                Books = this.bookService.GetAll<BookInListViewModel>(id, 1),
             };
             return this.View(viewModel);
         }

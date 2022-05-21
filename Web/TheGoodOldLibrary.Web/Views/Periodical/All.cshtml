@@ -1,0 +1,62 @@
+﻿@using TheGoodOldLibrary.Data.Models.ViewModel.Periodical
+
+
+@model PeriodicalListViewModel
+
+
+@{
+    this.ViewData["Title"] = "All Periodicals, page " + Model.PageNumber;
+}
+
+<h2 style="color : Black">@this.ViewData["Title"]</h2>
+
+
+
+<div id="products-search-bar-holder" class="form-group d-flex justify-content-between w-50">
+    <input type="text" class="form-control text-black" id="products-search-bar" name="search" placeholder="Search..." />
+</div>
+
+<div class="row">@foreach (var book in this.Model.Periodicals)
+     {
+                         
+
+          <div class="col-md-4">
+                <div class="col-md-10">
+                    <div class="card-body">
+                               <a href="@book.Image">
+            <img src="@book.Image" width="200">
+        </a>                
+                        <h4 style="color: orange" class="card-title">@book.Name</h4>
+                        <h4 style="color: orange" class="card-title">@book.TypeName</h4>
+
+                    </div>
+                </div>
+            </div>
+             
+         }
+</div>
+<partial name = "_PaginPeriodicalPartialView" model="@Model" />
+
+
+
+<script>
+    $('#sort').change(function () {
+        $('#order-form').submit();
+    });
+
+    $('#products-search-bar').on("change paste keyup", function () {
+        $('.card-body').show();
+
+        let searchValue = $('#products-search-bar').val();
+
+        for (let name of $('.card-body')) {
+            let productName = $($(name).children()[1]).text();    
+
+            if (!productName.toLowerCase().includes(searchValue.toLowerCase())) {
+                $(name).hide();
+            }
+        }
+    });
+</script>
+
+

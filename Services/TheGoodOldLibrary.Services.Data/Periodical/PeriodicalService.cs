@@ -1,16 +1,14 @@
 ﻿namespace TheGoodOldLibrary.Services.Data.Periodical
 {
-    using System;
-    using System.IO;
+    using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
     using TheGoodOldLibrary.Data.Common.Repositories;
     using TheGoodOldLibrary.Data.Models;
-    using TheGoodOldLibrary.Web.ViewModels.Peridiocal;
+    using TheGoodOldLibrary.Data.Models.ViewModel.Periodical;
 
     public class PeriodicalService : IPeriodicalService
     {
-        private readonly string[] allowedExtensions = new[] { "jpg", "png", "gif" };
         private readonly IDeletableEntityRepository<Periodical> periodicalRepository;
 
         public PeriodicalService(IDeletableEntityRepository<Periodical> periodicalRepository)
@@ -18,38 +16,38 @@
             this.periodicalRepository = periodicalRepository;
         }
 
-        public async Task CreateAsync(CreatePeridiocalViewModel model, string imagePath)
+        public async Task CreateAsync(CreatePeridiocalViewModel model)
         {
             var periodical = new Periodical
             {
                 Name = model.Name,
                 TypeId = model.TypeId,
+                ImageUrl = model.Image,
             };
 
-            Directory.CreateDirectory($"{imagePath}/periodicals/");
+            await this.periodicalRepository.AddAsync(periodical);
+            await this.periodicalRepository.SaveChangesAsync();
+        }
 
-            foreach (var image in model.Image)
-            {
-                var extension = Path.GetExtension(image.FileName).TrimStart('.');
-
-                if (!this.allowedExtensions.Any(x => extension.EndsWith(x)))
+        public IEnumerable<PeriodicalInListViewModel> GetAll<T>(int page, int itemsPerPage = 5)
+        {
+            var periodical = this.periodicalRepository.AllAsNoTracking()
+               .OrderBy(x => x.Name)
+                .Skip((page - 1) * itemsPerPage).Take(itemsPerPage)
+                .Select(x => new PeriodicalInListViewModel
                 {
-                    throw new Exception($"Invalid image extension {extension}");
-                }
+                    Id = x.Id,
+                    Name = x.Name,
+                    Image = x.ImageUrl,
+                    TypeName = x.Type.Name,
+                }).ToList();
 
-                var dbImage = new Image
-                {
-                    Extension = extension,
-                };
-                periodical.Images.Add(dbImage);
+            return periodical;
+        }
 
-                await this.periodicalRepository.AddAsync(periodical);
-                await this.periodicalRepository.SaveChangesAsync();
-
-                var physicalPath = $"{imagePath}/periodical/{dbImage.Id}.{extension}";
-                using Stream fileStream = new FileStream(physicalPath, FileMode.Create);
-                await image.CopyToAsync(fileStream);
-            }
+        public int GetCount()
+        {
+           return this.periodicalRepository.AllAsNoTracking().Count();
         }
     }
 }

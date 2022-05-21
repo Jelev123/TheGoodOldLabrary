@@ -1,8 +1,8 @@
-﻿@using TheGoodOldLibrary.Web.ViewModels.Peridiocal
+﻿@using TheGoodOldLibrary.Data.Models.ViewModel.Periodical
 @model CreatePeridiocalViewModel
 
 @{
-    var typeItems = this.Model.GenreItems.Select(x => new SelectListItem(x.Value, x.Key));
+    var typeItems = this.Model.TypeItems.Select(x => new SelectListItem(x.Value, x.Key));
     ViewData["Title"] = "Create Periodical";
     
 }

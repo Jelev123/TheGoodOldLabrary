@@ -8,12 +8,11 @@
 
     using TheGoodOldLibrary.Data.Common.Repositories;
     using TheGoodOldLibrary.Data.Models;
+    using TheGoodOldLibrary.Data.Models.ViewModel.Book;
     using TheGoodOldLibrary.Services.Mapping;
-    using TheGoodOldLibrary.Web.ViewModels.Books;
 
     public class BookService : IBookService
     {
-        private readonly string[] allowedExtensions = new[] { "jpg", "png", "gif" };
         private readonly IDeletableEntityRepository<Book> bookRepository;
 
         public BookService(IDeletableEntityRepository<Book> bookRepository)
@@ -21,46 +20,33 @@
             this.bookRepository = bookRepository;
         }
 
-        public async Task CreateAsync(CreateBooksViewModel model, string imagePath)
+        public async Task CreateAsync(CreateBooksViewModel model)
         {
             var book = new Book
             {
                 Name = model.Name,
                 GenreId = model.GenreId,
+                UriginalUrl = model.Image,
             };
+            await this.bookRepository.AddAsync(book);
+            await this.bookRepository.SaveChangesAsync();
 
-            Directory.CreateDirectory($"{imagePath}/books/");
-
-            foreach (var image in model.Image)
-            {
-                var extension = Path.GetExtension(image.FileName).TrimStart('.');
-
-                if (!this.allowedExtensions.Any(x => extension.EndsWith(x)))
-                {
-                    throw new Exception($"Invalid image extension {extension}");
-                }
-
-                var dbImage = new Image
-                {
-                    Extension = extension,
-                };
-                book.Images.Add(dbImage);
-
-                await this.bookRepository.AddAsync(book);
-                await this.bookRepository.SaveChangesAsync();
-
-                var physicalPath = $"{imagePath}/book/{dbImage.Id}.{extension}";
-                using Stream fileStream = new FileStream(physicalPath, FileMode.Create);
-                await image.CopyToAsync(fileStream);
-            }
         }
 
-        public IEnumerable<T> GetAll<T>(int page, int itemsPerPage = 2)
+        public IEnumerable<BookInListViewModel> GetAll<T>(int page, int itemsPerPage = 2)
         {
             var book = this.bookRepository.AllAsNoTracking()
                 .OrderBy(x => x.Name)
                 .Skip((page - 1) * itemsPerPage).Take(itemsPerPage)
-                .To<T>().ToList();
+                .Select(x => new BookInListViewModel
+                {
+                    Id = x.Id,
+                    GenreId = x.Genre.Id,
+                    GenreName = x.Genre.Name,
+                    Name = x.Name,
+                    Images = x.UriginalUrl,
+                }).ToList();
+
             return book;
         }
 

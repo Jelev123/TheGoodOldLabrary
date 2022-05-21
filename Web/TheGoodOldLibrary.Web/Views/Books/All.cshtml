@@ -1,5 +1,4 @@
-﻿@using TheGoodOldLibrary.Data.Models.ViewModel
-
+﻿@using TheGoodOldLibrary.Data.Models.ViewModel.Book
 @model BookListViewModel
 
 
@@ -15,15 +14,18 @@
     <input type="text" class="form-control text-black" id="products-search-bar" name="search" placeholder="Search..." />
 </div>
 
-<div class="row">@foreach (var product in this.Model.Books)
+<div class="row">@foreach (var book in this.Model.Books)
      {
+                         
+
           <div class="col-md-4">
                 <div class="col-md-10">
                     <div class="card-body">
-                     
-                            <img width="200" src="@product.Image" />
-                        
-                        <h2 style="color: orange" class="card-title">@product.Name</h2>
+                               <a href="@book.Images">
+            <img src="@book.Images" width="200">
+        </a>                
+                        <h4 style="color: orange" class="card-title">@book.Name</h4>
+                        <h4 style="color: orange" class="card-title">@book.GenreName</h4>
 
                     </div>
                 </div>

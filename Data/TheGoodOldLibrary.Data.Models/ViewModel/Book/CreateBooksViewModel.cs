@@ -1,9 +1,8 @@
-﻿namespace TheGoodOldLibrary.Web.ViewModels.Books
+﻿namespace TheGoodOldLibrary.Data.Models.ViewModel.Book
 {
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using Microsoft.AspNetCore.Http;
-    using TheGoodOldLibrary.Data.Models;
 
     public class CreateBooksViewModel
     {
@@ -14,6 +13,6 @@
 
         public IEnumerable<KeyValuePair<string, string>> GenreItems { get; set; }
 
-        public IEnumerable<IFormFile> Image { get; set; }
+        public string Image { get; set; }
     }
 }

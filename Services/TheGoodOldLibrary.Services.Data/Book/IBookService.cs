@@ -2,14 +2,13 @@
 {
     using System.Collections.Generic;
     using System.Threading.Tasks;
-
-    using TheGoodOldLibrary.Web.ViewModels.Books;
+    using TheGoodOldLibrary.Data.Models.ViewModel.Book;
 
     public interface IBookService
     {
-        Task CreateAsync(CreateBooksViewModel model, string imagePath);
+        Task CreateAsync(CreateBooksViewModel model);
 
-        IEnumerable<T> GetAll<T>(int page, int itemsPerPage = 100);
+        IEnumerable<BookInListViewModel> GetAll<T>(int page, int itemsPerPage = 5);
 
         int GetCount();
 

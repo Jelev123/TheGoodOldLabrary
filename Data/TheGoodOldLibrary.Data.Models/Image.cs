@@ -13,7 +13,7 @@
 
         public int BookId { get; set; }
 
-        public string RemoteImageUrl { get; set; }
+        public string Images { get; set; }
 
         public Book Books { get; set; }
 

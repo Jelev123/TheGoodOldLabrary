@@ -15,6 +15,8 @@
 
         public Types Type { get; set; }
 
+        public string ImageUrl { get; set; }
+
         public virtual ICollection<Reader> Readers { get; set; } = new HashSet<Reader>();
 
         public virtual ICollection<Image> Images { get; set; } = new HashSet<Image>();

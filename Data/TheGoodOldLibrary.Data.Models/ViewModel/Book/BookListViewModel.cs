@@ -1,7 +1,6 @@
-﻿namespace TheGoodOldLibrary.Data.Models.ViewModel
+﻿namespace TheGoodOldLibrary.Data.Models.ViewModel.Book
 {
     using System.Collections.Generic;
-    using TheGoodOldLibrary.Services.Mapping;
     using TheGoodOldLibrary.Web.ViewModels;
 
     public class BookListViewModel : PagingViewModel

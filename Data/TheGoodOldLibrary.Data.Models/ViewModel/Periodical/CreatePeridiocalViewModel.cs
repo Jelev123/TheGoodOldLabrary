@@ -1,8 +1,7 @@
-﻿namespace TheGoodOldLibrary.Web.ViewModels.Peridiocal
+﻿namespace TheGoodOldLibrary.Data.Models.ViewModel.Periodical
 {
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    using Microsoft.AspNetCore.Http;
 
     public class CreatePeridiocalViewModel
     {
@@ -12,10 +11,8 @@
 
         public int TypeId { get; set; }
 
-        public IEnumerable<IFormFile> Image { get; set; }
+        public string Image { get; set; }
 
-        public IEnumerable<KeyValuePair<string, string>> GenreItems { get; set; }
-
-
+        public IEnumerable<KeyValuePair<string, string>> TypeItems { get; set; }
     }
 }

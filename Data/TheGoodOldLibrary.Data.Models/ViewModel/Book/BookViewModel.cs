@@ -1,4 +1,4 @@
-﻿namespace TheGoodOldLibrary.Web.ViewModels.Books
+﻿namespace TheGoodOldLibrary.Data.Models.ViewModel.Book
 {
     using System;
     using System.Collections.Generic;
