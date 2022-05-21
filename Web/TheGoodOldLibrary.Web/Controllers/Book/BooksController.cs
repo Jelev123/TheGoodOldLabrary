@@ -46,7 +46,7 @@
                 ItemsPerPage = ItemsPerPage,
                 PageNumber = id,
                 BooksCount = this.bookService.GetCount(),
-                Books = this.bookService.GetAll<BookInListViewModel>(id, 1),
+                Books = this.bookService.GetAll<BookInListViewModel>(id, 100),
             };
             return this.View(viewModel);
         }

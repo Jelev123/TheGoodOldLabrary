@@ -45,7 +45,7 @@
                 ItemsPerPage = ItemsPerPage,
                 PageNumber = id,
                 PeriodicalsCount = this.periodicalService.GetCount(),
-                Periodicals = this.periodicalService.GetAll<PeriodicalInListViewModel>(id, 1),
+                Periodicals = this.periodicalService.GetAll<PeriodicalInListViewModel>(id, 100),
             };
             return this.View(viewModel);
         }

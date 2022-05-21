@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "5EIF2rDlTCz83FxJxXP3mMH/czo5M6aCrq3tQVoeBTg=",
+  "Hash": "EK0YQsSFp+8X4whtDe5SAeQPQJCTJh+twmnJsRyX8gY=",
   "Source": "TheGoodOldLibrary.Web",
   "BasePath": "_content/TheGoodOldLibrary.Web",
   "Mode": "Default",
@@ -680,12 +680,12 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\Owner\\Desktop\\Global Consulting\\Web\\TheGoodOldLibrary.Web\\wwwroot\\images\\book\\033e910d-cbe7-4baa-942d-cf44cfbac41b.jpg",
+      "Identity": "C:\\Users\\Owner\\Desktop\\Global Consulting\\Web\\TheGoodOldLibrary.Web\\wwwroot\\images\\book\\istockphoto-157482029-612x612.jpg",
       "SourceId": "TheGoodOldLibrary.Web",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Owner\\Desktop\\Global Consulting\\Web\\TheGoodOldLibrary.Web\\wwwroot\\",
       "BasePath": "_content/TheGoodOldLibrary.Web",
-      "RelativePath": "images/book/033e910d-cbe7-4baa-942d-cf44cfbac41b.jpg",
+      "RelativePath": "images/book/istockphoto-157482029-612x612.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -694,15 +694,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\book\\033e910d-cbe7-4baa-942d-cf44cfbac41b.jpg"
+      "OriginalItemSpec": "wwwroot\\images\\book\\istockphoto-157482029-612x612.jpg"
     },
     {
-      "Identity": "C:\\Users\\Owner\\Desktop\\Global Consulting\\Web\\TheGoodOldLibrary.Web\\wwwroot\\images\\book\\736599bc-bf40-4af2-ad03-26219452908e.jpg",
+      "Identity": "C:\\Users\\Owner\\Desktop\\Global Consulting\\Web\\TheGoodOldLibrary.Web\\wwwroot\\images\\periodical\\periodicals1.jpg",
       "SourceId": "TheGoodOldLibrary.Web",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Owner\\Desktop\\Global Consulting\\Web\\TheGoodOldLibrary.Web\\wwwroot\\",
       "BasePath": "_content/TheGoodOldLibrary.Web",
-      "RelativePath": "images/book/736599bc-bf40-4af2-ad03-26219452908e.jpg",
+      "RelativePath": "images/periodical/periodicals1.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -711,24 +711,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\book\\736599bc-bf40-4af2-ad03-26219452908e.jpg"
-    },
-    {
-      "Identity": "C:\\Users\\Owner\\Desktop\\Global Consulting\\Web\\TheGoodOldLibrary.Web\\wwwroot\\images\\periodical\\2edf5e4d-16f3-4764-8c28-3ce00988bd51.jpg",
-      "SourceId": "TheGoodOldLibrary.Web",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Owner\\Desktop\\Global Consulting\\Web\\TheGoodOldLibrary.Web\\wwwroot\\",
-      "BasePath": "_content/TheGoodOldLibrary.Web",
-      "RelativePath": "images/periodical/2edf5e4d-16f3-4764-8c28-3ce00988bd51.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\periodical\\2edf5e4d-16f3-4764-8c28-3ce00988bd51.jpg"
+      "OriginalItemSpec": "wwwroot\\images\\periodical\\periodicals1.jpg"
     },
     {
       "Identity": "C:\\Users\\Owner\\Desktop\\Global Consulting\\Web\\TheGoodOldLibrary.Web\\wwwroot\\js\\site.js",

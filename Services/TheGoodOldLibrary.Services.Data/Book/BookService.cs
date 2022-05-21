@@ -33,7 +33,7 @@
 
         }
 
-        public IEnumerable<BookInListViewModel> GetAll<T>(int page, int itemsPerPage = 2)
+        public IEnumerable<BookInListViewModel> GetAll<T>(int page, int itemsPerPage = 10)
         {
             var book = this.bookRepository.AllAsNoTracking()
                 .OrderBy(x => x.Name)

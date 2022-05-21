@@ -1,6 +1,18 @@
-﻿@using TheGoodOldLibrary.Common
+﻿@using TheGoodOldLibrary.Data.Models.ViewModel.Home
+@model HomeViewModel
+
 @{
     this.ViewData["Title"] = "Home Page";
 }
 
+<div class="row">
+    <h3>All Books</h3>
+    <a class="col-md-4" asp-controller="Books" asp-action="All">
+        <img width="200" src="~/images/book/istockphoto-157482029-612x612.jpg" />
+    </a>
+    <h3>All Periodicals</h3>
 
+    <a class="col-md-4" asp-controller="periodical" asp-action="All">
+        <img width="300" src="~/images/periodical/periodicals1.jpg" />
+    </a>
+</div>
