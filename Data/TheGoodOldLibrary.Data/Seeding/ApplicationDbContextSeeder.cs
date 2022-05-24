@@ -29,6 +29,7 @@
                               new SettingsSeeder(),
                               new GenreSeeder(),
                               new TypeSeeder(),
+                              new AuthorSeeder(),
                           };
 
             foreach (var seeder in seeders)

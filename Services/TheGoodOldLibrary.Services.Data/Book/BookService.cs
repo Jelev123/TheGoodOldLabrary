@@ -27,6 +27,7 @@
                 Name = model.Name,
                 GenreId = model.GenreId,
                 UriginalUrl = model.Image,
+                AuthorId = model.AuthorId,
             };
             await this.bookRepository.AddAsync(book);
             await this.bookRepository.SaveChangesAsync();
@@ -43,12 +44,15 @@
                     Id = x.Id,
                     GenreId = x.Genre.Id,
                     GenreName = x.Genre.Name,
+                    AuthorName = x.Author.Name,
                     Name = x.Name,
                     Images = x.UriginalUrl,
                 }).ToList();
 
             return book;
         }
+
+       
 
         public int GetCount()
         {

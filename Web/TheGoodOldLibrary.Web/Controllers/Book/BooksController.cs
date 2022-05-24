@@ -3,6 +3,7 @@
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Mvc;
     using TheGoodOldLibrary.Data.Models.ViewModel.Book;
+    using TheGoodOldLibrary.Services.Data.Author;
     using TheGoodOldLibrary.Services.Data.Book;
     using TheGoodOldLibrary.Services.Data.Genre;
 
@@ -10,17 +11,20 @@
     {
         private readonly IBookService bookService;
         private readonly IGenreService genreService;
+        private readonly IAuthorService authorService;
 
-        public BooksController(IBookService bookService, IGenreService genreService)
+        public BooksController(IBookService bookService, IGenreService genreService, IAuthorService authorService)
         {
             this.bookService = bookService;
             this.genreService = genreService;
-        }
+            this.authorService = authorService;
+        } 
 
         public IActionResult Create()
         {
             var viewModel = new CreateBooksViewModel();
             viewModel.GenreItems = this.genreService.GetAllAsKeyValuePairs();
+            viewModel.AuthorItems = this.authorService.GetAllAsKeyValuePairs();
             return this.View(viewModel);
         }
 

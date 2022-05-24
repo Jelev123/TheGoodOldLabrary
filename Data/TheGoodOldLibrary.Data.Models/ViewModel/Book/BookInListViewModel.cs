@@ -14,6 +14,8 @@
 
         public string GenreName { get; set; }
 
+        public string AuthorName { get; set; }
+
         public int GenreId { get; set; }
 
         public string Images { get; set; }
