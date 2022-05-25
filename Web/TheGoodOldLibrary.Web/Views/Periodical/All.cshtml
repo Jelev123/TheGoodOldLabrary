@@ -19,11 +19,11 @@
 <div class="row">@foreach (var peridical in this.Model.Periodicals)
      {
                          
-
+        
           <div class="col-md-4">
                 <div class="col-md-10">
                     <div class="card-body">
-                               <a href="@peridical.Image">
+                               <a href="@peridical">
                <a class="col-md-4" asp-controller="Periodical" asp-action="GetById" asp-route-id="@peridical.Id">
                             <img width="200" src="@peridical.Image" />
                         </a>

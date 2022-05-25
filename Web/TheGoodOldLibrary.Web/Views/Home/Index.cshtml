@@ -5,9 +5,25 @@
     this.ViewData["Title"] = "Home Page";
 }
 
-<h2>Users: @Model.UsersCount</h2>
-<h2>Books: @Model.BooksCount</h2>
-
+<table class="table  table-dark">
+    <thead>
+        <tr>
+            <th scope="col"></th>
+            <th style="color : white" scope="col">Periodicals</th>
+            <th style="color : white" scope="col">Books</th>
+            <th style="color : white" scope="col">Users</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row"></th>
+            <td>@Model.PerodicalsCount</td>
+            <td>@Model.BooksCount</td>
+            <td>@Model.UsersCount</td>
+        </tr>
+    </tbody>
+</table>
+<hr />
 <div class="row">
     <h3>All Books</h3>
     <a class="col-md-4" asp-controller="Books" asp-action="All">

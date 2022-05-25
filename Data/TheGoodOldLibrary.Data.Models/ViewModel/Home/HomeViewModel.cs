@@ -10,6 +10,8 @@
 
         public int BooksCount { get; set; }
 
+        public int PerodicalsCount { get; set; }
+
         public List<BookInListViewModel> Books { get; set; }
 
         public List<PeriodicalInListViewModel> Periodicals { get; set; }

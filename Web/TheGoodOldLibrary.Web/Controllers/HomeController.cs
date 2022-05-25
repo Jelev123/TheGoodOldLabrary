@@ -50,6 +50,8 @@
 
             var usersCount = this.data.Users.Count();
             var booksCount = this.data.Books.Count();
+            var periodicalsCount = this.data.Periodicals.Count();
+
 
             return this.View(new HomeViewModel()
             {
@@ -57,6 +59,7 @@
                 Periodicals = periodicalViewModel,
                 UsersCount = usersCount,
                 BooksCount = booksCount,
+                PerodicalsCount = periodicalsCount,
             });
         }
 
