@@ -12,11 +12,11 @@
 
         public int GenreId { get; set; }
 
-        public Genre Genre { get; set; }
+        public virtual Genre Genre { get; set; }
 
         public int AuthorId { get; set; }
 
-        public Author Author { get; set; }
+        public virtual Author Author { get; set; }
 
         public string UriginalUrl { get; set; }
 

@@ -49,5 +49,10 @@
             };
             return this.View(viewModel);
         }
+
+        public IActionResult GetById(int id)
+        {
+            return this.View(this.periodicalService.GetById(id));
+        }
     }
 }

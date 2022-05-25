@@ -1,0 +1,15 @@
+﻿@using TheGoodOldLibrary.Data.Models.ViewModel.Periodical
+@model List<PeriodicalInListViewModel>
+
+
+
+     @foreach (var item in Model)
+   {
+
+        <a href="@item.Image">
+            <img src="@item.Image" width="400" alt="@item.Name">
+        </a>
+       <h2>@item.Name</h2>
+       <h2>@item.TypeName</h2>
+      
+   }

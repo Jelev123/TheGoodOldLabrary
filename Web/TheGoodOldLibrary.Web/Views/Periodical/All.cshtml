@@ -16,18 +16,20 @@
     <input type="text" class="form-control text-black" id="products-search-bar" name="search" placeholder="Search..." />
 </div>
 
-<div class="row">@foreach (var book in this.Model.Periodicals)
+<div class="row">@foreach (var peridical in this.Model.Periodicals)
      {
                          
 
           <div class="col-md-4">
                 <div class="col-md-10">
                     <div class="card-body">
-                               <a href="@book.Image">
-            <img src="@book.Image" width="200">
+                               <a href="@peridical.Image">
+               <a class="col-md-4" asp-controller="Periodical" asp-action="GetById" asp-route-id="@peridical.Id">
+                            <img width="200" src="@peridical.Image" />
+                        </a>
         </a>                
-                        <h4 style="color: orange" class="card-title">@book.Name</h4>
-                        <h4 style="color: orange" class="card-title">@book.TypeName</h4>
+                        <h4 style="color: orange" class="card-title">@peridical.Name</h4>
+                        <h4 style="color: orange" class="card-title">@peridical.TypeName</h4>
 
                     </div>
                 </div>

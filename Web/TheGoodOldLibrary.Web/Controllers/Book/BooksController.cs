@@ -56,7 +56,7 @@
 
         public IActionResult GetById(int id)
         {
-            return this.View(this.bookService.GetById<BookViewModel>(id));
+            return this.View(this.bookService.GetById(id));
         }
 
     }

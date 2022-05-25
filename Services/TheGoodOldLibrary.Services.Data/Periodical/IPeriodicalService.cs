@@ -11,6 +11,8 @@
 
         IEnumerable<PeriodicalInListViewModel> GetAll<T>(int page, int itemsPerPage = 5);
 
+        List<PeriodicalInListViewModel> GetById(int id);
+
         int GetCount();
 
     }

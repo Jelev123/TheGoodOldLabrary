@@ -1,11 +1,13 @@
 ﻿@using TheGoodOldLibrary.Data.Models.ViewModel.Book
-@model BookViewModel
+@model List<BookViewModel>
 
-  <div class="row-cols">
-        <h4 style="color: white">
-            Genre :
-            <a style="color: red" class="btn btn-dark" asp-controller="Books" asp-action="GetById" asp-route-id="@Model.GenreId">@Model.GenreName</a>
-        </h4>
-        
+   @foreach (var item in Model)
+   {
 
-    </div>
+        <a href="@item.ImageUrl">
+            <img src="@item.ImageUrl" width="400" alt="@item.Name">
+        </a>
+       <h2>@item.Name</h2>
+       <h2>@item.GenreName</h2>
+       <h2>@item.AuthorName</h2>
+   }

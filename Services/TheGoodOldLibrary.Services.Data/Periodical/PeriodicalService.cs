@@ -43,6 +43,21 @@
                 }).ToList();
         }
 
+        public List<PeriodicalInListViewModel> GetById(int id)
+        {
+            var periodical = this.periodicalRepository.AllAsNoTracking()
+                .Where(s => s.Id == id)
+                .Select(s => new PeriodicalInListViewModel
+                {
+                    Id = s.Id,
+                    Image = s.ImageUrl,
+                    Name = s.Name,
+                    TypeName = s.Type.Name,
+                }).ToList();
+
+            return periodical;
+        }
+
         public int GetCount()
         {
            return this.periodicalRepository.AllAsNoTracking().Count();

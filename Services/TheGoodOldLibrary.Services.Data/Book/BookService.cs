@@ -47,16 +47,27 @@
                 }).ToList();
         }
 
-        public T GetById<T>(int id)
+        public  List<BookViewModel> GetById(int id)
         {
-            return this.bookRepository.AllAsNoTracking()
-                  .Where(s => s.Id == id)
-                 .To<T>().FirstOrDefault();
+            var book = this.bookRepository.AllAsNoTracking()
+                   .Where(s => s.Id == id)
+                  .Select(s => new BookViewModel
+                  {
+                      AuthorId = s.AuthorId,
+                      AuthorName = s.Author.Name,
+                      Name = s.Name,
+                      GenreId = s.GenreId,
+                      GenreName = s.Genre.Name,
+                      Id = s.Id,
+                      ImageUrl = s.UriginalUrl,
+                  }).ToList();
+
+            return book;
         }
 
         public int GetCount()
         {
-            return this.bookRepository.All().Count();
+            return this.bookRepository.AllAsNoTracking().Count();
         }
     }
 }
