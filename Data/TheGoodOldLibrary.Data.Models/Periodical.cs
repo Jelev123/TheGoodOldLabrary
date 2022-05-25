@@ -21,7 +21,13 @@
 
         public string ImageUrl { get; set; }
 
-        public virtual ICollection<Reader> Readers { get; set; } = new HashSet<Reader>();
+        public DateTime StartDate { get; set; }
+
+        public DateTime EndDate { get; set; }
+
+        public int PeriodicalCount { get; set; }
+
+        public virtual ICollection<ApplicationUser> Users { get; set; } = new HashSet<ApplicationUser>();
 
         public virtual ICollection<Image> Images { get; set; } = new HashSet<Image>();
     }

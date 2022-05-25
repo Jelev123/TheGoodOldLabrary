@@ -215,6 +215,9 @@ namespace TheGoodOldLibrary.Data.Migrations
                     b.Property<string>("PasswordHash")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("PeriodicalId")
+                        .HasColumnType("int");
+
                     b.Property<string>("PhoneNumber")
                         .HasColumnType("nvarchar(max)");
 
@@ -244,6 +247,8 @@ namespace TheGoodOldLibrary.Data.Migrations
                         .IsUnique()
                         .HasDatabaseName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
+
+                    b.HasIndex("PeriodicalId");
 
                     b.ToTable("AspNetUsers");
                 });
@@ -287,10 +292,16 @@ namespace TheGoodOldLibrary.Data.Migrations
                     b.Property<int>("AuthorId")
                         .HasColumnType("int");
 
+                    b.Property<int>("BookCount")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime?>("DeletedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("EndDate")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("GenreId")
@@ -305,6 +316,9 @@ namespace TheGoodOldLibrary.Data.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("UriginalUrl")
                         .HasColumnType("nvarchar(max)");
 
@@ -317,6 +331,71 @@ namespace TheGoodOldLibrary.Data.Migrations
                     b.HasIndex("IsDeleted");
 
                     b.ToTable("Books");
+                });
+
+            modelBuilder.Entity("TheGoodOldLibrary.Data.Models.BookStatus", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IsDeleted");
+
+                    b.ToTable("BookStatuses");
+                });
+
+            modelBuilder.Entity("TheGoodOldLibrary.Data.Models.BookTaking", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("BookId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("BookStatusId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("PeriodicalId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BookId");
+
+                    b.HasIndex("BookStatusId");
+
+                    b.HasIndex("PeriodicalId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("BookTakings");
                 });
 
             modelBuilder.Entity("TheGoodOldLibrary.Data.Models.Genre", b =>
@@ -396,6 +475,9 @@ namespace TheGoodOldLibrary.Data.Migrations
                     b.Property<DateTime?>("DeletedOn")
                         .HasColumnType("datetime2");
 
+                    b.Property<DateTime>("EndDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("ImageUrl")
                         .HasColumnType("nvarchar(max)");
 
@@ -408,7 +490,13 @@ namespace TheGoodOldLibrary.Data.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("PeriodicalCount")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("PublicDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("TypeId")
@@ -423,48 +511,6 @@ namespace TheGoodOldLibrary.Data.Migrations
                     b.HasIndex("TypeId");
 
                     b.ToTable("Periodicals");
-                });
-
-            modelBuilder.Entity("TheGoodOldLibrary.Data.Models.Reader", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("BirthDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int?>("BookId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("CreatedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("DeletedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime?>("ModifiedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("PeriodicalId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("BookId");
-
-                    b.HasIndex("IsDeleted");
-
-                    b.HasIndex("PeriodicalId");
-
-                    b.ToTable("Reader");
                 });
 
             modelBuilder.Entity("TheGoodOldLibrary.Data.Models.Setting", b =>
@@ -582,10 +628,14 @@ namespace TheGoodOldLibrary.Data.Migrations
             modelBuilder.Entity("TheGoodOldLibrary.Data.Models.ApplicationUser", b =>
                 {
                     b.HasOne("TheGoodOldLibrary.Data.Models.Book", "Books")
-                        .WithMany()
+                        .WithMany("Users")
                         .HasForeignKey("BookId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+
+                    b.HasOne("TheGoodOldLibrary.Data.Models.Periodical", null)
+                        .WithMany("Users")
+                        .HasForeignKey("PeriodicalId");
 
                     b.Navigation("Books");
                 });
@@ -607,6 +657,39 @@ namespace TheGoodOldLibrary.Data.Migrations
                     b.Navigation("Author");
 
                     b.Navigation("Genre");
+                });
+
+            modelBuilder.Entity("TheGoodOldLibrary.Data.Models.BookTaking", b =>
+                {
+                    b.HasOne("TheGoodOldLibrary.Data.Models.Book", "Book")
+                        .WithMany()
+                        .HasForeignKey("BookId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("TheGoodOldLibrary.Data.Models.BookStatus", "BookStatus")
+                        .WithMany()
+                        .HasForeignKey("BookStatusId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("TheGoodOldLibrary.Data.Models.Periodical", "Periodical")
+                        .WithMany()
+                        .HasForeignKey("PeriodicalId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("TheGoodOldLibrary.Data.Models.ApplicationUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("Book");
+
+                    b.Navigation("BookStatus");
+
+                    b.Navigation("Periodical");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("TheGoodOldLibrary.Data.Models.Image", b =>
@@ -647,17 +730,6 @@ namespace TheGoodOldLibrary.Data.Migrations
                     b.Navigation("Type");
                 });
 
-            modelBuilder.Entity("TheGoodOldLibrary.Data.Models.Reader", b =>
-                {
-                    b.HasOne("TheGoodOldLibrary.Data.Models.Book", null)
-                        .WithMany("Readers")
-                        .HasForeignKey("BookId");
-
-                    b.HasOne("TheGoodOldLibrary.Data.Models.Periodical", null)
-                        .WithMany("Readers")
-                        .HasForeignKey("PeriodicalId");
-                });
-
             modelBuilder.Entity("TheGoodOldLibrary.Data.Models.ApplicationUser", b =>
                 {
                     b.Navigation("Claims");
@@ -678,7 +750,7 @@ namespace TheGoodOldLibrary.Data.Migrations
                 {
                     b.Navigation("Images");
 
-                    b.Navigation("Readers");
+                    b.Navigation("Users");
                 });
 
             modelBuilder.Entity("TheGoodOldLibrary.Data.Models.Genre", b =>
@@ -690,7 +762,7 @@ namespace TheGoodOldLibrary.Data.Migrations
                 {
                     b.Navigation("Images");
 
-                    b.Navigation("Readers");
+                    b.Navigation("Users");
                 });
 
             modelBuilder.Entity("TheGoodOldLibrary.Data.Models.Types", b =>

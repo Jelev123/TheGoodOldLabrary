@@ -289,6 +289,9 @@
               "C:\\Users\\Owner\\Desktop\\Global Consulting\\Data\\TheGoodOldLibrary.Data.Models\\TheGoodOldLibrary.Data.Models.csproj": {
                 "projectPath": "C:\\Users\\Owner\\Desktop\\Global Consulting\\Data\\TheGoodOldLibrary.Data.Models\\TheGoodOldLibrary.Data.Models.csproj"
               },
+              "C:\\Users\\Owner\\Desktop\\Global Consulting\\Data\\TheGoodOldLibrary.Data\\TheGoodOldLibrary.Data.csproj": {
+                "projectPath": "C:\\Users\\Owner\\Desktop\\Global Consulting\\Data\\TheGoodOldLibrary.Data\\TheGoodOldLibrary.Data.csproj"
+              },
               "C:\\Users\\Owner\\Desktop\\Global Consulting\\Services\\TheGoodOldLibrary.Services.Mapping\\TheGoodOldLibrary.Services.Mapping.csproj": {
                 "projectPath": "C:\\Users\\Owner\\Desktop\\Global Consulting\\Services\\TheGoodOldLibrary.Services.Mapping\\TheGoodOldLibrary.Services.Mapping.csproj"
               },
@@ -819,6 +822,10 @@
             "BuildBundlerMinifier": {
               "target": "Package",
               "version": "[3.2.449, )"
+            },
+            "Microsoft.AspNet.Identity.Core": {
+              "target": "Package",
+              "version": "[2.2.3, )"
             },
             "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
               "target": "Package",

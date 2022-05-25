@@ -1,23 +1,34 @@
 ﻿    namespace TheGoodOldLibrary.Web.Controllers.Book
 {
+    using System.Security.Claims;
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Mvc;
     using TheGoodOldLibrary.Data.Models.ViewModel.Book;
+    using TheGoodOldLibrary.Data.Models.ViewModel.BookTaking;
     using TheGoodOldLibrary.Services.Data.Author;
     using TheGoodOldLibrary.Services.Data.Book;
+    using TheGoodOldLibrary.Services.Data.BookTaking;
     using TheGoodOldLibrary.Services.Data.Genre;
+    using Microsoft.AspNetCore.Identity;
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNetCore.Http;
+    using TheGoodOldLibrary.Data.Models;
+    using Microsoft.AspNetCore.Authentication.OAuth;
 
     public class BooksController : Controller
     {
         private readonly IBookService bookService;
         private readonly IGenreService genreService;
         private readonly IAuthorService authorService;
+        private readonly IBookTakingService takingService;
+      
 
-        public BooksController(IBookService bookService, IGenreService genreService, IAuthorService authorService)
+        public BooksController(IBookService bookService, IGenreService genreService, IAuthorService authorService, IBookTakingService takingService)
         {
             this.bookService = bookService;
             this.genreService = genreService;
             this.authorService = authorService;
+            this.takingService = takingService;
         }
 
         public IActionResult Create()
@@ -59,5 +70,14 @@
             return this.View(this.bookService.GetById(id));
         }
 
+        [HttpPost]
+        public async Task<IActionResult> BookTaking(TakingServiceModel takingServiceModel)
+        {
+
+            takingServiceModel.UserId = this.User.FindFirst(ClaimTypes.NameIdentifier).Value;
+            await this.takingService.Create(takingServiceModel);
+
+            return this.Redirect("All");
+        }
     }
 }

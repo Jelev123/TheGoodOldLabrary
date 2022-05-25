@@ -2784,6 +2784,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "TheGoodOldLibrary.Data": "1.0.0",
           "TheGoodOldLibrary.Data.Common": "1.0.0",
           "TheGoodOldLibrary.Data.Models": "1.0.0",
           "TheGoodOldLibrary.Services.Mapping": "1.0.0",

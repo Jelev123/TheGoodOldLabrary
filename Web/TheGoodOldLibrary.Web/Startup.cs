@@ -1,5 +1,6 @@
 ﻿namespace TheGoodOldLibrary.Web
 {
+    using System.Linq;
     using System.Reflection;
 
     using Microsoft.AspNetCore.Builder;
@@ -19,6 +20,7 @@
     using TheGoodOldLibrary.Services.Data;
     using TheGoodOldLibrary.Services.Data.Author;
     using TheGoodOldLibrary.Services.Data.Book;
+    using TheGoodOldLibrary.Services.Data.BookTaking;
     using TheGoodOldLibrary.Services.Data.Genre;
     using TheGoodOldLibrary.Services.Data.Periodical;
     using TheGoodOldLibrary.Services.Data.Type;
@@ -74,6 +76,7 @@
             services.AddTransient<IGenreService, GenreService>();
             services.AddTransient<ITypeService, TypeService>();
             services.AddTransient<IAuthorService, AuthorService>();
+            services.AddTransient<IBookTakingService, BookTakingService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -87,6 +90,21 @@
                 var dbContext = serviceScope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
                 dbContext.Database.Migrate();
                 new ApplicationDbContextSeeder().SeedAsync(dbContext, serviceScope.ServiceProvider).GetAwaiter().GetResult();
+
+                if (!dbContext.BookStatuses.Any())
+                {
+                    dbContext.BookStatuses.Add(new BookStatus
+                    {
+                        Name = "Available",
+                    });
+
+                    dbContext.BookStatuses.Add(new BookStatus
+                    {
+                        Name = "Not Available",
+                    });
+
+                    dbContext.SaveChanges();
+                }
             }
 
             if (env.IsDevelopment())

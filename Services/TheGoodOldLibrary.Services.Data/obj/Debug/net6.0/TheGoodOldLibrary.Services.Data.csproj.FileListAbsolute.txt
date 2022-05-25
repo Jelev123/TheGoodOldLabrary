@@ -21,3 +21,8 @@ C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Dat
 C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Data\obj\Debug\net6.0\refint\TheGoodOldLibrary.Services.Data.dll
 C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Data\obj\Debug\net6.0\TheGoodOldLibrary.Services.Data.pdb
 C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Data\obj\Debug\net6.0\ref\TheGoodOldLibrary.Services.Data.dll
+C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Data\bin\Debug\net6.0\appsettings.json
+C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Data\bin\Debug\net6.0\TheGoodOldLibrary.Common.dll
+C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Data\bin\Debug\net6.0\TheGoodOldLibrary.Data.dll
+C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Data\bin\Debug\net6.0\TheGoodOldLibrary.Data.pdb
+C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Data\bin\Debug\net6.0\TheGoodOldLibrary.Common.pdb

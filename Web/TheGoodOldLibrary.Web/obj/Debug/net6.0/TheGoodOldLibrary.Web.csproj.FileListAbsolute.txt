@@ -455,3 +455,4 @@ C:\Users\Owner\Desktop\Global Consulting\Web\TheGoodOldLibrary.Web\obj\Debug\net
 C:\Users\Owner\Desktop\Global Consulting\Web\TheGoodOldLibrary.Web\obj\Debug\net6.0\TheGoodOldLibrary.Web.pdb
 C:\Users\Owner\Desktop\Global Consulting\Web\TheGoodOldLibrary.Web\obj\Debug\net6.0\TheGoodOldLibrary.Web.genruntimeconfig.cache
 C:\Users\Owner\Desktop\Global Consulting\Web\TheGoodOldLibrary.Web\obj\Debug\net6.0\ref\TheGoodOldLibrary.Web.dll
+C:\Users\Owner\Desktop\Global Consulting\Web\TheGoodOldLibrary.Web\bin\Debug\net6.0\Microsoft.AspNet.Identity.Core.dll
