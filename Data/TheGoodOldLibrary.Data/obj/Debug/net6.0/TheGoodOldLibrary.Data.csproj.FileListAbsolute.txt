@@ -20,3 +20,5 @@ C:\Users\Owner\Desktop\Global Consulting\Data\TheGoodOldLibrary.Data\obj\Debug\n
 C:\Users\Owner\Desktop\Global Consulting\Data\TheGoodOldLibrary.Data\obj\Debug\net6.0\TheGoodOldLibrary.Data.pdb
 C:\Users\Owner\Desktop\Global Consulting\Data\TheGoodOldLibrary.Data\obj\Debug\net6.0\TheGoodOldLibrary.Data.genruntimeconfig.cache
 C:\Users\Owner\Desktop\Global Consulting\Data\TheGoodOldLibrary.Data\obj\Debug\net6.0\ref\TheGoodOldLibrary.Data.dll
+C:\Users\Owner\Desktop\Global Consulting\Data\TheGoodOldLibrary.Data\bin\Debug\net6.0\TheGoodOldLibrary.Services.Mapping.dll
+C:\Users\Owner\Desktop\Global Consulting\Data\TheGoodOldLibrary.Data\bin\Debug\net6.0\TheGoodOldLibrary.Services.Mapping.pdb

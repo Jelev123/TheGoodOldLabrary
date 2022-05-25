@@ -1,0 +1,12 @@
+C:\Users\Owner\Desktop\Global Consulting\Data\TheGoodOldLibrary.Data.Common\bin\Debug\net6.0\TheGoodOldLibrary.Data.Common.deps.json
+C:\Users\Owner\Desktop\Global Consulting\Data\TheGoodOldLibrary.Data.Common\bin\Debug\net6.0\TheGoodOldLibrary.Data.Common.dll
+C:\Users\Owner\Desktop\Global Consulting\Data\TheGoodOldLibrary.Data.Common\bin\Debug\net6.0\TheGoodOldLibrary.Data.Common.pdb
+C:\Users\Owner\Desktop\Global Consulting\Data\TheGoodOldLibrary.Data.Common\obj\Debug\net6.0\TheGoodOldLibrary.Data.Common.csproj.AssemblyReference.cache
+C:\Users\Owner\Desktop\Global Consulting\Data\TheGoodOldLibrary.Data.Common\obj\Debug\net6.0\TheGoodOldLibrary.Data.Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Owner\Desktop\Global Consulting\Data\TheGoodOldLibrary.Data.Common\obj\Debug\net6.0\TheGoodOldLibrary.Data.Common.AssemblyInfoInputs.cache
+C:\Users\Owner\Desktop\Global Consulting\Data\TheGoodOldLibrary.Data.Common\obj\Debug\net6.0\TheGoodOldLibrary.Data.Common.AssemblyInfo.cs
+C:\Users\Owner\Desktop\Global Consulting\Data\TheGoodOldLibrary.Data.Common\obj\Debug\net6.0\TheGoodOldLibrary.Data.Common.csproj.CoreCompileInputs.cache
+C:\Users\Owner\Desktop\Global Consulting\Data\TheGoodOldLibrary.Data.Common\obj\Debug\net6.0\TheGoodOldLibrary.Data.Common.dll
+C:\Users\Owner\Desktop\Global Consulting\Data\TheGoodOldLibrary.Data.Common\obj\Debug\net6.0\refint\TheGoodOldLibrary.Data.Common.dll
+C:\Users\Owner\Desktop\Global Consulting\Data\TheGoodOldLibrary.Data.Common\obj\Debug\net6.0\TheGoodOldLibrary.Data.Common.pdb
+C:\Users\Owner\Desktop\Global Consulting\Data\TheGoodOldLibrary.Data.Common\obj\Debug\net6.0\ref\TheGoodOldLibrary.Data.Common.dll

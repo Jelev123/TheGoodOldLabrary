@@ -5,6 +5,9 @@
     this.ViewData["Title"] = "Home Page";
 }
 
+<h2>Users: @Model.UsersCount</h2>
+<h2>Books: @Model.BooksCount</h2>
+
 <div class="row">
     <h3>All Books</h3>
     <a class="col-md-4" asp-controller="Books" asp-action="All">

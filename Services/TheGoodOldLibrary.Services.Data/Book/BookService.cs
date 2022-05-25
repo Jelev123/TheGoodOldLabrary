@@ -1,8 +1,6 @@
 ﻿namespace TheGoodOldLibrary.Services.Data.Book
 {
-    using System;
     using System.Collections.Generic;
-    using System.IO;
     using System.Linq;
     using System.Threading.Tasks;
 
@@ -31,12 +29,11 @@
             };
             await this.bookRepository.AddAsync(book);
             await this.bookRepository.SaveChangesAsync();
-
         }
 
         public IEnumerable<BookInListViewModel> GetAll<T>(int page, int itemsPerPage = 10)
         {
-            var book = this.bookRepository.AllAsNoTracking()
+            return this.bookRepository.AllAsNoTracking()
                 .OrderBy(x => x.Name)
                 .Skip((page - 1) * itemsPerPage).Take(itemsPerPage)
                 .Select(x => new BookInListViewModel
@@ -48,11 +45,14 @@
                     Name = x.Name,
                     Images = x.UriginalUrl,
                 }).ToList();
-
-            return book;
         }
 
-       
+        public T GetById<T>(int id)
+        {
+            return this.bookRepository.AllAsNoTracking()
+                  .Where(s => s.Id == id)
+                 .To<T>().FirstOrDefault();
+        }
 
         public int GetCount()
         {

@@ -12,8 +12,24 @@ using System;
 using System.Reflection;
 
 [assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap4")]
+[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("TheGoodOldLibrary.Data.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=n" +
+    "ull", "C:\\Users\\Owner\\Desktop\\Global Consulting\\Data\\TheGoodOldLibrary.Data.Common", "TheGoodOldLibrary.Data.Common.csproj", "0")]
 [assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("TheGoodOldLibrary.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "C:\\Users\\Owner\\Desktop\\Global Consulting\\Data\\TheGoodOldLibrary.Data", "TheGoodOldLibrary.Data.csproj", "0")]
+[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("TheGoodOldLibrary.Data.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=n" +
+    "ull", "C:\\Users\\Owner\\Desktop\\Global Consulting\\Data\\TheGoodOldLibrary.Data.Models", "TheGoodOldLibrary.Data.Models.csproj", "0")]
+[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("TheGoodOldLibrary.Services.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken" +
+    "=null", "C:\\Users\\Owner\\Desktop\\Global Consulting\\Services\\TheGoodOldLibrary.Services.Data" +
+    "", "TheGoodOldLibrary.Services.Data.csproj", "0")]
+[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("TheGoodOldLibrary.Services, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" +
+    "", "C:\\Users\\Owner\\Desktop\\Global Consulting\\Services\\TheGoodOldLibrary.Services", "TheGoodOldLibrary.Services.csproj", "0")]
+[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("TheGoodOldLibrary.Services.Mapping, Version=1.0.0.0, Culture=neutral, PublicKeyTo" +
+    "ken=null", "C:\\Users\\Owner\\Desktop\\Global Consulting\\Services\\TheGoodOldLibrary.Services.Mapp" +
+    "ing", "TheGoodOldLibrary.Services.Mapping.csproj", "0")]
+[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("TheGoodOldLibrary.Services.Messaging, Version=1.0.0.0, Culture=neutral, PublicKey" +
+    "Token=null", "C:\\Users\\Owner\\Desktop\\Global Consulting\\Services\\TheGoodOldLibrary.Services.Mess" +
+    "aging", "TheGoodOldLibrary.Services.Messaging.csproj", "0")]
 [assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("TheGoodOldLibrary.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "C:\\Users\\Owner\\Desktop\\Global Consulting\\Web\\TheGoodOldLibrary.Web", "TheGoodOldLibrary.Web.csproj", "0")]
+[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("TheGoodOldLibrary.Web.ViewModels", "C:\\Users\\Owner\\Desktop\\Global Consulting\\Web\\TheGoodOldLibrary.Web.ViewModels", "TheGoodOldLibrary.Web.ViewModels.csproj", "0")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("TheGoodOldLibrary.Web.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]

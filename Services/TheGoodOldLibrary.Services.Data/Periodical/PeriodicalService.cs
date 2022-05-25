@@ -31,7 +31,7 @@
 
         public IEnumerable<PeriodicalInListViewModel> GetAll<T>(int page, int itemsPerPage = 5)
         {
-            var periodical = this.periodicalRepository.AllAsNoTracking()
+            return this.periodicalRepository.AllAsNoTracking()
                .OrderBy(x => x.Name)
                 .Skip((page - 1) * itemsPerPage).Take(itemsPerPage)
                 .Select(x => new PeriodicalInListViewModel
@@ -41,8 +41,6 @@
                     Image = x.ImageUrl,
                     TypeName = x.Type.Name,
                 }).ToList();
-
-            return periodical;
         }
 
         public int GetCount()

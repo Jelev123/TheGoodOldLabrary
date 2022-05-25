@@ -1,0 +1,11 @@
+﻿@using TheGoodOldLibrary.Data.Models.ViewModel.Book
+@model BookViewModel
+
+  <div class="row-cols">
+        <h4 style="color: white">
+            Genre :
+            <a style="color: red" class="btn btn-dark" asp-controller="Books" asp-action="GetById" asp-route-id="@Model.GenreId">@Model.GenreName</a>
+        </h4>
+        
+
+    </div>

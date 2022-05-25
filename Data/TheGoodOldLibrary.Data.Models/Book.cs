@@ -6,7 +6,7 @@
     using TheGoodOldLibrary.Data.Models.ViewModel.Book;
     using TheGoodOldLibrary.Services.Mapping;
 
-    public class Book : BaseDeletableModel<int>, IMapTo<BookInListViewModel>
+    public class Book : BaseDeletableModel<int>, IMapTo<BookViewModel>
     {
         public string Name { get; set; }
 

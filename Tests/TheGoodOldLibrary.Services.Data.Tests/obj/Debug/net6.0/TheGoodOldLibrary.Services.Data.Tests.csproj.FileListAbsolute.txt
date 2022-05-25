@@ -170,3 +170,9 @@ C:\Users\Owner\Desktop\Global Consulting\Tests\TheGoodOldLibrary.Services.Data.T
 C:\Users\Owner\Desktop\Global Consulting\Tests\TheGoodOldLibrary.Services.Data.Tests\obj\Debug\net6.0\TheGoodOldLibrary.Services.Data.Tests.pdb
 C:\Users\Owner\Desktop\Global Consulting\Tests\TheGoodOldLibrary.Services.Data.Tests\obj\Debug\net6.0\TheGoodOldLibrary.Services.Data.Tests.genruntimeconfig.cache
 C:\Users\Owner\Desktop\Global Consulting\Tests\TheGoodOldLibrary.Services.Data.Tests\obj\Debug\net6.0\ref\TheGoodOldLibrary.Services.Data.Tests.dll
+C:\Users\Owner\Desktop\Global Consulting\Tests\TheGoodOldLibrary.Services.Data.Tests\bin\Debug\net6.0\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\Owner\Desktop\Global Consulting\Tests\TheGoodOldLibrary.Services.Data.Tests\bin\Debug\net6.0\System.IO.Pipelines.dll
+C:\Users\Owner\Desktop\Global Consulting\Tests\TheGoodOldLibrary.Services.Data.Tests\bin\Debug\net6.0\TheGoodOldLibrary.Services.dll
+C:\Users\Owner\Desktop\Global Consulting\Tests\TheGoodOldLibrary.Services.Data.Tests\bin\Debug\net6.0\TheGoodOldLibrary.Web.ViewModels.dll
+C:\Users\Owner\Desktop\Global Consulting\Tests\TheGoodOldLibrary.Services.Data.Tests\bin\Debug\net6.0\TheGoodOldLibrary.Services.pdb
+C:\Users\Owner\Desktop\Global Consulting\Tests\TheGoodOldLibrary.Services.Data.Tests\bin\Debug\net6.0\TheGoodOldLibrary.Web.ViewModels.pdb

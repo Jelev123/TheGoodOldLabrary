@@ -21,9 +21,9 @@
           <div class="col-md-4">
                 <div class="col-md-10">
                     <div class="card-body">
-                               <a href="@book.Images">
-            <img src="@book.Images" width="200">
-        </a>                
+                             <a class="col-md-4" asp-controller="Books" asp-action="GetById" asp-route-id="@book.Id">
+                            <img width="200" src="@book.Images" />
+                        </a>
                         <h4 style="color: orange" class="card-title">@book.Name</h4>
                         <h4 style="color: orange" class="card-title">@book.GenreName</h4>
                         <h4 style="color: orange" class="card-title">@book.AuthorName</h4>

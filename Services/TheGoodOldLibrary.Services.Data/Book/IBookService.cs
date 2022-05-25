@@ -10,6 +10,8 @@
 
         IEnumerable<BookInListViewModel> GetAll<T>(int page, int itemsPerPage = 5);
 
+        T GetById<T>(int id);
+
         int GetCount();
 
     }

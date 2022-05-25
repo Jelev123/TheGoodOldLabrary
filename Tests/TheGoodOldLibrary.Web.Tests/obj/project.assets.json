@@ -3570,7 +3570,7 @@
       },
       "TheGoodOldLibrary.Data/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
+        "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "5.0.6",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.6",
@@ -3588,7 +3588,7 @@
       },
       "TheGoodOldLibrary.Data.Common/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.1",
+        "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "System.ComponentModel.Annotations": "5.0.0"
         },
@@ -3601,7 +3601,7 @@
       },
       "TheGoodOldLibrary.Data.Models/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.1",
+        "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Microsoft.AspNetCore.Http.Features": "5.0.17",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "5.0.6",
@@ -3617,7 +3617,7 @@
       },
       "TheGoodOldLibrary.Services/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.1",
+        "framework": ".NETCoreApp,Version=v6.0",
         "compile": {
           "bin/placeholder/TheGoodOldLibrary.Services.dll": {}
         },
@@ -3627,7 +3627,7 @@
       },
       "TheGoodOldLibrary.Services.Data/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.1",
+        "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "TheGoodOldLibrary.Data.Common": "1.0.0",
           "TheGoodOldLibrary.Data.Models": "1.0.0",
@@ -3643,7 +3643,7 @@
       },
       "TheGoodOldLibrary.Services.Mapping/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.1",
+        "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "AutoMapper": "10.1.1"
         },
@@ -3656,7 +3656,7 @@
       },
       "TheGoodOldLibrary.Services.Messaging/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.1",
+        "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Sendgrid": "9.23.1"
         },
@@ -3709,7 +3709,7 @@
       },
       "TheGoodOldLibrary.Web.ViewModels/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.1",
+        "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "TheGoodOldLibrary.Data.Models": "1.0.0",
           "TheGoodOldLibrary.Services": "1.0.0",

@@ -3,6 +3,7 @@
     using System.Diagnostics;
     using System.Linq;
     using Microsoft.AspNetCore.Mvc;
+    using TheGoodOldLibrary.Data;
     using TheGoodOldLibrary.Data.Common.Repositories;
     using TheGoodOldLibrary.Data.Models.ViewModel.Book;
     using TheGoodOldLibrary.Data.Models.ViewModel.Home;
@@ -12,17 +13,20 @@
 
     public class HomeController : BaseController
     {
+        private readonly ApplicationDbContext data;
         private readonly IBookService bookService;
         private readonly IDeletableEntityRepository<Data.Models.Book> bookRepository;
         private readonly IDeletableEntityRepository<Data.Models.Periodical> periodicalRepository;
 
 
         public HomeController(IBookService bookService, IDeletableEntityRepository<Data.Models.Book> bookRepository,
-            IDeletableEntityRepository<Data.Models.Periodical> periodicalRepository)
+            IDeletableEntityRepository<Data.Models.Periodical> periodicalRepository,
+            ApplicationDbContext data)
         {
             this.bookService = bookService;
             this.bookRepository = bookRepository;
             this.periodicalRepository = periodicalRepository;
+            this.data = data;
         }
 
         public IActionResult Index()
@@ -44,10 +48,15 @@
                 Id = s.Id,
             }).ToList();
 
+            var usersCount = this.data.Users.Count();
+            var booksCount = this.data.Books.Count();
+
             return this.View(new HomeViewModel()
             {
                 Books = bookViewModel,
                 Periodicals = periodicalViewModel,
+                UsersCount = usersCount,
+                BooksCount = booksCount,
             });
         }
 

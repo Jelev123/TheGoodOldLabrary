@@ -6,6 +6,10 @@
 
     public class HomeViewModel
     {
+        public int UsersCount { get; set; }
+
+        public int BooksCount { get; set; }
+
         public List<BookInListViewModel> Books { get; set; }
 
         public List<PeriodicalInListViewModel> Periodicals { get; set; }

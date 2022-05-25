@@ -1,4 +1,4 @@
-﻿namespace TheGoodOldLibrary.Web.Controllers.Book
+﻿    namespace TheGoodOldLibrary.Web.Controllers.Book
 {
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Mvc;
@@ -18,7 +18,7 @@
             this.bookService = bookService;
             this.genreService = genreService;
             this.authorService = authorService;
-        } 
+        }
 
         public IActionResult Create()
         {
@@ -45,14 +45,19 @@
 
             const int ItemsPerPage = 9;
 
-            var viewModel = new BookListViewModel()
+            return this.View(new BookListViewModel()
             {
                 ItemsPerPage = ItemsPerPage,
                 PageNumber = id,
                 BooksCount = this.bookService.GetCount(),
                 Books = this.bookService.GetAll<BookInListViewModel>(id, 100),
-            };
-            return this.View(viewModel);
+            });
         }
+
+        public IActionResult GetById(int id)
+        {
+            return this.View(this.bookService.GetById<BookViewModel>(id));
+        }
+
     }
 }

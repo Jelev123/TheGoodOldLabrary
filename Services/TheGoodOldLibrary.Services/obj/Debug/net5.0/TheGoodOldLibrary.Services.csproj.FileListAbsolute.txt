@@ -1,0 +1,12 @@
+C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services\bin\Debug\net5.0\TheGoodOldLibrary.Services.deps.json
+C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services\bin\Debug\net5.0\TheGoodOldLibrary.Services.dll
+C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services\bin\Debug\net5.0\TheGoodOldLibrary.Services.pdb
+C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services\obj\Debug\net5.0\TheGoodOldLibrary.Services.csproj.AssemblyReference.cache
+C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services\obj\Debug\net5.0\TheGoodOldLibrary.Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services\obj\Debug\net5.0\TheGoodOldLibrary.Services.AssemblyInfoInputs.cache
+C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services\obj\Debug\net5.0\TheGoodOldLibrary.Services.AssemblyInfo.cs
+C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services\obj\Debug\net5.0\TheGoodOldLibrary.Services.csproj.CoreCompileInputs.cache
+C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services\obj\Debug\net5.0\TheGoodOldLibrary.Services.dll
+C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services\obj\Debug\net5.0\refint\TheGoodOldLibrary.Services.dll
+C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services\obj\Debug\net5.0\TheGoodOldLibrary.Services.pdb
+C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services\obj\Debug\net5.0\ref\TheGoodOldLibrary.Services.dll
