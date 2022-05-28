@@ -4,10 +4,8 @@
     using System.Collections.Generic;
 
     using TheGoodOldLibrary.Data.Common.Models;
-    using TheGoodOldLibrary.Data.Models.ViewModel.Book;
-    using TheGoodOldLibrary.Services.Mapping;
 
-    public class Book : BaseDeletableModel<int>, IMapTo<BookViewModel>
+    public class Book : BaseDeletableModel<int>
     {
         public string Name { get; set; }
 

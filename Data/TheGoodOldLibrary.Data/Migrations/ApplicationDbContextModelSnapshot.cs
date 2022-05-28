@@ -172,7 +172,7 @@ namespace TheGoodOldLibrary.Data.Migrations
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
 
-                    b.Property<int>("BookId")
+                    b.Property<int?>("BookId")
                         .HasColumnType("int");
 
                     b.Property<string>("ConcurrencyStamp")
@@ -627,17 +627,13 @@ namespace TheGoodOldLibrary.Data.Migrations
 
             modelBuilder.Entity("TheGoodOldLibrary.Data.Models.ApplicationUser", b =>
                 {
-                    b.HasOne("TheGoodOldLibrary.Data.Models.Book", "Books")
+                    b.HasOne("TheGoodOldLibrary.Data.Models.Book", null)
                         .WithMany("Users")
-                        .HasForeignKey("BookId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .HasForeignKey("BookId");
 
                     b.HasOne("TheGoodOldLibrary.Data.Models.Periodical", null)
                         .WithMany("Users")
                         .HasForeignKey("PeriodicalId");
-
-                    b.Navigation("Books");
                 });
 
             modelBuilder.Entity("TheGoodOldLibrary.Data.Models.Book", b =>

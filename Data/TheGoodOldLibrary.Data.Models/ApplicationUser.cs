@@ -28,10 +28,6 @@ namespace TheGoodOldLibrary.Data.Models
 
         public DateTime? DeletedOn { get; set; }
 
-        public int BookId { get; set; }
-
-        public Book Books { get; set; }
-
         public virtual ICollection<IdentityUserRole<string>> Roles { get; set; }
 
         public virtual ICollection<IdentityUserClaim<string>> Claims { get; set; }

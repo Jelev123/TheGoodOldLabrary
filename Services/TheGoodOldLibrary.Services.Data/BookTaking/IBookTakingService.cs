@@ -5,7 +5,7 @@
 
     public interface IBookTakingService
     {
-        Task<bool> Create(TakingServiceModel takingServiceModel);
+        Task Create(TakingServiceModel takingServiceModel);
 
     }
 }

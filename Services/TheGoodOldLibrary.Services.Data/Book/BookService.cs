@@ -47,7 +47,7 @@
                 }).ToList();
         }
 
-        public  List<BookViewModel> GetById(int id)
+        public List<BookViewModel> GetById(int id)
         {
             var book = this.bookRepository.AllAsNoTracking()
                    .Where(s => s.Id == id)

@@ -1,4 +1,4 @@
-﻿    namespace TheGoodOldLibrary.Web.Controllers.Book
+﻿namespace TheGoodOldLibrary.Web.Controllers.Book
 {
     using System.Security.Claims;
     using System.Threading.Tasks;
@@ -9,11 +9,6 @@
     using TheGoodOldLibrary.Services.Data.Book;
     using TheGoodOldLibrary.Services.Data.BookTaking;
     using TheGoodOldLibrary.Services.Data.Genre;
-    using Microsoft.AspNetCore.Identity;
-    using Microsoft.AspNet.Identity;
-    using Microsoft.AspNetCore.Http;
-    using TheGoodOldLibrary.Data.Models;
-    using Microsoft.AspNetCore.Authentication.OAuth;
 
     public class BooksController : Controller
     {
@@ -21,8 +16,6 @@
         private readonly IGenreService genreService;
         private readonly IAuthorService authorService;
         private readonly IBookTakingService takingService;
-      
-
         public BooksController(IBookService bookService, IGenreService genreService, IAuthorService authorService, IBookTakingService takingService)
         {
             this.bookService = bookService;
@@ -70,10 +63,11 @@
             return this.View(this.bookService.GetById(id));
         }
 
+     
+
         [HttpPost]
         public async Task<IActionResult> BookTaking(TakingServiceModel takingServiceModel)
         {
-
             takingServiceModel.UserId = this.User.FindFirst(ClaimTypes.NameIdentifier).Value;
             await this.takingService.Create(takingServiceModel);
 
