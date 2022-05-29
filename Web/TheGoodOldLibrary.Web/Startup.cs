@@ -23,6 +23,7 @@
     using TheGoodOldLibrary.Services.Data.BookTaking;
     using TheGoodOldLibrary.Services.Data.Genre;
     using TheGoodOldLibrary.Services.Data.Periodical;
+    using TheGoodOldLibrary.Services.Data.PeriodicalTaking;
     using TheGoodOldLibrary.Services.Data.Type;
     using TheGoodOldLibrary.Services.Mapping;
     using TheGoodOldLibrary.Services.Messaging;
@@ -77,6 +78,7 @@
             services.AddTransient<ITypeService, TypeService>();
             services.AddTransient<IAuthorService, AuthorService>();
             services.AddTransient<IBookTakingService, BookTakingService>();
+            services.AddTransient<IPeriodicalTakingService, PeriodicalTakingService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

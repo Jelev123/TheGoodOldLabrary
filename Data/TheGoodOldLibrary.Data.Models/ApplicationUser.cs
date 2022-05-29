@@ -33,5 +33,8 @@ namespace TheGoodOldLibrary.Data.Models
         public virtual ICollection<IdentityUserClaim<string>> Claims { get; set; }
 
         public virtual ICollection<IdentityUserLogin<string>> Logins { get; set; }
+
+        public virtual ICollection<BookTaking> BookTakings { get; set; } = new HashSet<BookTaking>();
+
     }
 }

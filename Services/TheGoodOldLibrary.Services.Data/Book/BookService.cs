@@ -24,8 +24,9 @@
             {
                 Name = model.Name,
                 GenreId = model.GenreId,
-                UriginalUrl = model.Image,
+                OriginalUrl = model.Image,
                 AuthorId = model.AuthorId,
+                Id = model.BookId,
             };
             await this.bookRepository.AddAsync(book);
             await this.bookRepository.SaveChangesAsync();
@@ -43,7 +44,7 @@
                     GenreName = x.Genre.Name,
                     AuthorName = x.Author.Name,
                     Name = x.Name,
-                    Images = x.UriginalUrl,
+                    Images = x.OriginalUrl,
                 }).ToList();
         }
 
@@ -59,7 +60,7 @@
                       GenreId = s.GenreId,
                       GenreName = s.Genre.Name,
                       Id = s.Id,
-                      ImageUrl = s.UriginalUrl,
+                      ImageUrl = s.OriginalUrl,
                   }).ToList();
 
             return book;

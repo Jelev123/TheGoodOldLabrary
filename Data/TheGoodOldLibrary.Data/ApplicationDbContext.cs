@@ -33,13 +33,13 @@
 
         public DbSet<Periodical> Periodicals { get; set; }
 
-        public DbSet<Image> Images { get; set; }
-
         public DbSet<Types> Types { get; set; }
 
         public DbSet<BookStatus> BookStatuses { get; set; }
 
         public DbSet<BookTaking> BookTakings { get; set; }
+
+        public DbSet<PeriodicalTaking> PeriodicalTakings { get; set; }
 
         public override int SaveChanges() => this.SaveChanges(true);
 

@@ -15,6 +15,10 @@
             }
 
             await dbContext.Authors.AddAsync(new Models.Author { Name = "Stiven" });
+            await dbContext.Authors.AddAsync(new Models.Author { Name = "Ben" });
+            await dbContext.Authors.AddAsync(new Models.Author { Name = "Hopkings" });
+            await dbContext.Authors.AddAsync(new Models.Author { Name = "Famous" });
+          
 
             await dbContext.SaveChangesAsync();
 

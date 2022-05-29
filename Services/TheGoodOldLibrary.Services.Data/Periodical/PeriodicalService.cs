@@ -22,6 +22,7 @@
             {
                 Name = model.Name,
                 TypeId = model.TypeId,
+                AuthorId = model.AuthorId,
                 ImageUrl = model.Image,
             };
 

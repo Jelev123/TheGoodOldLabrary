@@ -1,10 +1,8 @@
 ﻿namespace TheGoodOldLibrary.Services.Data.BookTaking
 {
     using System;
-    using System.Linq;
     using System.Threading.Tasks;
 
-    using Microsoft.EntityFrameworkCore;
     using TheGoodOldLibrary.Data;
     using TheGoodOldLibrary.Data.Common.Repositories;
     using TheGoodOldLibrary.Data.Models;
@@ -12,23 +10,20 @@
 
     public class BookTakingService : IBookTakingService
     {
-        private readonly ApplicationDbContext data;
-        private readonly IRepository<BookTaking> bookTakingRepository;
+        private readonly IDeletableEntityRepository<BookTaking> bookTakingRepository;
 
-        public BookTakingService(ApplicationDbContext data, IRepository<BookTaking> bookRepository)
+        public BookTakingService(IDeletableEntityRepository<BookTaking> bookTakingRepository)
         {
-            this.data = data;
-            this.bookTakingRepository = bookRepository;
+            this.bookTakingRepository = bookTakingRepository;
         }
 
         public async Task Create(TakingServiceModel takingServiceModel)
         {
-            BookTaking taking = new()
+            var taking = new BookTaking()
             {
                 Id = Guid.NewGuid().ToString(),
                 BookId = takingServiceModel.BookId,
                 BookStatusId = takingServiceModel.BookStatusId,
-                PeriodicalId = takingServiceModel.PeriodicalId,
                 UserId = takingServiceModel.UserId,
             };
 

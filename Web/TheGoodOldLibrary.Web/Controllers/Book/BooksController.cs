@@ -16,6 +16,7 @@
         private readonly IGenreService genreService;
         private readonly IAuthorService authorService;
         private readonly IBookTakingService takingService;
+
         public BooksController(IBookService bookService, IGenreService genreService, IAuthorService authorService, IBookTakingService takingService)
         {
             this.bookService = bookService;
@@ -62,8 +63,6 @@
         {
             return this.View(this.bookService.GetById(id));
         }
-
-     
 
         [HttpPost]
         public async Task<IActionResult> BookTaking(TakingServiceModel takingServiceModel)

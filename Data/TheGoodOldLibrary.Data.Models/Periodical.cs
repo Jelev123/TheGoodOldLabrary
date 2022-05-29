@@ -29,6 +29,8 @@
 
         public virtual ICollection<ApplicationUser> Users { get; set; } = new HashSet<ApplicationUser>();
 
-        public virtual ICollection<Image> Images { get; set; } = new HashSet<Image>();
+        public virtual ICollection<BookTaking> BookTakings { get; set; } = new HashSet<BookTaking>();
+
+
     }
 }

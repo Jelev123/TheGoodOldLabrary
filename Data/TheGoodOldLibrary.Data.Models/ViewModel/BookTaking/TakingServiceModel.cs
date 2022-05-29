@@ -4,15 +4,22 @@
 
     public class TakingServiceModel
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
 
         public int BookId { get; set; }
 
+        public Book Book { get; set; }
+
         public int PeriodicalId { get; set; }
+
+        public Periodical Periodical { get; set; }
 
         public string UserId { get; set; }
 
+        public ApplicationUser User { get; set; }
+
         public int BookStatusId { get; set; }
 
+        public BookStatus BookStatus { get; set; }
     }
 }

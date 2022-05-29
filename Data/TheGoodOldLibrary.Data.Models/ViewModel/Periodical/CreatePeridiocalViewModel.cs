@@ -11,8 +11,15 @@
 
         public int TypeId { get; set; }
 
+        [Display(Name = "Author")]
+
+        public int AuthorId { get; set; }
+
         public string Image { get; set; }
 
         public IEnumerable<KeyValuePair<string, string>> TypeItems { get; set; }
+
+        public IEnumerable<KeyValuePair<string, string>> AuthorItems { get; set; }
+
     }
 }

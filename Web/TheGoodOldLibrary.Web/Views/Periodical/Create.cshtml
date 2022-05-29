@@ -3,6 +3,8 @@
 
 @{
     var typeItems = this.Model.TypeItems.Select(x => new SelectListItem(x.Value, x.Key));
+    var authorItems = this.Model.AuthorItems.Select(x => new SelectListItem(x.Value, x.Key));
+
     ViewData["Title"] = "Create Periodical";
     
 }
@@ -20,6 +22,11 @@
         <label asp-for="TypeId"></label>
         <select asp-for="TypeId" class="form-control" asp-items="typeItems"></select>
     </div>
+    <div class="form-group">
+                <label asp-for="AuthorId"></label>
+                <select asp-for="AuthorId" class="form-control" asp-items="authorItems"></select>
+
+            </div>
            
             <div class="form-group">
                 <label asp-for="Image"></label>

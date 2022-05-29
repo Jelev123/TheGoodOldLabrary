@@ -16,6 +16,8 @@
 
         public int AuthorId { get; set; }
 
+        public int BookId { get; set; }
+
         public IEnumerable<KeyValuePair<string, string>> GenreItems { get; set; }
 
         public IEnumerable<KeyValuePair<string, string>> AuthorItems { get; set; }

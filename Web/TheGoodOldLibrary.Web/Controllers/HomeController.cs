@@ -36,7 +36,7 @@
                 Id = s.Id,
                 Name = s.Name,
                 GenreName = s.Genre.Name,
-                Images = s.UriginalUrl,
+                Images = s.OriginalUrl,
             }).ToList();
 
 

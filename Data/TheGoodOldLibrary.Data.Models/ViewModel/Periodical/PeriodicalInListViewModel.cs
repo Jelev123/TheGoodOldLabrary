@@ -1,6 +1,6 @@
 ﻿namespace TheGoodOldLibrary.Data.Models.ViewModel.Periodical
 {
-    public class PeriodicalInListViewModel
+    public class PeriodicalInListViewModel : PeriodicalTaking
     {
         public int Id { get; set; }
 
