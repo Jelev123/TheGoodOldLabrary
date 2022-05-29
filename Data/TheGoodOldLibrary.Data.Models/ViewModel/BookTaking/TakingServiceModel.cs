@@ -21,5 +21,6 @@
         public int BookStatusId { get; set; }
 
         public BookStatus BookStatus { get; set; }
+
     }
 }

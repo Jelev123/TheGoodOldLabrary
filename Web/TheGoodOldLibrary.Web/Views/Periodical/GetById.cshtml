@@ -3,21 +3,21 @@
 
 
 
-     @foreach (var item in Model)
-   {
+@foreach (var item in Model)
+{
 
-        <a href="@item.Image">
-            <img src="@item.Image" width="400" alt="@item.Name">
-        </a>
-       <h2>@item.Name</h2>
-       <h2>@item.TypeName</h2>
-      
-   }
+    <a href="@item.Image">
+        <img src="@item.Image" width="400" alt="@item.Name">
+    </a>
+    <h2>@item.Name</h2>
+    <h2>@item.TypeName</h2>
+
+}
 
 <button class="btn btn-primary text-black font-weight-bold" data-toggle="modal" data-target="#orderModal">Order</button>
 
 
-   @foreach (var item in Model)
+@foreach (var item in Model)
 {
     <div class="modal fade" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="orderModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -32,6 +32,9 @@
                     <form id="order-form" asp-controller="Periodical" asp-action="PeriodicalTaking" method="post">
                         <div class="form-group">
                         </div>
+                        <input type="hidden" value="@item.Id" name="periodicalId" />
+                        <input type="hidden" value="@item.BookStatusId" name="periodicalId" />
+
                     </form>
                 </div>
                 <div class="modal-footer">

@@ -28,9 +28,11 @@
 
         public IActionResult Create()
         {
-            var viewModel = new CreatePeridiocalViewModel();
-            viewModel.TypeItems = this.typeService.GetAllAsKeyValuePairs();
-            viewModel.AuthorItems = this.authorService.GetAllAsKeyValuePairs();
+            var viewModel = new CreatePeridiocalViewModel
+            {
+                TypeItems = this.typeService.GetAllAsKeyValuePairs(),
+                AuthorItems = this.authorService.GetAllAsKeyValuePairs(),
+            };
 
             return this.View(viewModel);
         }

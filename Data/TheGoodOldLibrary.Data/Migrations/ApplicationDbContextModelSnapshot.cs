@@ -385,9 +385,6 @@ namespace TheGoodOldLibrary.Data.Migrations
                     b.Property<DateTime?>("ModifiedOn")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("PeriodicalId")
-                        .HasColumnType("int");
-
                     b.Property<string>("UserId")
                         .HasColumnType("nvarchar(450)");
 
@@ -398,8 +395,6 @@ namespace TheGoodOldLibrary.Data.Migrations
                     b.HasIndex("BookStatusId");
 
                     b.HasIndex("IsDeleted");
-
-                    b.HasIndex("PeriodicalId");
 
                     b.HasIndex("UserId");
 
@@ -679,10 +674,6 @@ namespace TheGoodOldLibrary.Data.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("TheGoodOldLibrary.Data.Models.Periodical", null)
-                        .WithMany("BookTakings")
-                        .HasForeignKey("PeriodicalId");
-
                     b.HasOne("TheGoodOldLibrary.Data.Models.ApplicationUser", "User")
                         .WithMany("BookTakings")
                         .HasForeignKey("UserId");
@@ -767,8 +758,6 @@ namespace TheGoodOldLibrary.Data.Migrations
 
             modelBuilder.Entity("TheGoodOldLibrary.Data.Models.Periodical", b =>
                 {
-                    b.Navigation("BookTakings");
-
                     b.Navigation("Users");
                 });
 

@@ -22,6 +22,8 @@
                 Id = Guid.NewGuid().ToString(),
                 PeriodicalId = takingServiceModel.PeriodicalId,
                 UserId = takingServiceModel.UserId,
+                Periodical = takingServiceModel.Periodical,
+                User = takingServiceModel.User,
             };
 
             await this.periodicalRepository.AddAsync(periodical);

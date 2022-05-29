@@ -16,9 +16,6 @@
 
 @foreach (var item in Model)
 {
-
-
-
     <div class="modal fade" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="orderModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -32,6 +29,9 @@
                     <form id="order-form" asp-controller="Books" asp-action="BookTaking" method="post">
                         <div class="form-group">
                         </div>
+                            <input type="hidden" value="@item.Id" name="bookId" />
+                            <input type="hidden" value="@item.BookStatusId" name="bookId" />
+
                     </form>
                 </div>
                 <div class="modal-footer">

@@ -24,6 +24,7 @@
                 TypeId = model.TypeId,
                 AuthorId = model.AuthorId,
                 ImageUrl = model.Image,
+                BookStatusId = model.BookStatusId,
             };
 
             await this.periodicalRepository.AddAsync(periodical);

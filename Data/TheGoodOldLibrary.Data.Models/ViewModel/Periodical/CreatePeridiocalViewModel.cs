@@ -15,6 +15,8 @@
 
         public int AuthorId { get; set; }
 
+        public int BookStatusId { get; set; }
+
         public string Image { get; set; }
 
         public IEnumerable<KeyValuePair<string, string>> TypeItems { get; set; }

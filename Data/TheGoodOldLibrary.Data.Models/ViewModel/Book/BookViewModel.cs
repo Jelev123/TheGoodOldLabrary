@@ -12,6 +12,8 @@
 
         public int AuthorId { get; set; }
 
+        public int BookStatusId { get; set; }
+
         public string AuthorName { get; set; }
 
         public string ImageUrl { get; set; }

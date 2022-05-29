@@ -9,5 +9,7 @@
         public string TypeName { get; set; }
 
         public string Image { get; set; }
+
+        public int BookStatusId { get; set; }
     }
 }
