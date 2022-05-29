@@ -8,10 +8,6 @@
 
         public virtual Book Book { get; set; }
 
-        public int BookStatusId { get; set; }
-
-        public virtual BookStatus BookStatus { get; set; }
-
         public string UserId { get; set; }
 
         public virtual ApplicationUser User { get; set; }

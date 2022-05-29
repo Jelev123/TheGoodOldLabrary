@@ -25,6 +25,8 @@
 
         public int BookCount { get; set; }
 
+        public int OrderedTimes { get; set; }
+
         public virtual ICollection<ApplicationUser> Users { get; set; } = new HashSet<ApplicationUser>();
 
         public virtual ICollection<BookTaking> BookTakings { get; set; } = new HashSet<BookTaking>();

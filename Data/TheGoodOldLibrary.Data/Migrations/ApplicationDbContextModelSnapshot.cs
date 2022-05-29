@@ -316,6 +316,9 @@ namespace TheGoodOldLibrary.Data.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("OrderedTimes")
+                        .HasColumnType("int");
+
                     b.Property<string>("OriginalUrl")
                         .HasColumnType("nvarchar(max)");
 
@@ -333,44 +336,12 @@ namespace TheGoodOldLibrary.Data.Migrations
                     b.ToTable("Books");
                 });
 
-            modelBuilder.Entity("TheGoodOldLibrary.Data.Models.BookStatus", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("CreatedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("DeletedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime?>("ModifiedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("IsDeleted");
-
-                    b.ToTable("BookStatuses");
-                });
-
             modelBuilder.Entity("TheGoodOldLibrary.Data.Models.BookTaking", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("BookId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("BookStatusId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedOn")
@@ -391,8 +362,6 @@ namespace TheGoodOldLibrary.Data.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("BookId");
-
-                    b.HasIndex("BookStatusId");
 
                     b.HasIndex("IsDeleted");
 
@@ -460,6 +429,9 @@ namespace TheGoodOldLibrary.Data.Migrations
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("OrderedTimes")
+                        .HasColumnType("int");
 
                     b.Property<int>("PeriodicalCount")
                         .HasColumnType("int");
@@ -668,19 +640,11 @@ namespace TheGoodOldLibrary.Data.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("TheGoodOldLibrary.Data.Models.BookStatus", "BookStatus")
-                        .WithMany("BookTakings")
-                        .HasForeignKey("BookStatusId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
                     b.HasOne("TheGoodOldLibrary.Data.Models.ApplicationUser", "User")
                         .WithMany("BookTakings")
                         .HasForeignKey("UserId");
 
                     b.Navigation("Book");
-
-                    b.Navigation("BookStatus");
 
                     b.Navigation("User");
                 });
@@ -744,11 +708,6 @@ namespace TheGoodOldLibrary.Data.Migrations
                     b.Navigation("BookTakings");
 
                     b.Navigation("Users");
-                });
-
-            modelBuilder.Entity("TheGoodOldLibrary.Data.Models.BookStatus", b =>
-                {
-                    b.Navigation("BookTakings");
                 });
 
             modelBuilder.Entity("TheGoodOldLibrary.Data.Models.Genre", b =>

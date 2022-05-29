@@ -8,7 +8,9 @@
 
         public string GenreName { get; set; }
 
-        public string AuthorName { get; set; }
+        public string AuthorFirstName { get; set; }
+
+        public string AuthorLastName { get; set; }
 
         public int AuthorId { get; set; }
 

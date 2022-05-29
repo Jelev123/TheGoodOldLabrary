@@ -14,7 +14,11 @@
 
         public int BookStatusId { get; set; }
 
-        public string AuthorName { get; set; }
+        public int BookCount { get; set; }
+
+        public string AuthorFirstName { get; set; }
+
+        public string AuthorLastName { get; set; }
 
         public string ImageUrl { get; set; }
     }

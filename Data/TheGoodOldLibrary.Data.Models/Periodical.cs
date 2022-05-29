@@ -19,10 +19,6 @@
 
         public Author Author { get; set; }
 
-        public int BookStatusId { get; set; }
-
-        public BookStatus BookStatus { get; set; }
-
         public string ImageUrl { get; set; }
 
         public DateTime StartDate { get; set; }
@@ -30,6 +26,8 @@
         public DateTime EndDate { get; set; }
 
         public int PeriodicalCount { get; set; }
+
+        public int OrderedTimes { get; set; }
 
         public virtual ICollection<ApplicationUser> Users { get; set; } = new HashSet<ApplicationUser>();
     }

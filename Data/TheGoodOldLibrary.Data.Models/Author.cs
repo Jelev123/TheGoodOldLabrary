@@ -6,7 +6,9 @@
 
     public class Author : BaseDeletableModel<int>
     {
-        public string Name { get; set; }
+        public string FirstName { get; set; }
+
+        public string LastName { get; set; }
 
         public virtual ICollection<Book> Books { get; set; } = new HashSet<Book>();
 

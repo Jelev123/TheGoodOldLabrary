@@ -13,9 +13,7 @@
 
         [Display(Name = "Author")]
 
-        public int AuthorId { get; set; }
-
-        public int BookStatusId { get; set; }
+        public int AuthorId { get; set; } 
 
         public string Image { get; set; }
 

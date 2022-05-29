@@ -7,7 +7,6 @@
     using TheGoodOldLibrary.Data.Common.Repositories;
     using TheGoodOldLibrary.Data.Models;
     using TheGoodOldLibrary.Data.Models.ViewModel.Book;
-    using TheGoodOldLibrary.Services.Mapping;
 
     public class BookService : IBookService
     {
@@ -26,7 +25,7 @@
                 GenreId = model.GenreId,
                 OriginalUrl = model.Image,
                 AuthorId = model.AuthorId,
-                Id = model.BookId,
+                BookCount = model.BookCount,
             };
             await this.bookRepository.AddAsync(book);
             await this.bookRepository.SaveChangesAsync();
@@ -42,7 +41,8 @@
                     Id = x.Id,
                     GenreId = x.Genre.Id,
                     GenreName = x.Genre.Name,
-                    AuthorName = x.Author.Name,
+                    AuthorFirstName = x.Author.FirstName,
+                    AuthorLastName = x.Author.LastName,
                     Name = x.Name,
                     Images = x.OriginalUrl,
                 }).ToList();
@@ -55,7 +55,8 @@
                   .Select(s => new BookViewModel
                   {
                       AuthorId = s.AuthorId,
-                      AuthorName = s.Author.Name,
+                      AuthorFirstName = s.Author.FirstName,
+                      AuthorLastName = s.Author.LastName,
                       Name = s.Name,
                       GenreId = s.GenreId,
                       GenreName = s.Genre.Name,
@@ -69,6 +70,18 @@
         public int GetCount()
         {
             return this.bookRepository.AllAsNoTracking().Count();
+        }
+
+        public async Task UpdateAsync(UpdateViewModel model)
+        {
+            var book = this.bookRepository.AllAsNoTracking().FirstOrDefault(s => s.Id == model.BookId);
+            book.Name = model.Name;
+            book.BookCount = model.BookCount;
+            book.GenreId = model.GenreId;
+            book.AuthorId = model.AuthorId;
+            book.OriginalUrl = model.Image;
+            await this.bookRepository.SaveChangesAsync();
+            
         }
     }
 }

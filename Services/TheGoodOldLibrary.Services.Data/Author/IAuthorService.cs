@@ -1,12 +1,12 @@
 ﻿namespace TheGoodOldLibrary.Services.Data.Author
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Text;
+    using System.Threading.Tasks;
+
+    using TheGoodOldLibrary.Data.Models.ViewModel.Author;
 
     public interface IAuthorService
     {
-        IEnumerable<KeyValuePair<string, string>> GetAllAsKeyValuePairs();
+        Task CreateAsync(CreateAuthorViewModel model);
 
     }
 }

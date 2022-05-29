@@ -9,38 +9,41 @@
     </a>
     <h2>@item.Name</h2>
     <h2>@item.GenreName</h2>
-    <h2>@item.AuthorName</h2>
+    <h2>@item.AuthorFirstName</h2>
+    <h2>@item.AuthorLastName</h2>
 }
 
 <button class="btn btn-primary text-black font-weight-bold" data-toggle="modal" data-target="#orderModal">Order</button>
 
 @foreach (var item in Model)
 {
-    <div class="modal fade" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="orderModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 style="color : green" class="modal-title" id="orderModalLabel">Order - @item.Name</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form id="order-form" asp-controller="Books" asp-action="BookTaking" method="post">
-                        <div class="form-group">
-                        </div>
+
+        <div class="modal fade" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="orderModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 style="color : green" class="modal-title" id="orderModalLabel">Order - @item.Name</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="order-form" asp-controller="Books" asp-action="BookTaking" method="post">
+                            <div class="form-group">
+                            </div>
                             <input type="hidden" value="@item.Id" name="bookId" />
                             <input type="hidden" value="@item.BookStatusId" name="bookId" />
 
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" id="complete-order-button">Complete</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="complete-order-button">Complete</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    
 }
 
 <script>

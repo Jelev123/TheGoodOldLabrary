@@ -29,7 +29,6 @@
         {
             var viewModel = new CreateBooksViewModel();
             viewModel.GenreItems = this.genreService.GetAllAsKeyValuePairs();
-            viewModel.AuthorItems = this.authorService.GetAllAsKeyValuePairs();
             return this.View(viewModel);
         }
 
