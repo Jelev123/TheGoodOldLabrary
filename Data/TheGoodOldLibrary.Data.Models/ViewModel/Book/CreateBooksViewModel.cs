@@ -3,7 +3,7 @@
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    using Microsoft.AspNetCore.Http;
+    using TheGoodOldLibrary.Data.Models.ViewModel.Author;
 
     public class CreateBooksViewModel
     {
@@ -16,13 +16,11 @@
 
         public int AuthorId { get; set; }
 
-        public int BookId { get; set; }
-
         public int BookCount { get; set; }
 
         public IEnumerable<KeyValuePair<string, string>> GenreItems { get; set; }
 
-        public IEnumerable<KeyValuePair<string, string>> AuthorItems { get; set; }
+        public IEnumerable<AllAuthorsViewModel> Authors { get; set; }
 
         public string Image { get; set; }
     }

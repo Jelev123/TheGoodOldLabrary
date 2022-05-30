@@ -3,6 +3,7 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
+
     using TheGoodOldLibrary.Data.Common.Repositories;
     using TheGoodOldLibrary.Data.Models;
     using TheGoodOldLibrary.Data.Models.ViewModel.Periodical;
@@ -24,6 +25,7 @@
                 TypeId = model.TypeId,
                 AuthorId = model.AuthorId,
                 ImageUrl = model.Image,
+                PeriodicalCount = model.PeriodicalCount,
             };
 
             await this.periodicalRepository.AddAsync(periodical);
@@ -41,6 +43,7 @@
                     Name = x.Name,
                     Image = x.ImageUrl,
                     TypeName = x.Type.Name,
+                    PeriodicalCount = x.PeriodicalCount,
                 }).ToList();
         }
 

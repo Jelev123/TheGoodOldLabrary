@@ -31,6 +31,7 @@
             var viewModel = new CreatePeridiocalViewModel
             {
                 TypeItems = this.typeService.GetAllAsKeyValuePairs(),
+                Authors = this.authorService.GetAll(),
             };
 
             return this.View(viewModel);

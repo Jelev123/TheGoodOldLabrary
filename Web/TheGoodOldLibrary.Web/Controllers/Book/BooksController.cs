@@ -2,6 +2,7 @@
 {
     using System.Security.Claims;
     using System.Threading.Tasks;
+
     using Microsoft.AspNetCore.Mvc;
     using TheGoodOldLibrary.Data.Models.ViewModel.Book;
     using TheGoodOldLibrary.Data.Models.ViewModel.BookTaking;
@@ -27,16 +28,17 @@
 
         public IActionResult Create()
         {
-            var viewModel = new CreateBooksViewModel();
-            viewModel.GenreItems = this.genreService.GetAllAsKeyValuePairs();
-            return this.View(viewModel);
+              return this.View(new CreateBooksViewModel
+            {
+                Authors = this.authorService.GetAll(),
+                GenreItems = this.genreService.GetAllAsKeyValuePairs(),
+            });
         }
 
         [HttpPost]
         public async Task<IActionResult> Create(CreateBooksViewModel model)
         {
             await this.bookService.CreateAsync(model);
-
             return this.RedirectToAction("All");
         }
 

@@ -10,6 +10,8 @@
 
         public string Image { get; set; }
 
+        public int PeriodicalCount { get; set; }
+
         public int BookStatusId { get; set; }
     }
 }

@@ -1,0 +1,8 @@
+﻿@using TheGoodOldLibrary.Data.Models.ViewModel.Author
+@model IEnumerable<AllAuthorsViewModel>
+
+
+@foreach (var authors in Model)
+{
+    <h3>@authors.FirstName @authors.LastName</h3>
+}

@@ -8,15 +8,13 @@
 
         public string GenreName { get; set; }
 
-        public string AuthorFirstName { get; set; }
-
-        public string AuthorLastName { get; set; }
-
         public int AuthorId { get; set; }
 
         public int GenreId { get; set; }
 
         public string Images { get; set; }
+
+        public int BooksCount { get; set; }
 
     }
 }

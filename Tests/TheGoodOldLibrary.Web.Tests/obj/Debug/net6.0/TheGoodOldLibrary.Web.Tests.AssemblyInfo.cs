@@ -28,7 +28,7 @@ using System.Reflection;
 [assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("TheGoodOldLibrary.Services.Messaging, Version=1.0.0.0, Culture=neutral, PublicKey" +
     "Token=null", "C:\\Users\\Owner\\Desktop\\Global Consulting\\Services\\TheGoodOldLibrary.Services.Mess" +
     "aging", "TheGoodOldLibrary.Services.Messaging.csproj", "0")]
-[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("TheGoodOldLibrary.Web", "C:\\Users\\Owner\\Desktop\\Global Consulting\\Web\\TheGoodOldLibrary.Web", "TheGoodOldLibrary.Web.csproj", "0")]
+[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("TheGoodOldLibrary.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "C:\\Users\\Owner\\Desktop\\Global Consulting\\Web\\TheGoodOldLibrary.Web", "TheGoodOldLibrary.Web.csproj", "0")]
 [assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("TheGoodOldLibrary.Web.ViewModels, Version=1.0.0.0, Culture=neutral, PublicKeyToke" +
     "n=null", "C:\\Users\\Owner\\Desktop\\Global Consulting\\Web\\TheGoodOldLibrary.Web.ViewModels", "TheGoodOldLibrary.Web.ViewModels.csproj", "0")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("TheGoodOldLibrary.Web.Tests")]

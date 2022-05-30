@@ -11,10 +11,12 @@
     public class BookService : IBookService
     {
         private readonly IDeletableEntityRepository<Book> bookRepository;
+        private readonly IDeletableEntityRepository<Author> authorRepository;
 
-        public BookService(IDeletableEntityRepository<Book> bookRepository)
+        public BookService(IDeletableEntityRepository<Book> bookRepository, IDeletableEntityRepository<Author> authorRepository)
         {
             this.bookRepository = bookRepository;
+            this.authorRepository = authorRepository;
         }
 
         public async Task CreateAsync(CreateBooksViewModel model)
@@ -27,6 +29,7 @@
                 AuthorId = model.AuthorId,
                 BookCount = model.BookCount,
             };
+
             await this.bookRepository.AddAsync(book);
             await this.bookRepository.SaveChangesAsync();
         }
@@ -41,10 +44,10 @@
                     Id = x.Id,
                     GenreId = x.Genre.Id,
                     GenreName = x.Genre.Name,
-                    AuthorFirstName = x.Author.FirstName,
-                    AuthorLastName = x.Author.LastName,
+                    AuthorId = x.AuthorId,
                     Name = x.Name,
                     Images = x.OriginalUrl,
+                    BooksCount = x.BookCount,
                 }).ToList();
         }
 
@@ -80,8 +83,8 @@
             book.GenreId = model.GenreId;
             book.AuthorId = model.AuthorId;
             book.OriginalUrl = model.Image;
+
             await this.bookRepository.SaveChangesAsync();
-            
         }
     }
 }

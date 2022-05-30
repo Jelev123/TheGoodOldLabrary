@@ -1,6 +1,7 @@
 ﻿namespace TheGoodOldLibrary.Services.Data.PeriodicalTaking
 {
     using System;
+    using System.Linq;
     using System.Threading.Tasks;
     using TheGoodOldLibrary.Data.Common.Repositories;
     using TheGoodOldLibrary.Data.Models;
@@ -8,10 +9,12 @@
 
     public class PeriodicalTakingService : IPeriodicalTakingService
     {
-        private readonly IDeletableEntityRepository<PeriodicalTaking> periodicalRepository;
+        private readonly IDeletableEntityRepository<PeriodicalTaking> periodicalTakingRepository;
+        private readonly IDeletableEntityRepository<Periodical> periodicalRepository;
 
-        public PeriodicalTakingService(IDeletableEntityRepository<PeriodicalTaking> periodicalRepository)
+        public PeriodicalTakingService(IDeletableEntityRepository<PeriodicalTaking> periodicalTakingRepository, IDeletableEntityRepository<Periodical> periodicalRepository)
         {
+            this.periodicalTakingRepository = periodicalTakingRepository;
             this.periodicalRepository = periodicalRepository;
         }
 
@@ -26,8 +29,15 @@
                 User = takingServiceModel.User,
             };
 
-            await this.periodicalRepository.AddAsync(periodical);
-            await this.periodicalRepository.SaveChangesAsync();
+            var periodicals = this.periodicalRepository.AllAsNoTracking().FirstOrDefault(s => s.Id == takingServiceModel.PeriodicalId);
+
+            periodicals.PeriodicalCount -= 1;
+            periodicals.OrderedTimes += 1;
+
+            this.periodicalRepository.Update(periodicals);
+
+            await this.periodicalTakingRepository.AddAsync(periodical);
+            await this.periodicalTakingRepository.SaveChangesAsync();
         }
     }
 }
