@@ -57,6 +57,7 @@
                     Image = s.ImageUrl,
                     Name = s.Name,
                     TypeName = s.Type.Name,
+                    PeriodicalCount = s.PeriodicalCount,
                 }).ToList();
 
             return periodical;

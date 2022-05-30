@@ -16,44 +16,54 @@
     <input type="text" class="form-control text-black" id="products-search-bar" name="search" placeholder="Search..." />
 </div>
 
-<div class="row">@foreach (var peridical in this.Model.Periodicals)
-     {
-                         
-        
-          <div class="col-md-4">
-                <div class="col-md-10">
-                    <div class="card-body">
-                               <a href="@peridical">
-               <a class="col-md-4" asp-controller="Periodical" asp-action="GetById" asp-route-id="@peridical.Id">
+<div class="row">
+    @foreach (var peridical in this.Model.Periodicals)
+    {
+
+
+        <div class="col-md-4">
+            <div class="col-md-10">
+                <div class="card-body">
+                    <a href="@peridical">
+                        <a class="col-md-4" asp-controller="Periodical" asp-action="GetById" asp-route-id="@peridical.Id">
                             <img width="200" src="@peridical.Image" />
                         </a>
-        </a>                
-                        <h4 style="color: orange" class="card-title">@peridical.Name</h4>
-                        <h4 style="color: orange" class="card-title">@peridical.TypeName</h4>
-                        <h4 style="color: orange" class="card-title">@peridical.PeriodicalCount</h4>
+                    </a>
+                    <h4 style="color: orange" class="card-title">@peridical.Name</h4>
+                    <h4 style="color: orange" class="card-title">@peridical.TypeName</h4>
+                    @if (peridical.PeriodicalCount > 0)
+                    {
+                        <h4 style="color: black" class="card-title">Books Left: @peridical.PeriodicalCount</h4>
 
-                    </div>
+                    }
+                    @if (peridical.PeriodicalCount <= 0)
+                    {
+                        <h5>No More Periodicals Left</h5>
+                    }
+
+
                 </div>
             </div>
-             
-         }
+        </div>
+
+    }
 </div>
-<partial name = "_PaginPeriodicalPartialView" model="@Model" />
+<partial name="_PaginPeriodicalPartialView" model="@Model" />
 
 
 
 <script>
-    $('#sort').change(function () {
+    $('#sort').change(function() {
         $('#order-form').submit();
     });
 
-    $('#products-search-bar').on("change paste keyup", function () {
+    $('#products-search-bar').on("change paste keyup", function() {
         $('.card-body').show();
 
         let searchValue = $('#products-search-bar').val();
 
         for (let name of $('.card-body')) {
-            let productName = $($(name).children()[1]).text();    
+            let productName = $($(name).children()[1]).text();
 
             if (!productName.toLowerCase().includes(searchValue.toLowerCase())) {
                 $(name).hide();

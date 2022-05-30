@@ -4,7 +4,6 @@
     using System.Linq;
     using System.Threading.Tasks;
 
-    using TheGoodOldLibrary.Data;
     using TheGoodOldLibrary.Data.Common.Repositories;
     using TheGoodOldLibrary.Data.Models;
     using TheGoodOldLibrary.Data.Models.ViewModel.BookTaking;

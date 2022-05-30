@@ -21,6 +21,7 @@
 
         public async Task CreateAsync(CreateBooksViewModel model)
         {
+
             var book = new Book
             {
                 Name = model.Name,
@@ -65,6 +66,7 @@
                       GenreName = s.Genre.Name,
                       Id = s.Id,
                       ImageUrl = s.OriginalUrl,
+                      BookCount = s.BookCount,
                   }).ToList();
 
             return book;

@@ -12,12 +12,12 @@
     <h2>@item.AuthorFirstName @item.AuthorLastName</h2>
 }
 
-<button class="btn btn-primary text-black font-weight-bold" data-toggle="modal" data-target="#orderModal">Order</button>
 
 @foreach (var item in Model)
 {
-
-        <div class="modal fade" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="orderModalLabel" aria-hidden="true">
+    @if (item.BookCount > 0)
+    {
+          <div class="modal fade" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="orderModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -42,6 +42,16 @@
                 </div>
             </div>
         </div>
+
+<button class="btn btn-primary text-black font-weight-bold" data-toggle="modal" data-target="#orderModal">Order</button>
+
+    }
+    @if (item.BookCount == 0)
+    {
+        <h3 style="color: red">No Book Available</h3>
+    }
+
+      
     
 }
 

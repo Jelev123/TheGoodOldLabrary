@@ -14,42 +14,51 @@
     <input type="text" class="form-control text-black" id="products-search-bar" name="search" placeholder="Search..." />
 </div>
 
-<div class="row">@foreach (var book in this.Model.Books)
-     {
-                         
+<div class="row">
+    @foreach (var book in this.Model.Books)
+    {
 
-          <div class="col-md-4">
-                <div class="col-md-10">
-                    <div class="card-body">
-                             <a class="col-md-4" asp-controller="Books" asp-action="GetById" asp-route-id="@book.Id">
-                            <img width="200" src="@book.Images" />
-                        </a>
-                        <h4 style="color: orange" class="card-title">@book.Name</h4>
-                        <h4 style="color: orange" class="card-title">@book.GenreName</h4>
+
+        <div class="col-md-4">
+            <div class="col-md-10">
+                <div class="card-body">
+                    <a class="col-md-4" asp-controller="Books" asp-action="GetById" asp-route-id="@book.Id">
+                        <img width="200" src="@book.Images" />
+                    </a>
+                    <h4 style="color: orange" class="card-title">@book.Name</h4>
+                    <h4 style="color: orange" class="card-title">@book.GenreName</h4>
+                    @if (book.BooksCount > 0)
+                    {
                         <h4 style="color: black" class="card-title">Books Left: @book.BooksCount</h4>
 
-                    </div>
+                    }
+                    @if (book.BooksCount <= 0)
+                    {
+                        <h5>No More Books Left</h5>
+                    }
+
                 </div>
             </div>
-             
-         }
+        </div>
+
+    }
 </div>
 <partial name="_PaginPartilView" model="@Model" />
 
 
 
 <script>
-    $('#sort').change(function () {
+    $('#sort').change(function() {
         $('#order-form').submit();
     });
 
-    $('#products-search-bar').on("change paste keyup", function () {
+    $('#products-search-bar').on("change paste keyup", function() {
         $('.card-body').show();
 
         let searchValue = $('#products-search-bar').val();
 
         for (let name of $('.card-body')) {
-            let productName = $($(name).children()[1]).text();    
+            let productName = $($(name).children()[1]).text();
 
             if (!productName.toLowerCase().includes(searchValue.toLowerCase())) {
                 $(name).hide();
