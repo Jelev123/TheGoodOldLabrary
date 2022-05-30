@@ -1,9 +1,12 @@
 ﻿namespace TheGoodOldLibrary.Web.Controllers.Book
 {
+    using System.Linq;
     using System.Security.Claims;
     using System.Threading.Tasks;
 
     using Microsoft.AspNetCore.Mvc;
+    using TheGoodOldLibrary.Data.Common.Repositories;
+    using TheGoodOldLibrary.Data.Models;
     using TheGoodOldLibrary.Data.Models.ViewModel.Book;
     using TheGoodOldLibrary.Data.Models.ViewModel.BookTaking;
     using TheGoodOldLibrary.Services.Data.Author;
@@ -17,6 +20,8 @@
         private readonly IGenreService genreService;
         private readonly IAuthorService authorService;
         private readonly IBookTakingService takingService;
+        private readonly IDeletableEntityRepository<Book> bookRepository;
+
 
         public BooksController(IBookService bookService, IGenreService genreService, IAuthorService authorService, IBookTakingService takingService)
         {
@@ -28,7 +33,7 @@
 
         public IActionResult Create()
         {
-              return this.View(new CreateBooksViewModel
+            return this.View(new CreateBooksViewModel
             {
                 Authors = this.authorService.GetAll(),
                 GenreItems = this.genreService.GetAllAsKeyValuePairs(),
@@ -72,6 +77,20 @@
             await this.takingService.Create(takingServiceModel);
 
             return this.Redirect("All");
+        }
+
+        public IActionResult Update(int id)
+        {
+            var inputModel = this.bookService.ById<UpdateViewModel>(id);
+            return this.View(inputModel);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Update(int id, UpdateViewModel input)
+        {
+            await this.bookService.UpdateAsync(input, id);
+
+            return this.RedirectToAction(nameof(this.GetById), new { id });
         }
     }
 }

@@ -10,14 +10,19 @@
     <h2>@item.Name</h2>
     <h2>@item.GenreName</h2>
     <h2>@item.AuthorFirstName @item.AuthorLastName</h2>
+
+
+    <a asp-controller="Books" asp-action="Update" asp-route-id="@item.Id" class="btn btn-info">Edit</a>
+
 }
+
 
 
 @foreach (var item in Model)
 {
     @if (item.BookCount > 0)
     {
-          <div class="modal fade" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="orderModalLabel" aria-hidden="true">
+        <div class="modal fade" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="orderModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -43,7 +48,7 @@
             </div>
         </div>
 
-<button class="btn btn-primary text-black font-weight-bold" data-toggle="modal" data-target="#orderModal">Order</button>
+        <button class="btn btn-primary text-black font-weight-bold" data-toggle="modal" data-target="#orderModal">Purchace</button>
 
     }
     @if (item.BookCount == 0)
@@ -51,8 +56,8 @@
         <h3 style="color: red">No Book Available</h3>
     }
 
-      
-    
+
+
 }
 
 <script>

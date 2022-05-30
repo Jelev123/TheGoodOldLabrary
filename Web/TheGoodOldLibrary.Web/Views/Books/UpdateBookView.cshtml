@@ -1,0 +1,28 @@
+﻿@using TheGoodOldLibrary.Data.Models.ViewModel.Book
+@model UpdateViewModel
+
+<form method="post" id="editForm">
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+     < <div class="form-group">
+        <label asp-for="AuthorId"></label>
+        <input asp-for="AuthorId" class="form-control" />
+
+    </div>
+    <div class="form-group">
+        <label asp-for="BookCount"></label>
+        <input asp-for="BookCount" class="form-control" />
+    </div>
+   
+
+    <div class="form-group">
+        <label asp-for="Image"></label>
+        <input asp-for="Image" class="form-control" />
+    </div>
+    <hr />
+    <input type="hidden" asp-for="BookId" />
+</form>
+
+<button type="submit" class="btn btn-success" data-toggle="modal" data-target="#modalEdit">Save changes</button>

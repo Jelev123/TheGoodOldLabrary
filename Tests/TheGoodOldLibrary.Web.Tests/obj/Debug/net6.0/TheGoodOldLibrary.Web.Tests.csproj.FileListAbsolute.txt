@@ -545,3 +545,4 @@ C:\Users\Owner\Desktop\Global Consulting\Tests\TheGoodOldLibrary.Web.Tests\obj\D
 C:\Users\Owner\Desktop\Global Consulting\Tests\TheGoodOldLibrary.Web.Tests\obj\Debug\net6.0\ref\TheGoodOldLibrary.Web.Tests.dll
 C:\Users\Owner\Desktop\Global Consulting\Tests\TheGoodOldLibrary.Web.Tests\bin\Debug\net6.0\TheGoodOldLibrary.Web.staticwebassets.runtime.json
 C:\Users\Owner\Desktop\Global Consulting\Tests\TheGoodOldLibrary.Web.Tests\bin\Debug\net6.0\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Owner\Desktop\Global Consulting\Tests\TheGoodOldLibrary.Web.Tests\obj\Debug\net6.0\TheGoodOldLibrary.Web.Tests.MvcApplicationPartsAssemblyInfo.cs

@@ -12,6 +12,8 @@
 
         public int BookId { get; set; }
 
+        public string BookName { get; set; }
+
         public int BookCount { get; set; }
 
         public int AuthorId { get; set; }

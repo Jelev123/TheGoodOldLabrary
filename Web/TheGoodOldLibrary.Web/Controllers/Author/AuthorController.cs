@@ -1,7 +1,8 @@
 ﻿namespace TheGoodOldLibrary.Web.Controllers.Author
 {
-    using Microsoft.AspNetCore.Mvc;
     using System.Threading.Tasks;
+
+    using Microsoft.AspNetCore.Mvc;
     using TheGoodOldLibrary.Data.Models.ViewModel.Author;
     using TheGoodOldLibrary.Services.Data.Author;
 

@@ -19,6 +19,23 @@
             this.authorRepository = authorRepository;
         }
 
+        public List<UpdateViewModel> ById<T>(int id)
+        {
+            var book = this.bookRepository.AllAsNoTracking()
+                   .Where(s => s.Id == id)
+                  .Select(s => new UpdateViewModel
+                  {
+                      AuthorId = s.AuthorId,
+                      Name = s.Name,
+                      GenreId = s.GenreId,
+                      Image = s.OriginalUrl,
+                      BookCount = s.BookCount,
+                      BookId = s.Id,
+                  }).ToList();
+
+            return book;
+        }
+
         public async Task CreateAsync(CreateBooksViewModel model)
         {
 
@@ -77,9 +94,9 @@
             return this.bookRepository.AllAsNoTracking().Count();
         }
 
-        public async Task UpdateAsync(UpdateViewModel model)
+        public async Task UpdateAsync(UpdateViewModel model, int id)
         {
-            var book = this.bookRepository.AllAsNoTracking().FirstOrDefault(s => s.Id == model.BookId);
+            var book = this.bookRepository.AllAsNoTracking().FirstOrDefault(s => s.Id == id);
             book.Name = model.Name;
             book.BookCount = model.BookCount;
             book.GenreId = model.GenreId;
