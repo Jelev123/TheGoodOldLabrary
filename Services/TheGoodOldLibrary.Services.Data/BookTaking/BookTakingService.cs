@@ -1,6 +1,5 @@
 ﻿namespace TheGoodOldLibrary.Services.Data.BookTaking
 {
-    using Microsoft.EntityFrameworkCore;
     using System;
     using System.Linq;
     using System.Threading.Tasks;
@@ -14,12 +13,10 @@
     {
         private readonly IDeletableEntityRepository<BookTaking> bookTakingRepository;
         private readonly IDeletableEntityRepository<Book> bookRepository;
-        private readonly ApplicationDbContext data;
 
-        public BookTakingService(IDeletableEntityRepository<BookTaking> bookTakingRepository, ApplicationDbContext data, IDeletableEntityRepository<Book> bookRepository)
+        public BookTakingService(IDeletableEntityRepository<BookTaking> bookTakingRepository, IDeletableEntityRepository<Book> bookRepository)
         {
             this.bookTakingRepository = bookTakingRepository;
-            this.data = data;
             this.bookRepository = bookRepository;
         }
 
