@@ -52,6 +52,26 @@
             await this.bookRepository.SaveChangesAsync();
         }
 
+        public async Task UpdateAsync(BookViewModel model, int id)
+        {
+            var book = this.bookRepository.AllAsNoTracking().FirstOrDefault(s => s.Id == id);
+            book.Name = model.Name;
+            book.BookCount = model.BookCount;
+            book.GenreId = model.GenreId;
+            book.AuthorId = model.AuthorId;
+            book.OriginalUrl = model.ImageUrl;
+
+            this.bookRepository.Update(book);
+            await this.bookRepository.SaveChangesAsync();
+        }
+
+        public async Task DeleteAsync(int id)
+        {
+            var book = this.bookRepository.AllAsNoTracking().FirstOrDefault(s => s.Id == id);
+            this.bookRepository.Delete(book);
+            await this.bookRepository.SaveChangesAsync();
+        }
+
         public IEnumerable<BookInListViewModel> GetAll<T>(int page, int itemsPerPage = 10)
         {
             return this.bookRepository.AllAsNoTracking()
@@ -94,17 +114,6 @@
             return this.bookRepository.AllAsNoTracking().Count();
         }
 
-        public async Task UpdateAsync(BookViewModel model, int id)
-        {
-            var book = this.bookRepository.AllAsNoTracking().FirstOrDefault(s => s.Id == id);
-            book.Name = model.Name;
-            book.BookCount = model.BookCount;
-            book.GenreId = model.GenreId;
-            book.AuthorId = model.AuthorId;
-            book.OriginalUrl = model.ImageUrl;
 
-            this.bookRepository.Update(book);
-            await this.bookRepository.SaveChangesAsync();
-        }
     }
 }

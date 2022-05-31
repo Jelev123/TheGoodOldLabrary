@@ -1,0 +1,60 @@
+﻿@using TheGoodOldLibrary.Data.Models.ViewModel.User
+@model IEnumerable<AllUsersViewModel>
+
+<div class="row">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+            </tr>
+        </thead>
+        @foreach (var user in this.Model)
+        {
+            <tbody>
+                <tr>
+                    <td>@user.Id</td>
+                    <td>@user.Name</td>
+
+                    <td>
+                        <button class="btn btn-danger text-black font-weight-bold" data-toggle="modal" data-target="#orderModal">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+
+        
+ 
+ 
+    <div class="modal fade" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="orderModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 style="color : green" class="modal-title" id="orderModalLabel">Delete User? - @user.Name</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="order-form" asp-controller="Users" asp-action="Delete" method="post">
+                        <div class="form-group">
+                        </div>
+                        <input type="hidden" value="@user.Id" name="bookId" />
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="complete-order-button">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    }
+      </table>
+
+</div>
+
+<script>
+    $('#complete-order-button').click(function() {
+        $('#order-form').submit();
+    });
+</script>

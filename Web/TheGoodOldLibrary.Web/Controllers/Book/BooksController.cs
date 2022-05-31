@@ -81,7 +81,7 @@
         public IActionResult Update(int id)
         {
             var inputModel = this.bookService.GetById(id);
-            inputModel.GenreItems = genreService.GetAllAsKeyValuePairs();
+            inputModel.GenreItems = this.genreService.GetAllAsKeyValuePairs();
             return this.View(inputModel);
         }
 
@@ -91,6 +91,13 @@
             await this.bookService.UpdateAsync(input, id);
 
             return this.RedirectToAction(nameof(this.GetById), new { id });
+        }
+
+        public async Task<IActionResult> Delete(int id)
+        {
+            await this.bookService.DeleteAsync(id);
+
+            return this.RedirectToAction("All");
         }
     }
 }
