@@ -21,6 +21,15 @@
 
         public async Task Create(TakingServiceModel takingServiceModel)
         {
+
+            var book = this.bookRepository.AllAsNoTracking()
+               .FirstOrDefault(s => s.Id == takingServiceModel.BookId);
+
+            if (book.BookCount == 0)
+            {
+                return;
+            }
+
             var taking = new BookTaking()
             {
                 Id = Guid.NewGuid().ToString(),
@@ -28,17 +37,7 @@
                 UserId = takingServiceModel.UserId,
             };
 
-            var book = this.bookRepository.AllAsNoTracking()
-                .FirstOrDefault(s => s.Id == takingServiceModel.BookId);
-
             book.BookCount -= 1;
-
-            if (book.BookCount <= 0)
-            {
-                book.BookCount = 0;
-                return;
-            }
-
             book.OrderedTimes += 1;
 
             this.bookRepository.Update(book);

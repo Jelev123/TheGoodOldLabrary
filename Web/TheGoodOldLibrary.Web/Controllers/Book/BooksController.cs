@@ -20,7 +20,6 @@
         private readonly IGenreService genreService;
         private readonly IAuthorService authorService;
         private readonly IBookTakingService takingService;
-        private readonly IDeletableEntityRepository<Book> bookRepository;
 
 
         public BooksController(IBookService bookService, IGenreService genreService, IAuthorService authorService, IBookTakingService takingService)
@@ -81,12 +80,13 @@
 
         public IActionResult Update(int id)
         {
-            var inputModel = this.bookService.ById<UpdateViewModel>(id);
+            var inputModel = this.bookService.GetById(id);
+            inputModel.GenreItems = genreService.GetAllAsKeyValuePairs();
             return this.View(inputModel);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Update(int id, UpdateViewModel input)
+        public async Task<IActionResult> Update(int id, BookViewModel input)
         {
             await this.bookService.UpdateAsync(input, id);
 

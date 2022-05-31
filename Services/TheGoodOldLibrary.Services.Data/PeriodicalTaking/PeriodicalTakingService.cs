@@ -21,6 +21,13 @@
 
         public async Task Create(TakingServiceModel takingServiceModel)
         {
+            var periodicals = this.periodicalRepository.AllAsNoTracking().FirstOrDefault(s => s.Id == takingServiceModel.PeriodicalId);
+
+            if (periodicals.PeriodicalCount == 0)
+            {
+                return;
+            }
+
             var periodical = new PeriodicalTaking
             {
                 Id = Guid.NewGuid().ToString(),
@@ -30,16 +37,7 @@
                 User = takingServiceModel.User,
             };
 
-            var periodicals = this.periodicalRepository.AllAsNoTracking().FirstOrDefault(s => s.Id == takingServiceModel.PeriodicalId);
-
             periodicals.PeriodicalCount -= 1;
-
-            if (periodicals.PeriodicalCount <= 0)
-            {
-                periodicals.PeriodicalCount = 0;
-                return;
-            }
-
             periodicals.OrderedTimes += 1;
 
             this.periodicalRepository.Update(periodicals);

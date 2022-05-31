@@ -1,5 +1,7 @@
 ﻿namespace TheGoodOldLibrary.Data.Models.ViewModel.Book
 {
+    using System.Collections.Generic;
+
     public class BookViewModel
     {
         public int Id { get; set; }
@@ -21,5 +23,8 @@
         public string AuthorLastName { get; set; }
 
         public string ImageUrl { get; set; }
+
+        public IEnumerable<KeyValuePair<string, string>> GenreItems { get; set; }
+
     }
 }

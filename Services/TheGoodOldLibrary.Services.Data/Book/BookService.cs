@@ -1,5 +1,6 @@
 ﻿namespace TheGoodOldLibrary.Services.Data.Book
 {
+    using AutoMapper;
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
@@ -19,19 +20,18 @@
             this.authorRepository = authorRepository;
         }
 
-        public List<UpdateViewModel> ById<T>(int id)
+        public UpdateViewModel ById<T>(int id)
         {
             var book = this.bookRepository.AllAsNoTracking()
                    .Where(s => s.Id == id)
-                  .Select(s => new UpdateViewModel
-                  {
-                      AuthorId = s.AuthorId,
-                      Name = s.Name,
-                      GenreId = s.GenreId,
-                      Image = s.OriginalUrl,
-                      BookCount = s.BookCount,
-                      BookId = s.Id,
-                  }).ToList();
+                   .Select(s => new UpdateViewModel
+                   {
+                       Name = s.Name,
+                       BookCount = s.BookCount,
+                       Image = s.OriginalUrl,
+                       AuthorId = s.AuthorId,
+                   })
+                  .FirstOrDefault();
 
             return book;
         }
@@ -69,7 +69,7 @@
                 }).ToList();
         }
 
-        public List<BookViewModel> GetById(int id)
+        public BookViewModel GetById(int id)
         {
             var book = this.bookRepository.AllAsNoTracking()
                    .Where(s => s.Id == id)
@@ -84,7 +84,7 @@
                       Id = s.Id,
                       ImageUrl = s.OriginalUrl,
                       BookCount = s.BookCount,
-                  }).ToList();
+                  }).FirstOrDefault();
 
             return book;
         }
@@ -94,15 +94,16 @@
             return this.bookRepository.AllAsNoTracking().Count();
         }
 
-        public async Task UpdateAsync(UpdateViewModel model, int id)
+        public async Task UpdateAsync(BookViewModel model, int id)
         {
             var book = this.bookRepository.AllAsNoTracking().FirstOrDefault(s => s.Id == id);
             book.Name = model.Name;
             book.BookCount = model.BookCount;
             book.GenreId = model.GenreId;
             book.AuthorId = model.AuthorId;
-            book.OriginalUrl = model.Image;
+            book.OriginalUrl = model.ImageUrl;
 
+            this.bookRepository.Update(book);
             await this.bookRepository.SaveChangesAsync();
         }
     }
