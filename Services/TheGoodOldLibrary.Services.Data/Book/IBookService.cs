@@ -14,6 +14,8 @@
 
         IEnumerable<T> GetAll<T>(int page, int itemsPerPage = 5);
 
+        IEnumerable<T> GetMostOrdered<T>();
+
         BookViewModel GetById<T>(int id);
 
         int GetCount();

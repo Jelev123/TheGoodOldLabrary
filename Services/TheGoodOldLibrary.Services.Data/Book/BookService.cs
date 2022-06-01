@@ -12,12 +12,10 @@
     public class BookService : IBookService
     {
         private readonly IDeletableEntityRepository<Book> bookRepository;
-        private readonly IDeletableEntityRepository<Author> authorRepository;
 
-        public BookService(IDeletableEntityRepository<Book> bookRepository, IDeletableEntityRepository<Author> authorRepository)
+        public BookService(IDeletableEntityRepository<Book> bookRepository)
         {
             this.bookRepository = bookRepository;
-            this.authorRepository = authorRepository;
         }
 
         public async Task CreateAsync(CreateBooksViewModel model)
@@ -98,6 +96,24 @@
             return this.bookRepository.AllAsNoTracking().Count();
         }
 
+        public IEnumerable<T> GetMostOrdered<T>()
+        {
+            var ordered = (IEnumerable<T>)this.bookRepository.AllAsNoTracking()
+                 .Where(s => s.OrderedTimes > 5)
+                 .Select(s => new BookInListViewModel
+                 {
+                     Id = s.Id,
+                     BooksCount = s.BookCount,
+                     Name = s.Name,
+                     GenreName = s.Genre.Name,
+                     GenreId = s.GenreId,
+                     AuthorId = s.AuthorId,
+                     OrderedTimes = s.OrderedTimes,
+                     Images = s.OriginalUrl,
+                 })
+                 .ToList();
 
+            return ordered;
+        }
     }
 }

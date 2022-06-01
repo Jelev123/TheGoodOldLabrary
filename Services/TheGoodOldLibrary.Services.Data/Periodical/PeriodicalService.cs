@@ -88,7 +88,5 @@
         {
             return this.periodicalRepository.AllAsNoTracking().Count();
         }
-
-
     }
 }

@@ -46,9 +46,15 @@
                     </div>
                 </div>
             </div>
-        </div>
+    </div>
 
+    if (User.Identity.IsAuthenticated)
+    {
         <button class="btn btn-primary text-black font-weight-bold" data-toggle="modal" data-target="#orderModal">Purchace</button>
+        
+    }
+   
+
 
     @if (Model.BookCount == 0)
     {

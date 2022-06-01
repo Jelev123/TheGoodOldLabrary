@@ -1,12 +1,9 @@
 ﻿namespace TheGoodOldLibrary.Web.Controllers.Book
 {
-    using System.Linq;
     using System.Security.Claims;
     using System.Threading.Tasks;
 
     using Microsoft.AspNetCore.Mvc;
-    using TheGoodOldLibrary.Data.Common.Repositories;
-    using TheGoodOldLibrary.Data.Models;
     using TheGoodOldLibrary.Data.Models.ViewModel.Book;
     using TheGoodOldLibrary.Data.Models.ViewModel.BookTaking;
     using TheGoodOldLibrary.Services.Data.Author;
@@ -20,7 +17,6 @@
         private readonly IGenreService genreService;
         private readonly IAuthorService authorService;
         private readonly IBookTakingService takingService;
-
 
         public BooksController(IBookService bookService, IGenreService genreService, IAuthorService authorService, IBookTakingService takingService)
         {
@@ -98,6 +94,24 @@
             await this.takingService.Create(takingServiceModel);
 
             return this.Redirect("All");
+        }
+
+        public async Task<IActionResult> GetMostOrdered(int id = 1)
+        {
+            if (id <= 0)
+            {
+                return this.NotFound();
+            }
+
+            const int ItemsPerPage = 9;
+
+            return this.View(new BookListViewModel()
+            {
+                ItemsPerPage = ItemsPerPage,
+                PageNumber = id,
+                BooksCount = this.bookService.GetCount(),
+                Purcahced = this.bookService.GetMostOrdered<BookInListViewModel>(),
+            });
         }
     }
 }

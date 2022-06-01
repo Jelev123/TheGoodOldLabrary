@@ -16,5 +16,6 @@
 
         public int BooksCount { get; set; }
 
+        public int OrderedTimes { get; set; }
     }
 }

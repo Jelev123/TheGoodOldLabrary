@@ -2,31 +2,28 @@
 {
     using System.Diagnostics;
     using System.Linq;
+
     using Microsoft.AspNetCore.Mvc;
-    using TheGoodOldLibrary.Data;
     using TheGoodOldLibrary.Data.Common.Repositories;
     using TheGoodOldLibrary.Data.Models.ViewModel.Book;
     using TheGoodOldLibrary.Data.Models.ViewModel.Home;
     using TheGoodOldLibrary.Data.Models.ViewModel.Periodical;
-    using TheGoodOldLibrary.Services.Data.Book;
     using TheGoodOldLibrary.Web.ViewModels;
 
     public class HomeController : BaseController
     {
-        private readonly ApplicationDbContext data;
-        private readonly IBookService bookService;
         private readonly IDeletableEntityRepository<Data.Models.Book> bookRepository;
         private readonly IDeletableEntityRepository<Data.Models.Periodical> periodicalRepository;
+        private readonly IRepository<Data.Models.ApplicationUser> userlRepository;
 
-
-        public HomeController(IBookService bookService, IDeletableEntityRepository<Data.Models.Book> bookRepository,
-            IDeletableEntityRepository<Data.Models.Periodical> periodicalRepository,
-            ApplicationDbContext data)
+        public HomeController(
+                              IDeletableEntityRepository<Data.Models.Book> bookRepository,
+                              IDeletableEntityRepository<Data.Models.Periodical> periodicalRepository,
+                              IRepository<Data.Models.ApplicationUser> userlRepository)
         {
-            this.bookService = bookService;
             this.bookRepository = bookRepository;
             this.periodicalRepository = periodicalRepository;
-            this.data = data;
+            this.userlRepository = userlRepository;
         }
 
         public IActionResult Index()
@@ -39,7 +36,6 @@
                 Images = s.OriginalUrl,
             }).ToList();
 
-
             var periodicalViewModel = this.periodicalRepository.All().Select(s => new PeriodicalInListViewModel
             {
                 Name = s.Name,
@@ -48,10 +44,9 @@
                 Id = s.Id,
             }).ToList();
 
-            var usersCount = this.data.Users.Count();
-            var booksCount = this.data.Books.Count();
-            var periodicalsCount = this.data.Periodicals.Count();
-
+            var usersCount = this.userlRepository.All().Count();
+            var booksCount = this.bookRepository.All().Count();
+            var periodicalsCount = this.periodicalRepository.All().Count();
 
             return this.View(new HomeViewModel()
             {

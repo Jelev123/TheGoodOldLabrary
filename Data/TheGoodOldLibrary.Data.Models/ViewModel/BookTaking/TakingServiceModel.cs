@@ -18,5 +18,6 @@
 
         public ApplicationUser User { get; set; }
 
+        public int OrderedTimes { get; set; }
     }
 }
