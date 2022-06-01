@@ -10,6 +10,7 @@
     using TheGoodOldLibrary.Services.Data.Book;
     using TheGoodOldLibrary.Services.Data.BookTaking;
     using TheGoodOldLibrary.Services.Data.Genre;
+    using TheGoodOldLibrary.Services.Data.Library;
 
     public class BooksController : Controller
     {
@@ -17,13 +18,15 @@
         private readonly IGenreService genreService;
         private readonly IAuthorService authorService;
         private readonly IBookTakingService takingService;
+        private readonly ILabraryService labraryService;
 
-        public BooksController(IBookService bookService, IGenreService genreService, IAuthorService authorService, IBookTakingService takingService)
+        public BooksController(IBookService bookService, IGenreService genreService, IAuthorService authorService, IBookTakingService takingService, ILabraryService labraryService)
         {
             this.bookService = bookService;
             this.genreService = genreService;
             this.authorService = authorService;
             this.takingService = takingService;
+            this.labraryService = labraryService;
         }
 
         public IActionResult Create()
@@ -59,7 +62,7 @@
 
         public async Task<IActionResult> Delete(int id)
         {
-            await this.bookService.DeleteAsync(id);
+            await this.labraryService.DeleteAsync(id);
 
             return this.RedirectToAction("All");
         }
@@ -77,8 +80,8 @@
             {
                 ItemsPerPage = ItemsPerPage,
                 PageNumber = id,
-                BooksCount = this.bookService.GetCount(),
-                Books = this.bookService.GetAll<BookInListViewModel>(id, 100),
+                BooksCount = this.labraryService.GetCount(),
+                Books = this.labraryService.GetAll<BookInListViewModel>(id, 100),
             });
         }
 
@@ -109,8 +112,8 @@
             {
                 ItemsPerPage = ItemsPerPage,
                 PageNumber = id,
-                BooksCount = this.bookService.GetCount(),
-                Purcahced = this.bookService.GetMostOrdered<BookInListViewModel>(),
+                BooksCount = this.labraryService.GetCount(),
+                Purcahced = this.labraryService.GetMostOrdered<BookInListViewModel>(),
             });
         }
     }

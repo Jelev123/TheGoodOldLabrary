@@ -7,8 +7,9 @@
     using TheGoodOldLibrary.Data.Common.Repositories;
     using TheGoodOldLibrary.Data.Models;
     using TheGoodOldLibrary.Data.Models.ViewModel.Periodical;
+    using TheGoodOldLibrary.Services.Data.Library;
 
-    public class PeriodicalService : IPeriodicalService
+    public class PeriodicalService : IPeriodicalService, ILabraryService
     {
         private readonly IDeletableEntityRepository<Periodical> periodicalRepository;
 
@@ -52,9 +53,9 @@
             await this.periodicalRepository.SaveChangesAsync();
         }
 
-        public IEnumerable<PeriodicalInListViewModel> GetAll<T>(int page, int itemsPerPage = 5)
+        public IEnumerable<T> GetAll<T>(int page, int itemsPerPage = 5)
         {
-            return this.periodicalRepository.AllAsNoTracking()
+            return (IEnumerable<T>)this.periodicalRepository.AllAsNoTracking()
                .OrderBy(x => x.Name)
                 .Skip((page - 1) * itemsPerPage).Take(itemsPerPage)
                 .Select(x => new PeriodicalInListViewModel
@@ -87,6 +88,11 @@
         public int GetCount()
         {
             return this.periodicalRepository.AllAsNoTracking().Count();
+        }
+
+        public IEnumerable<T> GetMostOrdered<T>()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

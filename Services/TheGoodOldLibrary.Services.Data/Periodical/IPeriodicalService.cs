@@ -11,13 +11,6 @@
 
         Task UpdateAsync(PeriodicalInListViewModel model, int id);
 
-        Task DeleteAsync(int id);
-
-        IEnumerable<PeriodicalInListViewModel> GetAll<T>(int page, int itemsPerPage = 5);
-
         PeriodicalInListViewModel GetById<T>(int id);
-
-        int GetCount();
-
     }
 }

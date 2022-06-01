@@ -1,6 +1,5 @@
 ﻿namespace TheGoodOldLibrary.Services.Data.Book
 {
-    using AutoMapper;
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
@@ -8,8 +7,9 @@
     using TheGoodOldLibrary.Data.Common.Repositories;
     using TheGoodOldLibrary.Data.Models;
     using TheGoodOldLibrary.Data.Models.ViewModel.Book;
+    using TheGoodOldLibrary.Services.Data.Library;
 
-    public class BookService : IBookService
+    public class BookService : IBookService, ILabraryService
     {
         private readonly IDeletableEntityRepository<Book> bookRepository;
 

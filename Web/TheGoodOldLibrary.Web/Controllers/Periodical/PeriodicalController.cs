@@ -7,6 +7,7 @@
     using TheGoodOldLibrary.Data.Models.ViewModel.BookTaking;
     using TheGoodOldLibrary.Data.Models.ViewModel.Periodical;
     using TheGoodOldLibrary.Services.Data.Author;
+    using TheGoodOldLibrary.Services.Data.Library;
     using TheGoodOldLibrary.Services.Data.Periodical;
     using TheGoodOldLibrary.Services.Data.PeriodicalTaking;
     using TheGoodOldLibrary.Services.Data.Type;
@@ -16,14 +17,16 @@
         private readonly IPeriodicalService periodicalService;
         private readonly IAuthorService authorService;
         private readonly ITypeService typeService;
+        private readonly ILabraryService labraryService;
         private readonly IPeriodicalTakingService takingPeriodicalService;
 
-        public PeriodicalController(IPeriodicalService periodicalService, ITypeService typeService, IAuthorService authorService, IPeriodicalTakingService takingPeriodicalService)
+        public PeriodicalController(IPeriodicalService periodicalService, ITypeService typeService, IAuthorService authorService, IPeriodicalTakingService takingPeriodicalService, ILabraryService labraryService)
         {
             this.periodicalService = periodicalService;
             this.typeService = typeService;
             this.authorService = authorService;
             this.takingPeriodicalService = takingPeriodicalService;
+            this.labraryService = labraryService;
         }
 
         public IActionResult Create()
@@ -61,7 +64,7 @@
 
         public async Task<IActionResult> Delete(int id)
         {
-            await this.periodicalService.DeleteAsync(id);
+            await this.labraryService.DeleteAsync(id);
 
             return this.RedirectToAction("All");
         }
@@ -75,14 +78,13 @@
 
             const int ItemsPerPage = 9;
 
-            var viewModel = new PeriodicalListViewModel()
+            return this.View(new PeriodicalListViewModel()
             {
                 ItemsPerPage = ItemsPerPage,
                 PageNumber = id,
-                PeriodicalsCount = this.periodicalService.GetCount(),
-                Periodicals = this.periodicalService.GetAll<PeriodicalInListViewModel>(id, 100),
-            };
-            return this.View(viewModel);
+                PeriodicalsCount = this.labraryService.GetCount(),
+                Periodicals = this.labraryService.GetAll<PeriodicalInListViewModel>(id, 100),
+            });
         }
 
         public IActionResult GetById(int id)
