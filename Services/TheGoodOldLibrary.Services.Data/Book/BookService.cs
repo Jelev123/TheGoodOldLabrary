@@ -54,7 +54,7 @@
             await this.bookRepository.SaveChangesAsync();
         }
 
-        public IEnumerable<T> GetAll<T>(int page, int itemsPerPage = 10)
+        public IEnumerable<T> GetAll<T>(int page, int itemsPerPage = 6)
         {
             return (IEnumerable<T>)this.bookRepository.AllAsNoTracking()
                 .OrderBy(x => x.Name)

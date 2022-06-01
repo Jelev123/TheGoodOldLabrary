@@ -74,14 +74,14 @@
                 return this.NotFound();
             }
 
-            const int ItemsPerPage = 9;
+            const int ItemsPerPage = 6;
 
             return this.View(new BookListViewModel()
             {
                 ItemsPerPage = ItemsPerPage,
                 PageNumber = id,
                 BooksCount = this.labraryService.GetCount(),
-                Books = this.labraryService.GetAll<BookInListViewModel>(id, 100),
+                Books = this.labraryService.GetAll<BookInListViewModel>(id, ItemsPerPage),
             });
         }
 

@@ -9,7 +9,7 @@
 
         IEnumerable<T> GetMostOrdered<T>();
 
-        IEnumerable<T> GetAll<T>(int page, int itemsPerPage = 5);
+        IEnumerable<T> GetAll<T>(int page, int itemsPerPage = 6);
 
         int GetCount();
     }
