@@ -1,30 +1,30 @@
 ﻿@using TheGoodOldLibrary.Data.Models.ViewModel.Periodical
-@model List<PeriodicalInListViewModel>
+@model PeriodicalInListViewModel
 
 
 
-@foreach (var item in Model)
-{
 
-    <a href="@item.Image">
-        <img src="@item.Image" width="400" alt="@item.Name">
+    <a href="@Model.ImageUrl">
+        <img src="@Model.ImageUrl" width="400" alt="@Model.Name">
     </a>
-    <h2>@item.Name</h2>
-    <h2>@item.TypeName</h2>
-
-}
+    <h2>@Model.Name</h2>
+    <h2>@Model.TypeName</h2>
 
 
 
-@foreach (var item in Model)
-{
-    @if (item.PeriodicalCount > 0)
+    <a asp-controller="Periodical" asp-action="Update" asp-route-id="@Model.Id" class="btn btn-info">Edit</a>
+    <a asp-controller="Periodical" asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-info">Delete</a>
+
+
+
+
+    @if (Model.PeriodicalCount > 0)
     {
         <div class="modal fade" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="orderModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 style="color : green" class="modal-title" id="orderModalLabel">Order - @item.Name</h5>
+                        <h5 style="color : green" class="modal-title" id="orderModalLabel">Order - @Model.Name</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -33,8 +33,8 @@
                         <form id="order-form" asp-controller="Periodical" asp-action="PeriodicalTaking" method="post">
                             <div class="form-group">
                             </div>
-                            <input type="hidden" value="@item.Id" name="periodicalId" />
-                            <input type="hidden" value="@item.BookStatusId" name="periodicalId" />
+                            <input type="hidden" value="@Model.Id" name="periodicalId" />
+                            <input type="hidden" value="@Model.BookStatusId" name="periodicalId" />
 
                         </form>
                     </div>
@@ -49,13 +49,13 @@
         <button class="btn btn-primary text-black font-weight-bold" data-toggle="modal" data-target="#orderModal">Purchace</button>
 
     }
-     @if (item.PeriodicalCount == 0)
+     @if (Model.PeriodicalCount == 0)
         {
             <h3 style="color: red">No Periodical Available</h3>
 
         }
 
-}
+
 
 <script>
     $('#complete-order-button').click(function() {

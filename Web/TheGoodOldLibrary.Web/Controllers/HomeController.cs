@@ -44,7 +44,7 @@
             {
                 Name = s.Name,
                 TypeName = s.Type.Name,
-                Image = s.ImageUrl,
+                ImageUrl = s.ImageUrl,
                 Id = s.Id,
             }).ToList();
 

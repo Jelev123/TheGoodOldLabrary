@@ -46,6 +46,28 @@
             return this.RedirectToAction("All");
         }
 
+        public IActionResult Update(int id)
+        {
+            var inputModel = this.bookService.GetById<BookViewModel>(id);
+            inputModel.GenreItems = this.genreService.GetAllAsKeyValuePairs();
+            return this.View(inputModel);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Update(int id, BookViewModel input)
+        {
+            await this.bookService.UpdateAsync(input, id);
+
+            return this.RedirectToAction(nameof(this.GetById), new { id });
+        }
+
+        public async Task<IActionResult> Delete(int id)
+        {
+            await this.bookService.DeleteAsync(id);
+
+            return this.RedirectToAction("All");
+        }
+
         public async Task<IActionResult> All(int id = 1)
         {
             if (id <= 0)
@@ -66,7 +88,7 @@
 
         public IActionResult GetById(int id)
         {
-            return this.View(this.bookService.GetById(id));
+            return this.View(this.bookService.GetById<BookViewModel>(id));
         }
 
         [HttpPost]
@@ -76,28 +98,6 @@
             await this.takingService.Create(takingServiceModel);
 
             return this.Redirect("All");
-        }
-
-        public IActionResult Update(int id)
-        {
-            var inputModel = this.bookService.GetById(id);
-            inputModel.GenreItems = this.genreService.GetAllAsKeyValuePairs();
-            return this.View(inputModel);
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> Update(int id, BookViewModel input)
-        {
-            await this.bookService.UpdateAsync(input, id);
-
-            return this.RedirectToAction(nameof(this.GetById), new { id });
-        }
-
-        public async Task<IActionResult> Delete(int id)
-        {
-            await this.bookService.DeleteAsync(id);
-
-            return this.RedirectToAction("All");
         }
     }
 }

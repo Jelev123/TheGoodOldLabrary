@@ -44,6 +44,28 @@
             return this.RedirectToAction("All");
         }
 
+        public IActionResult Update(int id)
+        {
+            var inputModel = this.periodicalService.GetById<PeriodicalInListViewModel>(id);
+            inputModel.TypeItems = this.typeService.GetAllAsKeyValuePairs();
+            return this.View(inputModel);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Update(int id, PeriodicalInListViewModel input)
+        {
+            await this.periodicalService.UpdateAsync(input, id);
+
+            return this.RedirectToAction(nameof(this.GetById), new { id });
+        }
+
+        public async Task<IActionResult> Delete(int id)
+        {
+            await this.periodicalService.DeleteAsync(id);
+
+            return this.RedirectToAction("All");
+        }
+
         public async Task<IActionResult> All(int id = 1)
         {
             if (id <= 0)
@@ -65,7 +87,7 @@
 
         public IActionResult GetById(int id)
         {
-            return this.View(this.periodicalService.GetById(id));
+            return this.View(this.periodicalService.GetById<PeriodicalInListViewModel>(id));
         }
 
         [HttpPost]

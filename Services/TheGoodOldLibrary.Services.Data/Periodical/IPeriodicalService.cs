@@ -9,9 +9,13 @@
     {
         Task CreateAsync(CreatePeridiocalViewModel model);
 
+        Task UpdateAsync(PeriodicalInListViewModel model, int id);
+
+        Task DeleteAsync(int id);
+
         IEnumerable<PeriodicalInListViewModel> GetAll<T>(int page, int itemsPerPage = 5);
 
-        List<PeriodicalInListViewModel> GetById(int id);
+        PeriodicalInListViewModel GetById<T>(int id);
 
         int GetCount();
 

@@ -20,22 +20,6 @@
             this.authorRepository = authorRepository;
         }
 
-        public UpdateViewModel ById<T>(int id)
-        {
-            var book = this.bookRepository.AllAsNoTracking()
-                   .Where(s => s.Id == id)
-                   .Select(s => new UpdateViewModel
-                   {
-                       Name = s.Name,
-                       BookCount = s.BookCount,
-                       Image = s.OriginalUrl,
-                       AuthorId = s.AuthorId,
-                   })
-                  .FirstOrDefault();
-
-            return book;
-        }
-
         public async Task CreateAsync(CreateBooksViewModel model)
         {
 
@@ -72,9 +56,9 @@
             await this.bookRepository.SaveChangesAsync();
         }
 
-        public IEnumerable<BookInListViewModel> GetAll<T>(int page, int itemsPerPage = 10)
+        public IEnumerable<T> GetAll<T>(int page, int itemsPerPage = 10)
         {
-            return this.bookRepository.AllAsNoTracking()
+            return (IEnumerable<T>)this.bookRepository.AllAsNoTracking()
                 .OrderBy(x => x.Name)
                 .Skip((page - 1) * itemsPerPage).Take(itemsPerPage)
                 .Select(x => new BookInListViewModel
@@ -89,7 +73,7 @@
                 }).ToList();
         }
 
-        public BookViewModel GetById(int id)
+        public BookViewModel GetById<T>(int id)
         {
             var book = this.bookRepository.AllAsNoTracking()
                    .Where(s => s.Id == id)

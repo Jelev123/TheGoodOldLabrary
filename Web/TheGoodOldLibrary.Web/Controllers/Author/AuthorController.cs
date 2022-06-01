@@ -29,7 +29,6 @@
             return this.Redirect("/");
         }
 
-   
         public async Task<IActionResult> AllAuthors(AllAuthorsViewModel model)
         {
             var all = this.authorService.GetAll();
