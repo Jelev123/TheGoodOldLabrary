@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
     <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.312" PrivateAssets="all">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
@@ -23,7 +24,6 @@
     <ProjectReference Include="..\..\Data\TheGoodOldLibrary.Data.Models\TheGoodOldLibrary.Data.Models.csproj" />
     <ProjectReference Include="..\..\Data\TheGoodOldLibrary.Data\TheGoodOldLibrary.Data.csproj" />
     <ProjectReference Include="..\..\Web\TheGoodOldLibrary.Web.ViewModels\TheGoodOldLibrary.Web.ViewModels.csproj" />
-    <ProjectReference Include="..\TheGoodOldLibrary.Services.Mapping\TheGoodOldLibrary.Services.Mapping.csproj" />
   </ItemGroup>
 
 </Project>

@@ -8,7 +8,5 @@
     {
         public virtual IEnumerable<BookInListViewModel> Books { get; set; }
 
-        public virtual IEnumerable<BookInListViewModel> Purcahced { get; set; }
-
     }
 }

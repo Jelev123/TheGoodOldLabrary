@@ -104,9 +104,6 @@
             "projectReferences": {
               "C:\\Users\\Owner\\Desktop\\Global Consulting\\Data\\TheGoodOldLibrary.Data.Common\\TheGoodOldLibrary.Data.Common.csproj": {
                 "projectPath": "C:\\Users\\Owner\\Desktop\\Global Consulting\\Data\\TheGoodOldLibrary.Data.Common\\TheGoodOldLibrary.Data.Common.csproj"
-              },
-              "C:\\Users\\Owner\\Desktop\\Global Consulting\\Services\\TheGoodOldLibrary.Services.Mapping\\TheGoodOldLibrary.Services.Mapping.csproj": {
-                "projectPath": "C:\\Users\\Owner\\Desktop\\Global Consulting\\Services\\TheGoodOldLibrary.Services.Mapping\\TheGoodOldLibrary.Services.Mapping.csproj"
               }
             }
           }
@@ -292,9 +289,6 @@
               "C:\\Users\\Owner\\Desktop\\Global Consulting\\Data\\TheGoodOldLibrary.Data\\TheGoodOldLibrary.Data.csproj": {
                 "projectPath": "C:\\Users\\Owner\\Desktop\\Global Consulting\\Data\\TheGoodOldLibrary.Data\\TheGoodOldLibrary.Data.csproj"
               },
-              "C:\\Users\\Owner\\Desktop\\Global Consulting\\Services\\TheGoodOldLibrary.Services.Mapping\\TheGoodOldLibrary.Services.Mapping.csproj": {
-                "projectPath": "C:\\Users\\Owner\\Desktop\\Global Consulting\\Services\\TheGoodOldLibrary.Services.Mapping\\TheGoodOldLibrary.Services.Mapping.csproj"
-              },
               "C:\\Users\\Owner\\Desktop\\Global Consulting\\Web\\TheGoodOldLibrary.Web.ViewModels\\TheGoodOldLibrary.Web.ViewModels.csproj": {
                 "projectPath": "C:\\Users\\Owner\\Desktop\\Global Consulting\\Web\\TheGoodOldLibrary.Web.ViewModels\\TheGoodOldLibrary.Web.ViewModels.csproj"
               }
@@ -311,75 +305,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
-            "StyleCop.Analyzers": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
-              "suppressParent": "All",
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
-              "version": "[1.2.0-beta.312, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\Owner\\Desktop\\Global Consulting\\Services\\TheGoodOldLibrary.Services.Mapping\\TheGoodOldLibrary.Services.Mapping.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\Owner\\Desktop\\Global Consulting\\Services\\TheGoodOldLibrary.Services.Mapping\\TheGoodOldLibrary.Services.Mapping.csproj",
-        "projectName": "TheGoodOldLibrary.Services.Mapping",
-        "projectPath": "C:\\Users\\Owner\\Desktop\\Global Consulting\\Services\\TheGoodOldLibrary.Services.Mapping\\TheGoodOldLibrary.Services.Mapping.csproj",
-        "packagesPath": "C:\\Users\\Owner\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Owner\\Desktop\\Global Consulting\\Services\\TheGoodOldLibrary.Services.Mapping\\obj\\",
-        "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
-        "configFilePaths": [
-          "C:\\Users\\Owner\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net6.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
-            "projectReferences": {}
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
-          "dependencies": {
-            "AutoMapper": {
-              "target": "Package",
-              "version": "[10.1.1, )"
+              "version": "[11.0.0, )"
             },
             "StyleCop.Analyzers": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers",
@@ -706,9 +634,6 @@
               "C:\\Users\\Owner\\Desktop\\Global Consulting\\Data\\TheGoodOldLibrary.Data.Models\\TheGoodOldLibrary.Data.Models.csproj": {
                 "projectPath": "C:\\Users\\Owner\\Desktop\\Global Consulting\\Data\\TheGoodOldLibrary.Data.Models\\TheGoodOldLibrary.Data.Models.csproj"
               },
-              "C:\\Users\\Owner\\Desktop\\Global Consulting\\Services\\TheGoodOldLibrary.Services.Mapping\\TheGoodOldLibrary.Services.Mapping.csproj": {
-                "projectPath": "C:\\Users\\Owner\\Desktop\\Global Consulting\\Services\\TheGoodOldLibrary.Services.Mapping\\TheGoodOldLibrary.Services.Mapping.csproj"
-              },
               "C:\\Users\\Owner\\Desktop\\Global Consulting\\Services\\TheGoodOldLibrary.Services\\TheGoodOldLibrary.Services.csproj": {
                 "projectPath": "C:\\Users\\Owner\\Desktop\\Global Consulting\\Services\\TheGoodOldLibrary.Services\\TheGoodOldLibrary.Services.csproj"
               }
@@ -788,9 +713,6 @@
               "C:\\Users\\Owner\\Desktop\\Global Consulting\\Services\\TheGoodOldLibrary.Services.Data\\TheGoodOldLibrary.Services.Data.csproj": {
                 "projectPath": "C:\\Users\\Owner\\Desktop\\Global Consulting\\Services\\TheGoodOldLibrary.Services.Data\\TheGoodOldLibrary.Services.Data.csproj"
               },
-              "C:\\Users\\Owner\\Desktop\\Global Consulting\\Services\\TheGoodOldLibrary.Services.Mapping\\TheGoodOldLibrary.Services.Mapping.csproj": {
-                "projectPath": "C:\\Users\\Owner\\Desktop\\Global Consulting\\Services\\TheGoodOldLibrary.Services.Mapping\\TheGoodOldLibrary.Services.Mapping.csproj"
-              },
               "C:\\Users\\Owner\\Desktop\\Global Consulting\\Services\\TheGoodOldLibrary.Services.Messaging\\TheGoodOldLibrary.Services.Messaging.csproj": {
                 "projectPath": "C:\\Users\\Owner\\Desktop\\Global Consulting\\Services\\TheGoodOldLibrary.Services.Messaging\\TheGoodOldLibrary.Services.Messaging.csproj"
               },
@@ -819,6 +741,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[11.0.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
             "BuildBundlerMinifier": {
               "target": "Package",
               "version": "[3.2.449, )"

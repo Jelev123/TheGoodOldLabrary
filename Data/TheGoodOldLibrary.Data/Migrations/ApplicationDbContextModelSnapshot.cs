@@ -421,9 +421,6 @@ namespace TheGoodOldLibrary.Data.Migrations
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("ImageUrl")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
@@ -435,6 +432,9 @@ namespace TheGoodOldLibrary.Data.Migrations
 
                     b.Property<int>("OrderedTimes")
                         .HasColumnType("int");
+
+                    b.Property<string>("OriginalUrl")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("PeriodicalCount")
                         .HasColumnType("int");

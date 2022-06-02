@@ -113,7 +113,7 @@
                 ItemsPerPage = ItemsPerPage,
                 PageNumber = id,
                 BooksCount = this.labraryService.GetCount(),
-                Purcahced = this.labraryService.GetMostOrdered<BookInListViewModel>(),
+                Books = this.labraryService.GetMostOrdered<BookInListViewModel>(),
             });
         }
     }

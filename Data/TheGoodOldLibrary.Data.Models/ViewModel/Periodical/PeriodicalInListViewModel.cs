@@ -2,7 +2,7 @@
 {
     using System.Collections.Generic;
 
-    public class PeriodicalInListViewModel : PeriodicalTaking
+    public class PeriodicalInListViewModel
     {
         public int Id { get; set; }
 
@@ -14,11 +14,13 @@
 
         public int AuthorId { get; set; }
 
-        public string ImageUrl { get; set; }
+        public string OriginalUrl { get; set; }
 
         public int PeriodicalCount { get; set; }
 
         public int BookStatusId { get; set; }
+
+        public int OrderedTimes { get; set; }
 
         public IEnumerable<KeyValuePair<string, string>> TypeItems { get; set; }
 

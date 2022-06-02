@@ -53,14 +53,12 @@ C:\Users\Owner\Desktop\Global Consulting\Tests\Sandbox\bin\Debug\net6.0\TheGoodO
 C:\Users\Owner\Desktop\Global Consulting\Tests\Sandbox\bin\Debug\net6.0\TheGoodOldLibrary.Data.Models.dll
 C:\Users\Owner\Desktop\Global Consulting\Tests\Sandbox\bin\Debug\net6.0\TheGoodOldLibrary.Services.Data.dll
 C:\Users\Owner\Desktop\Global Consulting\Tests\Sandbox\bin\Debug\net6.0\TheGoodOldLibrary.Services.dll
-C:\Users\Owner\Desktop\Global Consulting\Tests\Sandbox\bin\Debug\net6.0\TheGoodOldLibrary.Services.Mapping.dll
 C:\Users\Owner\Desktop\Global Consulting\Tests\Sandbox\bin\Debug\net6.0\TheGoodOldLibrary.Services.Messaging.dll
 C:\Users\Owner\Desktop\Global Consulting\Tests\Sandbox\bin\Debug\net6.0\TheGoodOldLibrary.Common.pdb
 C:\Users\Owner\Desktop\Global Consulting\Tests\Sandbox\bin\Debug\net6.0\TheGoodOldLibrary.Data.Common.pdb
 C:\Users\Owner\Desktop\Global Consulting\Tests\Sandbox\bin\Debug\net6.0\TheGoodOldLibrary.Data.Models.pdb
 C:\Users\Owner\Desktop\Global Consulting\Tests\Sandbox\bin\Debug\net6.0\TheGoodOldLibrary.Data.pdb
 C:\Users\Owner\Desktop\Global Consulting\Tests\Sandbox\bin\Debug\net6.0\TheGoodOldLibrary.Services.Data.pdb
-C:\Users\Owner\Desktop\Global Consulting\Tests\Sandbox\bin\Debug\net6.0\TheGoodOldLibrary.Services.Mapping.pdb
 C:\Users\Owner\Desktop\Global Consulting\Tests\Sandbox\bin\Debug\net6.0\TheGoodOldLibrary.Services.Messaging.pdb
 C:\Users\Owner\Desktop\Global Consulting\Tests\Sandbox\bin\Debug\net6.0\TheGoodOldLibrary.Services.pdb
 C:\Users\Owner\Desktop\Global Consulting\Tests\Sandbox\obj\Debug\net6.0\Sandbox.csproj.AssemblyReference.cache
@@ -76,3 +74,4 @@ C:\Users\Owner\Desktop\Global Consulting\Tests\Sandbox\obj\Debug\net6.0\Sandbox.
 C:\Users\Owner\Desktop\Global Consulting\Tests\Sandbox\obj\Debug\net6.0\ref\Sandbox.dll
 C:\Users\Owner\Desktop\Global Consulting\Tests\Sandbox\bin\Debug\net6.0\TheGoodOldLibrary.Web.ViewModels.dll
 C:\Users\Owner\Desktop\Global Consulting\Tests\Sandbox\bin\Debug\net6.0\TheGoodOldLibrary.Web.ViewModels.pdb
+C:\Users\Owner\Desktop\Global Consulting\Tests\Sandbox\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

@@ -19,7 +19,7 @@
 
         public int PeriodicalCount { get; set; }
 
-        public string Image { get; set; }
+        public string OriginalUrl { get; set; }
 
         public IEnumerable<KeyValuePair<string, string>> TypeItems { get; set; }
 

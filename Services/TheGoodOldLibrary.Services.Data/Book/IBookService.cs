@@ -10,6 +10,6 @@
 
         Task UpdateAsync(BookViewModel model, int id);
 
-        BookViewModel GetById<T>(int id);
+        T GetById<T>(int id);
     }
 }

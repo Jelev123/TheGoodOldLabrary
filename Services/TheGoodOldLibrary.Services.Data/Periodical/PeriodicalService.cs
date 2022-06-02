@@ -4,6 +4,8 @@
     using System.Linq;
     using System.Threading.Tasks;
 
+    using AutoMapper;
+    using AutoMapper.QueryableExtensions;
     using TheGoodOldLibrary.Data.Common.Repositories;
     using TheGoodOldLibrary.Data.Models;
     using TheGoodOldLibrary.Data.Models.ViewModel.Periodical;
@@ -12,10 +14,12 @@
     public class PeriodicalService : IPeriodicalService, ILabraryService
     {
         private readonly IDeletableEntityRepository<Periodical> periodicalRepository;
+        private readonly IMapper mapper;
 
-        public PeriodicalService(IDeletableEntityRepository<Periodical> periodicalRepository)
+        public PeriodicalService(IDeletableEntityRepository<Periodical> periodicalRepository, IMapper mapper)
         {
             this.periodicalRepository = periodicalRepository;
+            this.mapper = mapper;
         }
 
         public async Task CreateAsync(CreatePeridiocalViewModel model)
@@ -25,7 +29,7 @@
                 Name = model.Name,
                 TypeId = model.TypeId,
                 AuthorId = model.AuthorId,
-                ImageUrl = model.Image,
+                OriginalUrl = model.OriginalUrl,
                 PeriodicalCount = model.PeriodicalCount,
             };
 
@@ -37,7 +41,7 @@
         {
             var periodical = this.periodicalRepository.AllAsNoTracking().FirstOrDefault(s => s.Id == id);
             periodical.Name = model.Name;
-            periodical.ImageUrl = model.ImageUrl;
+            periodical.OriginalUrl = model.OriginalUrl;
             periodical.PeriodicalCount = model.PeriodicalCount;
             periodical.TypeId = model.TypeId;
             periodical.AuthorId = model.AuthorId;
@@ -55,32 +59,19 @@
 
         public IEnumerable<T> GetAll<T>(int page, int itemsPerPage = 5)
         {
-            return (IEnumerable<T>)this.periodicalRepository.AllAsNoTracking()
+            return this.periodicalRepository.AllAsNoTracking()
                .OrderBy(x => x.Name)
                 .Skip((page - 1) * itemsPerPage).Take(itemsPerPage)
-                .Select(x => new PeriodicalInListViewModel
-                {
-                    Id = x.Id,
-                    Name = x.Name,
-                    ImageUrl = x.ImageUrl,
-                    TypeName = x.Type.Name,
-                    TypeId = x.TypeId,
-                    PeriodicalCount = x.PeriodicalCount,
-                }).ToList();
+                .ProjectTo<T>(this.mapper.ConfigurationProvider)
+                .ToList();
         }
 
-        public PeriodicalInListViewModel GetById<T>(int id)
+        public T GetById<T>(int id)
         {
             var periodical = this.periodicalRepository.AllAsNoTracking()
                 .Where(s => s.Id == id)
-                .Select(s => new PeriodicalInListViewModel
-                {
-                    Id = s.Id,
-                    ImageUrl = s.ImageUrl,
-                    Name = s.Name,
-                    TypeName = s.Type.Name,
-                    PeriodicalCount = s.PeriodicalCount,
-                }).FirstOrDefault();
+               .ProjectTo<T>(this.mapper.ConfigurationProvider)
+                .FirstOrDefault();
 
             return periodical;
         }
@@ -92,7 +83,10 @@
 
         public IEnumerable<T> GetMostOrdered<T>()
         {
-            throw new System.NotImplementedException();
+            return this.periodicalRepository.AllAsNoTracking()
+                .Where(s => s.OrderedTimes > 5)
+                .ProjectTo<T>(this.mapper.ConfigurationProvider)
+                .ToList();
         }
     }
 }

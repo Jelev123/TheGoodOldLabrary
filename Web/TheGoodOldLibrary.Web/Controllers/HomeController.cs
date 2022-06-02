@@ -2,7 +2,8 @@
 {
     using System.Diagnostics;
     using System.Linq;
-
+    using AutoMapper;
+    using AutoMapper.QueryableExtensions;
     using Microsoft.AspNetCore.Mvc;
     using TheGoodOldLibrary.Data.Common.Repositories;
     using TheGoodOldLibrary.Data.Models.ViewModel.Book;
@@ -15,34 +16,30 @@
         private readonly IDeletableEntityRepository<Data.Models.Book> bookRepository;
         private readonly IDeletableEntityRepository<Data.Models.Periodical> periodicalRepository;
         private readonly IRepository<Data.Models.ApplicationUser> userlRepository;
+        private readonly IMapper mapper;
 
         public HomeController(
                               IDeletableEntityRepository<Data.Models.Book> bookRepository,
                               IDeletableEntityRepository<Data.Models.Periodical> periodicalRepository,
-                              IRepository<Data.Models.ApplicationUser> userlRepository)
+                              IRepository<Data.Models.ApplicationUser> userlRepository,
+                              IMapper mapper)
         {
             this.bookRepository = bookRepository;
             this.periodicalRepository = periodicalRepository;
             this.userlRepository = userlRepository;
+            this.mapper = mapper;
         }
 
         public IActionResult Index()
         {
-            var bookViewModel = this.bookRepository.All().Select(s => new BookInListViewModel()
-            {
-                Id = s.Id,
-                Name = s.Name,
-                GenreName = s.Genre.Name,
-                Images = s.OriginalUrl,
-            }).ToList();
 
-            var periodicalViewModel = this.periodicalRepository.All().Select(s => new PeriodicalInListViewModel
-            {
-                Name = s.Name,
-                TypeName = s.Type.Name,
-                ImageUrl = s.ImageUrl,
-                Id = s.Id,
-            }).ToList();
+            var bookViewModel = this.bookRepository.All()
+            .ProjectTo<BookInListViewModel>(this.mapper.ConfigurationProvider)
+            .ToList();
+
+            var periodicalViewModel = this.periodicalRepository.All()
+            .ProjectTo<PeriodicalInListViewModel>(this.mapper.ConfigurationProvider)
+            .ToList();
 
             var usersCount = this.userlRepository.All().Count();
             var booksCount = this.bookRepository.All().Count();

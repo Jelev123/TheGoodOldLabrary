@@ -100,5 +100,24 @@
 
             return this.Redirect("All");
         }
+
+        public async Task<IActionResult> GetMostOrdered(int id = 1)
+        {
+            if (id <= 0)
+            {
+                return this.NotFound();
+            }
+
+            const int ItemsPerPage = 6;
+
+            return this.View(new PeriodicalListViewModel
+            {
+                ItemsPerPage = ItemsPerPage,
+                PageNumber = id,
+                PeriodicalsCount = this.labraryService.GetCount(),
+                Periodicals = this.labraryService.GetMostOrdered<PeriodicalInListViewModel>(),
+
+            });
+        }
     }
 }

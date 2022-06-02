@@ -5,9 +5,8 @@
 
     using TheGoodOldLibrary.Data.Common.Repositories;
     using TheGoodOldLibrary.Data.Models;
-    using TheGoodOldLibrary.Services.Mapping;
 
-    public class SettingsService : ISettingsService
+    public class SettingsService
     {
         private readonly IDeletableEntityRepository<Setting> settingsRepository;
 
@@ -19,11 +18,6 @@
         public int GetCount()
         {
             return this.settingsRepository.AllAsNoTracking().Count();
-        }
-
-        public IEnumerable<T> GetAll<T>()
-        {
-            return this.settingsRepository.All().To<T>().ToList();
         }
     }
 }

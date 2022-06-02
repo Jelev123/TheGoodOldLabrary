@@ -1,5 +1,7 @@
 ﻿namespace TheGoodOldLibrary.Services.Data.Book
 {
+    using AutoMapper;
+    using AutoMapper.QueryableExtensions;
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
@@ -12,10 +14,12 @@
     public class BookService : IBookService, ILabraryService
     {
         private readonly IDeletableEntityRepository<Book> bookRepository;
+        private readonly IMapper mapper;
 
-        public BookService(IDeletableEntityRepository<Book> bookRepository)
+        public BookService(IDeletableEntityRepository<Book> bookRepository, IMapper mapper)
         {
             this.bookRepository = bookRepository;
+            this.mapper = mapper;
         }
 
         public async Task CreateAsync(CreateBooksViewModel model)
@@ -41,7 +45,7 @@
             book.BookCount = model.BookCount;
             book.GenreId = model.GenreId;
             book.AuthorId = model.AuthorId;
-            book.OriginalUrl = model.ImageUrl;
+            book.OriginalUrl = model.OriginalUrl;
 
             this.bookRepository.Update(book);
             await this.bookRepository.SaveChangesAsync();
@@ -56,37 +60,19 @@
 
         public IEnumerable<T> GetAll<T>(int page, int itemsPerPage = 6)
         {
-            return (IEnumerable<T>)this.bookRepository.AllAsNoTracking()
+            return this.bookRepository.AllAsNoTracking()
                 .OrderBy(x => x.Name)
                 .Skip((page - 1) * itemsPerPage).Take(itemsPerPage)
-                .Select(x => new BookInListViewModel
-                {
-                    Id = x.Id,
-                    GenreId = x.Genre.Id,
-                    GenreName = x.Genre.Name,
-                    AuthorId = x.AuthorId,
-                    Name = x.Name,
-                    Images = x.OriginalUrl,
-                    BooksCount = x.BookCount,
-                }).ToList();
+                .ProjectTo<T>(this.mapper.ConfigurationProvider)
+                .ToList();
         }
 
-        public BookViewModel GetById<T>(int id)
+        public T GetById<T>(int id)
         {
             var book = this.bookRepository.AllAsNoTracking()
                    .Where(s => s.Id == id)
-                  .Select(s => new BookViewModel
-                  {
-                      AuthorId = s.AuthorId,
-                      AuthorFirstName = s.Author.FirstName,
-                      AuthorLastName = s.Author.LastName,
-                      Name = s.Name,
-                      GenreId = s.GenreId,
-                      GenreName = s.Genre.Name,
-                      Id = s.Id,
-                      ImageUrl = s.OriginalUrl,
-                      BookCount = s.BookCount,
-                  }).FirstOrDefault();
+               .ProjectTo<T>(this.mapper.ConfigurationProvider)
+                  .FirstOrDefault();
 
             return book;
         }
@@ -100,17 +86,7 @@
         {
             var ordered = (IEnumerable<T>)this.bookRepository.AllAsNoTracking()
                  .Where(s => s.OrderedTimes > 5)
-                 .Select(s => new BookInListViewModel
-                 {
-                     Id = s.Id,
-                     BooksCount = s.BookCount,
-                     Name = s.Name,
-                     GenreName = s.Genre.Name,
-                     GenreId = s.GenreId,
-                     AuthorId = s.AuthorId,
-                     OrderedTimes = s.OrderedTimes,
-                     Images = s.OriginalUrl,
-                 })
+                .ProjectTo<T>(this.mapper.ConfigurationProvider)
                  .ToList();
 
             return ordered;

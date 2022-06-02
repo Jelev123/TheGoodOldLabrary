@@ -22,7 +22,7 @@
 
         public string AuthorLastName { get; set; }
 
-        public string ImageUrl { get; set; }
+        public string OriginalUrl { get; set; }
 
         public IEnumerable<KeyValuePair<string, string>> GenreItems { get; set; }
 

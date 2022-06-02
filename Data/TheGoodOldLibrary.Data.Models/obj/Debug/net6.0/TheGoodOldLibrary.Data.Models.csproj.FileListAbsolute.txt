@@ -2,8 +2,6 @@ C:\Users\Owner\Desktop\Global Consulting\Data\TheGoodOldLibrary.Data.Models\bin\
 C:\Users\Owner\Desktop\Global Consulting\Data\TheGoodOldLibrary.Data.Models\bin\Debug\net6.0\TheGoodOldLibrary.Data.Models.dll
 C:\Users\Owner\Desktop\Global Consulting\Data\TheGoodOldLibrary.Data.Models\bin\Debug\net6.0\TheGoodOldLibrary.Data.Models.pdb
 C:\Users\Owner\Desktop\Global Consulting\Data\TheGoodOldLibrary.Data.Models\bin\Debug\net6.0\TheGoodOldLibrary.Data.Common.dll
-C:\Users\Owner\Desktop\Global Consulting\Data\TheGoodOldLibrary.Data.Models\bin\Debug\net6.0\TheGoodOldLibrary.Services.Mapping.dll
-C:\Users\Owner\Desktop\Global Consulting\Data\TheGoodOldLibrary.Data.Models\bin\Debug\net6.0\TheGoodOldLibrary.Services.Mapping.pdb
 C:\Users\Owner\Desktop\Global Consulting\Data\TheGoodOldLibrary.Data.Models\bin\Debug\net6.0\TheGoodOldLibrary.Data.Common.pdb
 C:\Users\Owner\Desktop\Global Consulting\Data\TheGoodOldLibrary.Data.Models\obj\Debug\net6.0\TheGoodOldLibrary.Data.Models.csproj.AssemblyReference.cache
 C:\Users\Owner\Desktop\Global Consulting\Data\TheGoodOldLibrary.Data.Models\obj\Debug\net6.0\TheGoodOldLibrary.Data.Models.GeneratedMSBuildEditorConfig.editorconfig

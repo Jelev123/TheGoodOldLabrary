@@ -11,6 +11,6 @@
 
         Task UpdateAsync(PeriodicalInListViewModel model, int id);
 
-        PeriodicalInListViewModel GetById<T>(int id);
+        T GetById<T>(int id);
     }
 }

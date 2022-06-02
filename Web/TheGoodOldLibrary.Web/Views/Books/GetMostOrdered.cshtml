@@ -15,13 +15,13 @@
 </div>*@
 
 <div class="row">
-    @foreach (var book in this.Model.Purcahced)
+    @foreach (var book in this.Model.Books)
     {
         <div class="col-md-4">
             <div class="col-md-10">
                 <div class="card-body">
                     <a class="col-md-4" asp-controller="Books" asp-action="GetById" asp-route-id="@book.Id">
-                        <img width="200" src="@book.Images" />
+                        <img width="200" src="@book.OriginalUrl" />
                     </a>
                     <h4 style="color: orange" class="card-title">@book.Name</h4>
                     <h4 style="color: orange" class="card-title">@book.GenreName</h4>

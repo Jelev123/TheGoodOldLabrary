@@ -12,7 +12,7 @@
 
         public int GenreId { get; set; }
 
-        public string Images { get; set; }
+        public string OriginalUrl { get; set; }
 
         public int BooksCount { get; set; }
 

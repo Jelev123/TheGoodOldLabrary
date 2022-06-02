@@ -1,7 +1,5 @@
 ﻿namespace TheGoodOldLibrary.Web
 {
-    using System.Linq;
-    using System.Reflection;
 
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
@@ -17,7 +15,6 @@
     using TheGoodOldLibrary.Data.Models;
     using TheGoodOldLibrary.Data.Repositories;
     using TheGoodOldLibrary.Data.Seeding;
-    using TheGoodOldLibrary.Services.Data;
     using TheGoodOldLibrary.Services.Data.Author;
     using TheGoodOldLibrary.Services.Data.Book;
     using TheGoodOldLibrary.Services.Data.BookTaking;
@@ -27,9 +24,7 @@
     using TheGoodOldLibrary.Services.Data.PeriodicalTaking;
     using TheGoodOldLibrary.Services.Data.Type;
     using TheGoodOldLibrary.Services.Data.User;
-    using TheGoodOldLibrary.Services.Mapping;
     using TheGoodOldLibrary.Services.Messaging;
-    using TheGoodOldLibrary.Web.ViewModels;
 
     public class Startup
     {
@@ -43,6 +38,9 @@
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.AddAutoMapper(typeof(Startup));
+
             services.AddDbContext<ApplicationDbContext>(
                 options => options.UseSqlServer(this.configuration.GetConnectionString("DefaultConnection")));
 
@@ -73,7 +71,6 @@
 
             // Application services
             services.AddTransient<IEmailSender, NullMessageSender>();
-            services.AddTransient<ISettingsService, SettingsService>();
             services.AddTransient<IBookService, BookService>();
             services.AddTransient<IPeriodicalService, PeriodicalService>();
             services.AddTransient<IGenreService, GenreService>();
@@ -89,7 +86,6 @@
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            AutoMapperConfig.RegisterMappings(typeof(ErrorViewModel).GetTypeInfo().Assembly);
 
             // Seed data on application startup
             using (var serviceScope = app.ApplicationServices.CreateScope())

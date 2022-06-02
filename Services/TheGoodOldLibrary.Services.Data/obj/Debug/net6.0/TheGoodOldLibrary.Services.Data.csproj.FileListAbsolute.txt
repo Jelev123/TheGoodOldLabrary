@@ -4,12 +4,10 @@ C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Dat
 C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Data\bin\Debug\net6.0\TheGoodOldLibrary.Data.Common.dll
 C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Data\bin\Debug\net6.0\TheGoodOldLibrary.Data.Models.dll
 C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Data\bin\Debug\net6.0\TheGoodOldLibrary.Services.dll
-C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Data\bin\Debug\net6.0\TheGoodOldLibrary.Services.Mapping.dll
 C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Data\bin\Debug\net6.0\TheGoodOldLibrary.Web.ViewModels.dll
 C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Data\bin\Debug\net6.0\TheGoodOldLibrary.Data.Common.pdb
 C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Data\bin\Debug\net6.0\TheGoodOldLibrary.Data.Models.pdb
 C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Data\bin\Debug\net6.0\TheGoodOldLibrary.Web.ViewModels.pdb
-C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Data\bin\Debug\net6.0\TheGoodOldLibrary.Services.Mapping.pdb
 C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Data\bin\Debug\net6.0\TheGoodOldLibrary.Services.pdb
 C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Data\obj\Debug\net6.0\TheGoodOldLibrary.Services.Data.csproj.AssemblyReference.cache
 C:\Users\Owner\Desktop\Global Consulting\Services\TheGoodOldLibrary.Services.Data\obj\Debug\net6.0\TheGoodOldLibrary.Services.Data.GeneratedMSBuildEditorConfig.editorconfig

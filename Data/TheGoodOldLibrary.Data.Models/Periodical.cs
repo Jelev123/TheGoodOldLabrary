@@ -19,7 +19,7 @@
 
         public Author Author { get; set; }
 
-        public string ImageUrl { get; set; }
+        public string OriginalUrl { get; set; }
 
         public DateTime StartDate { get; set; }
 

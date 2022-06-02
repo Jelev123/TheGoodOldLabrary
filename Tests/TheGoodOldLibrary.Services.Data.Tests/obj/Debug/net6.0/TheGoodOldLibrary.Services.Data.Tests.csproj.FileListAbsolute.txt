@@ -152,13 +152,11 @@ C:\Users\Owner\Desktop\Global Consulting\Tests\TheGoodOldLibrary.Services.Data.T
 C:\Users\Owner\Desktop\Global Consulting\Tests\TheGoodOldLibrary.Services.Data.Tests\bin\Debug\net6.0\TheGoodOldLibrary.Data.dll
 C:\Users\Owner\Desktop\Global Consulting\Tests\TheGoodOldLibrary.Services.Data.Tests\bin\Debug\net6.0\TheGoodOldLibrary.Data.Models.dll
 C:\Users\Owner\Desktop\Global Consulting\Tests\TheGoodOldLibrary.Services.Data.Tests\bin\Debug\net6.0\TheGoodOldLibrary.Services.Data.dll
-C:\Users\Owner\Desktop\Global Consulting\Tests\TheGoodOldLibrary.Services.Data.Tests\bin\Debug\net6.0\TheGoodOldLibrary.Services.Mapping.dll
 C:\Users\Owner\Desktop\Global Consulting\Tests\TheGoodOldLibrary.Services.Data.Tests\bin\Debug\net6.0\TheGoodOldLibrary.Data.pdb
 C:\Users\Owner\Desktop\Global Consulting\Tests\TheGoodOldLibrary.Services.Data.Tests\bin\Debug\net6.0\TheGoodOldLibrary.Services.Data.pdb
 C:\Users\Owner\Desktop\Global Consulting\Tests\TheGoodOldLibrary.Services.Data.Tests\bin\Debug\net6.0\TheGoodOldLibrary.Common.pdb
 C:\Users\Owner\Desktop\Global Consulting\Tests\TheGoodOldLibrary.Services.Data.Tests\bin\Debug\net6.0\TheGoodOldLibrary.Data.Common.pdb
 C:\Users\Owner\Desktop\Global Consulting\Tests\TheGoodOldLibrary.Services.Data.Tests\bin\Debug\net6.0\TheGoodOldLibrary.Data.Models.pdb
-C:\Users\Owner\Desktop\Global Consulting\Tests\TheGoodOldLibrary.Services.Data.Tests\bin\Debug\net6.0\TheGoodOldLibrary.Services.Mapping.pdb
 C:\Users\Owner\Desktop\Global Consulting\Tests\TheGoodOldLibrary.Services.Data.Tests\obj\Debug\net6.0\TheGoodOldLibrary.Services.Data.Tests.csproj.AssemblyReference.cache
 C:\Users\Owner\Desktop\Global Consulting\Tests\TheGoodOldLibrary.Services.Data.Tests\obj\Debug\net6.0\TheGoodOldLibrary.Services.Data.Tests.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Owner\Desktop\Global Consulting\Tests\TheGoodOldLibrary.Services.Data.Tests\obj\Debug\net6.0\TheGoodOldLibrary.Services.Data.Tests.AssemblyInfoInputs.cache
@@ -176,3 +174,4 @@ C:\Users\Owner\Desktop\Global Consulting\Tests\TheGoodOldLibrary.Services.Data.T
 C:\Users\Owner\Desktop\Global Consulting\Tests\TheGoodOldLibrary.Services.Data.Tests\bin\Debug\net6.0\TheGoodOldLibrary.Web.ViewModels.dll
 C:\Users\Owner\Desktop\Global Consulting\Tests\TheGoodOldLibrary.Services.Data.Tests\bin\Debug\net6.0\TheGoodOldLibrary.Services.pdb
 C:\Users\Owner\Desktop\Global Consulting\Tests\TheGoodOldLibrary.Services.Data.Tests\bin\Debug\net6.0\TheGoodOldLibrary.Web.ViewModels.pdb
+C:\Users\Owner\Desktop\Global Consulting\Tests\TheGoodOldLibrary.Services.Data.Tests\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

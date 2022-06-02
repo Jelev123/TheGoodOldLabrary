@@ -4,6 +4,8 @@
 
     public class PeriodicalListViewModel : PagingPeriodicalsViewModel
     {
-        public IEnumerable<PeriodicalInListViewModel> Periodicals { get; set; }
+        public virtual IEnumerable<PeriodicalInListViewModel> Periodicals { get; set; }
+
+
     }
 }
