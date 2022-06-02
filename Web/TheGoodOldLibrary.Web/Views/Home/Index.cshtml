@@ -35,7 +35,15 @@
         <img width="300" src="~/images/periodical/periodicals1.jpg" />
     </a>
 
-        <a asp-controller="Books" asp-action="GetMostOrdered" method="post" class="btn btn-info">Most Ordered Books</a>
-        <a asp-controller="Periodical" asp-action="GetMostOrdered" method="post" class="btn btn-info">Most Ordered Periodicals</a>
+    <div class="col">
+        <div class="col">
+            <a asp-controller="Books" asp-action="GetMostOrdered" method="post" class="btn btn-info">Most Ordered Books</a>
+            <a asp-controller="Books" asp-action="GetLessOrdered" method="post" class="btn btn-info">Lesss Ordered Books</a>
+        </div>
+        <div class="col">
+            <a asp-controller="Periodical" asp-action="GetMostOrdered" method="post" class="btn btn-info">Most Ordered Periodicals</a>
+            <a asp-controller="Periodical" asp-action="GetLessOrdered" method="post" class="btn btn-info">Less Ordered Periodicals</a>
+        </div>
 
+    </div>
 </div>

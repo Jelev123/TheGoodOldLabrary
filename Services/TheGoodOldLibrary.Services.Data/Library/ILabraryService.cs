@@ -5,12 +5,15 @@
 
     public interface ILabraryService
     {
-        Task DeleteAsync(int id);
+        Task DeleteBooksAsync(int id);
 
-        IEnumerable<T> GetMostOrdered<T>();
+        IEnumerable<T> GetMostOrderedBooks<T>();
 
-        IEnumerable<T> GetAll<T>(int page, int itemsPerPage = 6);
+        IEnumerable<T> GetLessOrderedBooks<T>();
 
-        int GetCount();
+        IEnumerable<T> GetAllBooks<T>(int page, int itemsPerPage = 6);
+        T GetBooksById<T>(int id);
+
+        int GetBooksCount();
     }
 }

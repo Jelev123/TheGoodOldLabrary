@@ -68,6 +68,7 @@
             services.AddScoped(typeof(IDeletableEntityRepository<>), typeof(EfDeletableEntityRepository<>));
             services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
             services.AddScoped<IDbQueryRunner, DbQueryRunner>();
+            
 
             // Application services
             services.AddTransient<IEmailSender, NullMessageSender>();
@@ -79,8 +80,8 @@
             services.AddTransient<IBookTakingService, BookTakingService>();
             services.AddTransient<IPeriodicalTakingService, PeriodicalTakingService>();
             services.AddTransient<IUserService, UserService>();
-            services.AddTransient<ILabraryService, PeriodicalService>();
-            services.AddTransient<ILabraryService, BookService>();
+            services.AddTransient<IBookService, BookService>();
+            services.AddTransient<IPeriodicalService, PeriodicalService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

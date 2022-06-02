@@ -11,7 +11,7 @@
     using TheGoodOldLibrary.Data.Models.ViewModel.Book;
     using TheGoodOldLibrary.Services.Data.Library;
 
-    public class BookService : IBookService, ILabraryService
+    public class BookService : IBookService
     {
         private readonly IDeletableEntityRepository<Book> bookRepository;
         private readonly IMapper mapper;
@@ -88,6 +88,16 @@
                  .Where(s => s.OrderedTimes > 5)
                 .ProjectTo<T>(this.mapper.ConfigurationProvider)
                  .ToList();
+
+            return ordered;
+        }
+
+        public IEnumerable<T> GetLessOrdered<T>()
+        {
+            var ordered = (IEnumerable<T>)this.bookRepository.AllAsNoTracking()
+                .Where(s => s.OrderedTimes < 5)
+               .ProjectTo<T>(this.mapper.ConfigurationProvider)
+                .ToList();
 
             return ordered;
         }

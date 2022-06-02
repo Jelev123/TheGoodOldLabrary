@@ -17,16 +17,14 @@
         private readonly IPeriodicalService periodicalService;
         private readonly IAuthorService authorService;
         private readonly ITypeService typeService;
-        private readonly ILabraryService labraryService;
         private readonly IPeriodicalTakingService takingPeriodicalService;
 
-        public PeriodicalController(IPeriodicalService periodicalService, ITypeService typeService, IAuthorService authorService, IPeriodicalTakingService takingPeriodicalService, ILabraryService labraryService)
+        public PeriodicalController(IPeriodicalService periodicalService, ITypeService typeService, IAuthorService authorService, IPeriodicalTakingService takingPeriodicalService)
         {
             this.periodicalService = periodicalService;
             this.typeService = typeService;
             this.authorService = authorService;
             this.takingPeriodicalService = takingPeriodicalService;
-            this.labraryService = labraryService;
         }
 
         public IActionResult Create()
@@ -64,7 +62,7 @@
 
         public async Task<IActionResult> Delete(int id)
         {
-            await this.labraryService.DeleteAsync(id);
+            await this.periodicalService.DeleteAsync(id);
 
             return this.RedirectToAction("All");
         }
@@ -82,8 +80,8 @@
             {
                 ItemsPerPage = ItemsPerPage,
                 PageNumber = id,
-                PeriodicalsCount = this.labraryService.GetCount(),
-                Periodicals = this.labraryService.GetAll<PeriodicalInListViewModel>(id, 100),
+                PeriodicalsCount = this.periodicalService.GetCount(),
+                Periodicals = this.periodicalService.GetAll<PeriodicalInListViewModel>(id, 100),
             });
         }
 
@@ -114,10 +112,28 @@
             {
                 ItemsPerPage = ItemsPerPage,
                 PageNumber = id,
-                PeriodicalsCount = this.labraryService.GetCount(),
-                Periodicals = this.labraryService.GetMostOrdered<PeriodicalInListViewModel>(),
-
+                PeriodicalsCount = this.periodicalService.GetCount(),
+                Periodicals = this.periodicalService.GetMostOrdered<PeriodicalInListViewModel>(),
             });
+        }
+
+        public async Task<IActionResult> GetLessOrdered(int id = 1)
+        {
+            if (id <= 0)
+            {
+                return this.NotFound();
+            }
+
+            const int ItemsPerPage = 6;
+
+            return this.View(new PeriodicalListViewModel
+            {
+                ItemsPerPage = ItemsPerPage,
+                PageNumber = id,
+                PeriodicalsCount = this.periodicalService.GetCount(),
+                Periodicals = this.periodicalService.GetLessOrdered<PeriodicalInListViewModel>(),
+            });
+
         }
     }
 }

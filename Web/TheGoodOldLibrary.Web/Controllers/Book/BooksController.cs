@@ -18,15 +18,13 @@
         private readonly IGenreService genreService;
         private readonly IAuthorService authorService;
         private readonly IBookTakingService takingService;
-        private readonly ILabraryService labraryService;
 
-        public BooksController(IBookService bookService, IGenreService genreService, IAuthorService authorService, IBookTakingService takingService, ILabraryService labraryService)
+        public BooksController(IBookService bookService, IGenreService genreService, IAuthorService authorService, IBookTakingService takingService)
         {
             this.bookService = bookService;
             this.genreService = genreService;
             this.authorService = authorService;
             this.takingService = takingService;
-            this.labraryService = labraryService;
         }
 
         public IActionResult Create()
@@ -62,7 +60,7 @@
 
         public async Task<IActionResult> Delete(int id)
         {
-            await this.labraryService.DeleteAsync(id);
+            await this.bookService.DeleteAsync(id);
 
             return this.RedirectToAction("All");
         }
@@ -80,8 +78,8 @@
             {
                 ItemsPerPage = ItemsPerPage,
                 PageNumber = id,
-                BooksCount = this.labraryService.GetCount(),
-                Books = this.labraryService.GetAll<BookInListViewModel>(id, ItemsPerPage),
+                BooksCount = this.bookService.GetCount(),
+                Books = this.bookService.GetAll<BookInListViewModel>(id, ItemsPerPage),
             });
         }
 
@@ -112,8 +110,26 @@
             {
                 ItemsPerPage = ItemsPerPage,
                 PageNumber = id,
-                BooksCount = this.labraryService.GetCount(),
-                Books = this.labraryService.GetMostOrdered<BookInListViewModel>(),
+                BooksCount = this.bookService.GetCount(),
+                Books = this.bookService.GetMostOrdered<BookInListViewModel>(),
+            });
+        }
+
+        public async Task<IActionResult> GetLessOrdered(int id = 1)
+        {
+            if (id <= 0)
+            {
+                return this.NotFound();
+            }
+
+            const int ItemsPerPage = 9;
+
+            return this.View(new BookListViewModel()
+            {
+                ItemsPerPage = ItemsPerPage,
+                PageNumber = id,
+                BooksCount = this.bookService.GetCount(),
+                Books = this.bookService.GetLessOrdered<BookInListViewModel>(),
             });
         }
     }

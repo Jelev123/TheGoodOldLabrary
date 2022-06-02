@@ -11,6 +11,16 @@
 
         Task UpdateAsync(PeriodicalInListViewModel model, int id);
 
+        Task DeleteAsync(int id);
+
         T GetById<T>(int id);
+
+        IEnumerable<T> GetAll<T>(int page, int itemsPerPage = 6);
+
+        IEnumerable<T> GetMostOrdered<T>();
+
+        IEnumerable<T> GetLessOrdered<T>();
+
+        int GetCount();
     }
 }

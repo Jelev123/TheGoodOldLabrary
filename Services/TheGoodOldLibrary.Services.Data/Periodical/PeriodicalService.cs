@@ -9,9 +9,8 @@
     using TheGoodOldLibrary.Data.Common.Repositories;
     using TheGoodOldLibrary.Data.Models;
     using TheGoodOldLibrary.Data.Models.ViewModel.Periodical;
-    using TheGoodOldLibrary.Services.Data.Library;
 
-    public class PeriodicalService : IPeriodicalService, ILabraryService
+    public class PeriodicalService : IPeriodicalService
     {
         private readonly IDeletableEntityRepository<Periodical> periodicalRepository;
         private readonly IMapper mapper;
@@ -87,6 +86,14 @@
                 .Where(s => s.OrderedTimes > 5)
                 .ProjectTo<T>(this.mapper.ConfigurationProvider)
                 .ToList();
+        }
+
+        public IEnumerable<T> GetLessOrdered<T>()
+        {
+            return this.periodicalRepository.AllAsNoTracking()
+               .Where(s => s.OrderedTimes < 5)
+               .ProjectTo<T>(this.mapper.ConfigurationProvider)
+               .ToList();
         }
     }
 }

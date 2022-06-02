@@ -1,31 +1,74 @@
 ﻿namespace TheGoodOldLibrary.Services.Data.Library
 {
+    using AutoMapper;
+    using AutoMapper.QueryableExtensions;
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
+    using TheGoodOldLibrary.Data.Common.Repositories;
+    using TheGoodOldLibrary.Data.Models;
 
     public class LabraryService : ILabraryService
     {
-        public Task DeleteAsync(int id)
+        private readonly IDeletableEntityRepository<Book> bookRepository;
+        private readonly IDeletableEntityRepository<Periodical> periodicalRepository;
+        private readonly IMapper mapper;
+
+        public LabraryService(IDeletableEntityRepository<Book> bookRepository, IMapper mapper, IDeletableEntityRepository<Periodical> periodicalRepository)
         {
-            throw new NotImplementedException();
+            this.bookRepository = bookRepository;
+            this.mapper = mapper;
+            this.periodicalRepository = periodicalRepository;
         }
 
-        public IEnumerable<T> GetAll<T>(int page, int itemsPerPage = 6)
+        public async Task DeleteBooksAsync(int id)
         {
-            throw new NotImplementedException();
+            var book = this.bookRepository.AllAsNoTracking().FirstOrDefault(s => s.Id == id);
+            this.bookRepository.Delete(book);
+            await this.bookRepository.SaveChangesAsync();
         }
 
-        public int GetCount()
+        public IEnumerable<T> GetAllBooks<T>(int page, int itemsPerPage = 6)
         {
-            throw new NotImplementedException();
+            return this.bookRepository.AllAsNoTracking()
+                .OrderBy(x => x.Name)
+                .Skip((page - 1) * itemsPerPage).Take(itemsPerPage)
+                .ProjectTo<T>(this.mapper.ConfigurationProvider)
+                .ToList();
         }
 
-        public IEnumerable<T> GetMostOrdered<T>()
+        public int GetBooksCount()
         {
-            throw new NotImplementedException();
+            return this.bookRepository.AllAsNoTracking().Count();
+
+        }
+
+        public IEnumerable<T> GetMostOrderedBooks<T>()
+        {
+            return this.bookRepository.AllAsNoTracking()
+                 .Where(s => s.OrderedTimes > 5)
+                .ProjectTo<T>(this.mapper.ConfigurationProvider)
+                 .ToList();
+        }
+
+        public IEnumerable<T> GetLessOrderedBooks<T>()
+        {
+            return this.bookRepository.AllAsNoTracking()
+                .Where(s => s.OrderedTimes < 5)
+               .ProjectTo<T>(this.mapper.ConfigurationProvider)
+                .ToList();
+        }
+
+        public T GetBooksById<T>(int id)
+        {
+            var book = this.bookRepository.AllAsNoTracking()
+                  .Where(s => s.Id == id)
+              .ProjectTo<T>(this.mapper.ConfigurationProvider)
+                 .FirstOrDefault();
+
+            return book;
         }
     }
 }

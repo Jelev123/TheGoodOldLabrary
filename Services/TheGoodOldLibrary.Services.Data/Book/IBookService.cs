@@ -1,5 +1,6 @@
 ﻿namespace TheGoodOldLibrary.Services.Data.Book
 {
+    using System.Collections.Generic;
     using System.Threading.Tasks;
 
     using TheGoodOldLibrary.Data.Models.ViewModel.Book;
@@ -10,6 +11,17 @@
 
         Task UpdateAsync(BookViewModel model, int id);
 
+        Task DeleteAsync(int id);
+
         T GetById<T>(int id);
+
+        IEnumerable<T> GetAll<T>(int page, int itemsPerPage = 6);
+
+        IEnumerable<T> GetMostOrdered<T>();
+
+        IEnumerable<T> GetLessOrdered<T>();
+
+        int GetCount();
+
     }
 }
