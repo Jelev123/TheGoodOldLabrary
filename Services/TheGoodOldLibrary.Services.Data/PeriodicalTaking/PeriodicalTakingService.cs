@@ -37,6 +37,7 @@
                 User = takingServiceModel.User,
             };
 
+            periodical.IsTaken = true;
             periodicals.PeriodicalCount -= 1;
             periodicals.OrderedTimes += 1;
 

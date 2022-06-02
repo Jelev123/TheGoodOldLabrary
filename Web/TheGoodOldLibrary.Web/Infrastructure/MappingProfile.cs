@@ -3,6 +3,7 @@
     using AutoMapper;
     using TheGoodOldLibrary.Data.Models;
     using TheGoodOldLibrary.Data.Models.ViewModel.Book;
+    using TheGoodOldLibrary.Data.Models.ViewModel.BookTaking;
     using TheGoodOldLibrary.Data.Models.ViewModel.Periodical;
 
     public class MappingProfile : Profile
@@ -15,6 +16,7 @@
             this.CreateMap<Periodical, BookInListViewModel>();
             this.CreateMap<Periodical, PeriodicalInListViewModel>();
             this.CreateMap<Periodical, PeriodicalListViewModel>();
+            this.CreateMap<BookTaking, AllTakingsBook>();
         }
     }
 }

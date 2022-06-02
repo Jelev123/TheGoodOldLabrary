@@ -88,15 +88,6 @@
             return this.View(this.bookService.GetById<BookViewModel>(id));
         }
 
-        [HttpPost]
-        public async Task<IActionResult> BookTaking(TakingServiceModel takingServiceModel)
-        {
-            takingServiceModel.UserId = this.User.FindFirst(ClaimTypes.NameIdentifier).Value;
-            await this.takingService.Create(takingServiceModel);
-
-            return this.Redirect("All");
-        }
-
         public async Task<IActionResult> GetMostOrdered(int id = 1)
         {
             if (id <= 0)

@@ -22,6 +22,5 @@
         IEnumerable<T> GetLessOrdered<T>();
 
         int GetCount();
-
     }
 }

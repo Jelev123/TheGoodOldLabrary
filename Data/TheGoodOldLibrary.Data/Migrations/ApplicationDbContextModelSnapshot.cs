@@ -356,7 +356,16 @@ namespace TheGoodOldLibrary.Data.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
+                    b.Property<bool>("IsTaken")
+                        .HasColumnType("bit");
+
                     b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("ReturnAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("TakeAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("UserId")
@@ -473,11 +482,20 @@ namespace TheGoodOldLibrary.Data.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
+                    b.Property<bool>("IsTaken")
+                        .HasColumnType("bit");
+
                     b.Property<DateTime?>("ModifiedOn")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("PeriodicalId")
                         .HasColumnType("int");
+
+                    b.Property<DateTime>("ReturnAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("TakeAt")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("UserId")
                         .HasColumnType("nvarchar(450)");

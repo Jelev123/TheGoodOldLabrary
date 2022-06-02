@@ -85,7 +85,7 @@
         public IEnumerable<T> GetMostOrdered<T>()
         {
             var ordered = (IEnumerable<T>)this.bookRepository.AllAsNoTracking()
-                 .Where(s => s.OrderedTimes > 5)
+                 .OrderByDescending(s => s.OrderedTimes)
                 .ProjectTo<T>(this.mapper.ConfigurationProvider)
                  .ToList();
 
@@ -95,7 +95,7 @@
         public IEnumerable<T> GetLessOrdered<T>()
         {
             var ordered = (IEnumerable<T>)this.bookRepository.AllAsNoTracking()
-                .Where(s => s.OrderedTimes < 5)
+                .OrderBy(s => s.OrderedTimes)
                .ProjectTo<T>(this.mapper.ConfigurationProvider)
                 .ToList();
 
