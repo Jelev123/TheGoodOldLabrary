@@ -14,7 +14,7 @@
 
         public string OriginalUrl { get; set; }
 
-        public int BooksCount { get; set; }
+        public int BookCount { get; set; }
 
         public int OrderedTimes { get; set; }
     }

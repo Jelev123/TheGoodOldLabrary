@@ -27,12 +27,12 @@
                     </a>
                     <h4 style="color: orange" class="card-title">@book.Name</h4>
                     <h4 style="color: orange" class="card-title">@book.GenreName</h4>
-                    @if (book.BooksCount > 0)
+                    @if (book.BookCount > 0)
                     {
-                        <h4 style="color: black" class="card-title">Books Left: @book.BooksCount</h4>
+                        <h4 style="color: black" class="card-title">Books Left: @book.BookCount</h4>
 
                     }
-                    @if (book.BooksCount <= 0)
+                    @if (book.BookCount <= 0)
                     {
                         <h5>No More Books Left</h5>
                     }

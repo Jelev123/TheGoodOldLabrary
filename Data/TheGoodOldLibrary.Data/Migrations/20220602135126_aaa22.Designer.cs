@@ -10,8 +10,8 @@ using TheGoodOldLibrary.Data;
 namespace TheGoodOldLibrary.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220531194009_addBools")]
-    partial class addBools
+    [Migration("20220602135126_aaa22")]
+    partial class aaa22
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -423,9 +423,6 @@ namespace TheGoodOldLibrary.Data.Migrations
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("ImageUrl")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
@@ -437,6 +434,9 @@ namespace TheGoodOldLibrary.Data.Migrations
 
                     b.Property<int>("OrderedTimes")
                         .HasColumnType("int");
+
+                    b.Property<string>("OriginalUrl")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("PeriodicalCount")
                         .HasColumnType("int");
