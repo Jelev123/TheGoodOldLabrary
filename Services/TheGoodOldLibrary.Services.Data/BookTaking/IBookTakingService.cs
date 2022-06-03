@@ -8,7 +8,7 @@
     {
         Task Create(TakingServiceModel takingServiceModel);
 
-        List<AllTakingsBook> GetOrders<T>(string id, bool isTaken);
+        List<AllTakings> GetOrders<T>(string id, bool isTaken);
 
         void Return<T>(string orderedId);
     }

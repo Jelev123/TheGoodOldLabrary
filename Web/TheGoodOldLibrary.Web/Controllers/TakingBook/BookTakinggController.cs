@@ -28,9 +28,9 @@
 
         public IActionResult GeTAllOrderedByUser(string id)
         {
-            var all = this.bookTakingService.GetOrders<AllTakingsBook>(id, true);
+            var all = this.bookTakingService.GetOrders<AllTakings>(id, true);
 
-            var allReturned = this.bookTakingService.GetOrders<AllTakingsBook>(id,false);
+            var allReturned = this.bookTakingService.GetOrders<AllTakings>(id,false);
 
             var allIn = all.Concat(allReturned).ToList();
 
@@ -41,7 +41,7 @@
         [HttpGet]
         public IActionResult Return(string orderedId)
         {
-           this.bookTakingService.Return<AllTakingsBook>(orderedId);
+           this.bookTakingService.Return<AllTakings>(orderedId);
 
            return this.Redirect("/");
         }

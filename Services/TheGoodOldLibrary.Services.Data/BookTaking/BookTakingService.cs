@@ -51,16 +51,17 @@
             await this.bookTakingRepository.SaveChangesAsync();
         }
 
-        public List<AllTakingsBook> GetOrders<T>(string orderedId, bool isTaken)
+        public List<AllTakings> GetOrders<T>(string orderedId, bool isTaken)
         {
             return this.bookTakingRepository.AllAsNoTracking()
                 .Where(s => s.UserId == orderedId && s.IsTaken == isTaken)
-               .Select(s => new AllTakingsBook
+               .Select(s => new AllTakings
                {
                    BookName = s.Book.Name,
                    UserName = s.User.UserName,
                    IsTaken = s.IsTaken,
                    CreatedOn = s.CreatedOn,
+                   ModifiedOn = s.ModifiedOn,
                    Id = s.Id,
                })
                 .ToList();
@@ -77,7 +78,6 @@
             book.BookCount += 1;
             order.IsTaken = false;
 
-            order.ReturnAt = DateTime.UtcNow;
             this.bookRepository.Update(book);
             this.bookTakingRepository.Update(order);
 

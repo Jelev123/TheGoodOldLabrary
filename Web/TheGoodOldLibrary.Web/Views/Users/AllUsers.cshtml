@@ -16,13 +16,13 @@
                     <td>@user.Id</td>
                     <td>@user.Name</td>
 
+                    
                     <td>
-                        <button class="btn btn-danger text-black font-weight-bold" data-toggle="modal" data-target="#orderModal">Delete</button>
+                        <a class="col-md-4" class="btn btn-danger" asp-controller="BookTakingg" asp-action="GeTAllOrderedByUser" asp-route-id="@user.Id">View All Books </a>
+                        <a class="col-md-4"  asp-controller="PeriodicalTaken" asp-action="GeTAllOrderedByUser" asp-route-id="@user.Id">View All Periodicals </a>
                     </td>
                     <td>
-                        <a class="col-md-4" class="btn btn-danger" asp-controller="BookTakingg" asp-action="GeTAllOrderedByUser" asp-route-id="@user.Id">View All </a>
-
-
+                        <button class="btn btn-danger text-black font-weight-bold" data-toggle="modal" data-target="#orderModal">Delete</button>
                     </td>
                 </tr>
             </tbody>

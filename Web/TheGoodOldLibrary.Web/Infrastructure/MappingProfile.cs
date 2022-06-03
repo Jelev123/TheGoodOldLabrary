@@ -16,7 +16,7 @@
             this.CreateMap<Periodical, BookInListViewModel>();
             this.CreateMap<Periodical, PeriodicalInListViewModel>();
             this.CreateMap<Periodical, PeriodicalListViewModel>();
-            this.CreateMap<BookTaking, AllTakingsBook>();
+            this.CreateMap<BookTaking, AllTakings>();
         }
     }
 }

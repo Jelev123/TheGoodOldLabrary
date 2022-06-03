@@ -1,12 +1,14 @@
 ﻿namespace TheGoodOldLibrary.Services.Data.PeriodicalTaking
 {
     using System;
+    using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
 
     using TheGoodOldLibrary.Data.Common.Repositories;
     using TheGoodOldLibrary.Data.Models;
     using TheGoodOldLibrary.Data.Models.ViewModel.BookTaking;
+    using TheGoodOldLibrary.Data.Models.ViewModel.Periodical;
 
     public class PeriodicalTakingService : IPeriodicalTakingService
     {
@@ -45,6 +47,40 @@
 
             await this.periodicalTakingRepository.AddAsync(periodical);
             await this.periodicalTakingRepository.SaveChangesAsync();
+        }
+
+        public List<AllTakings> GetOrders<T>(string id, bool isTaken)
+        {
+            return this.periodicalTakingRepository.AllAsNoTracking()
+                .Where(s => s.UserId == id && s.IsTaken == isTaken)
+               .Select(s => new AllTakings
+               {
+                   PeriodicalName = s.Periodical.Name,
+                   UserName = s.User.UserName,
+                   IsTaken = s.IsTaken,
+                   CreatedOn = s.CreatedOn,
+                   ModifiedOn = s.ModifiedOn,
+                   Id = s.Id,
+               })
+                .ToList();
+        }
+
+        public void Return<T>(string orderedId)
+        {
+            var order = this.periodicalTakingRepository.AllAsNoTracking()
+                .Where(s => s.Id == orderedId).FirstOrDefault();
+
+            var periodical = this.periodicalRepository.AllAsNoTracking()
+                 .Where(s => s.Id == order.PeriodicalId).FirstOrDefault();
+
+            periodical.PeriodicalCount += 1;
+            order.IsTaken = false;
+
+            this.periodicalRepository.Update(periodical);
+            this.periodicalTakingRepository.Update(order);
+
+            this.periodicalRepository.SaveChangesAsync();
+            this.periodicalTakingRepository.SaveChangesAsync();
         }
     }
 }
