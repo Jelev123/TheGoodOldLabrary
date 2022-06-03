@@ -406,7 +406,7 @@ namespace TheGoodOldLibrary.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("AuthorId")
+                    b.Property<int?>("AuthorId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedOn")
@@ -645,19 +645,15 @@ namespace TheGoodOldLibrary.Data.Migrations
 
             modelBuilder.Entity("TheGoodOldLibrary.Data.Models.Periodical", b =>
                 {
-                    b.HasOne("TheGoodOldLibrary.Data.Models.Author", "Author")
+                    b.HasOne("TheGoodOldLibrary.Data.Models.Author", null)
                         .WithMany("Periodicals")
-                        .HasForeignKey("AuthorId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .HasForeignKey("AuthorId");
 
                     b.HasOne("TheGoodOldLibrary.Data.Models.Types", "Type")
                         .WithMany("Periodicals")
                         .HasForeignKey("TypeId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
-
-                    b.Navigation("Author");
 
                     b.Navigation("Type");
                 });

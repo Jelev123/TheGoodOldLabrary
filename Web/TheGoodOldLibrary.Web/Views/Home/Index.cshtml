@@ -19,32 +19,36 @@
             <th scope="row"></th>
             <td>@Model.PerodicalsCount</td>
             <td>@Model.BooksCount</td>
-            <td>@Model.UsersCount</td>
+            @if (!User.IsInRole("Administrator"))
+            {
+                <td>@Model.UsersCount</td>
+
+            } 
         </tr>
     </tbody>
 </table>
 <hr />
 <div class="col-md-5">
-<div class="row-col-md-5">
-    <h3>All Books</h3>
-    <a class="col-md-4" asp-controller="Books" asp-action="All">
-        <img width="200" src="~/images/book/istockphoto-157482029-612x612.jpg" />
-    </a>
-    <div>
-    <a asp-controller="Books" asp-action="GetMostOrdered" method="post" class="btn btn-info">Most Ordered Books</a>
-    <a asp-controller="Books" asp-action="GetLessOrdered" method="post" class="btn btn-info">Lesss Ordered Books</a>
+    <div class="row-col-md-5">
+        <h3>All Books</h3>
+        <a class="col-md-4" asp-controller="Books" asp-action="All">
+            <img width="200" src="~/images/book/istockphoto-157482029-612x612.jpg" />
+        </a>
+        <div>
+            <a asp-controller="Books" asp-action="GetMostOrdered" method="post" class="btn btn-info">Most Ordered Books</a>
+            <a asp-controller="Books" asp-action="GetLessOrdered" method="post" class="btn btn-info">Lesss Ordered Books</a>
+        </div>
     </div>
-</div>
-<hr class="-am-centered"/>
-<div class="row-col-md-6">
-    <h3>All Periodicals</h3>
+    <hr class="-am-centered" />
+    <div class="row-col-md-6">
+        <h3>All Periodicals</h3>
 
-    <a class="col-md-6" asp-controller="Periodical" asp-action="All">
-        <img width="300" src="~/images/periodical/periodicals1.jpg" />
-    </a>
-    <div>
-    <a asp-controller="Periodical" asp-action="GetMostOrdered" method="post" class="btn btn-info">Most Ordered Periodicals</a>
-    <a asp-controller="Periodical" asp-action="GetLessOrdered" method="post" class="btn btn-info">Less Ordered Periodicals</a>
+        <a class="col-md-6" asp-controller="Periodical" asp-action="All">
+            <img width="300" src="~/images/periodical/periodicals1.jpg" />
+        </a>
+        <div>
+            <a asp-controller="Periodical" asp-action="GetMostOrdered" method="post" class="btn btn-info">Most Ordered Periodicals</a>
+            <a asp-controller="Periodical" asp-action="GetLessOrdered" method="post" class="btn btn-info">Less Ordered Periodicals</a>
+        </div>
     </div>
-</div>
 </div>

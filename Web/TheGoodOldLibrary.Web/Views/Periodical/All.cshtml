@@ -27,16 +27,16 @@
                             <img width="200" src="@peridical.OriginalUrl" />
                         </a>
                     </a>
-                    <h4 style="color: orange" class="card-title">@peridical.Name</h4>
-                    <h4 style="color: orange" class="card-title">@peridical.TypeName</h4>
+                    <h6 style="color: black" class="card-title">@peridical.Name</h6>
+                    <h6 style="color: black" class="card-title">Type: @peridical.TypeName</h6>
                     @if (peridical.PeriodicalCount > 0)
                     {
-                        <h4 style="color: black" class="card-title">Books Left: @peridical.PeriodicalCount</h4>
+                        <h4 style="color: green" class="card-title">Periodicals Left: @peridical.PeriodicalCount</h4>
 
                     }
                     @if (peridical.PeriodicalCount <= 0)
                     {
-                        <h5>No More Periodicals Left</h5>
+                        <h5 style="color: red">No More Periodicals Left</h5>
                     }
 
 

@@ -74,14 +74,14 @@
                 return this.NotFound();
             }
 
-            const int ItemsPerPage = 9;
+            const int ItemsPerPage = 6;
 
             return this.View(new PeriodicalListViewModel()
             {
                 ItemsPerPage = ItemsPerPage,
                 PageNumber = id,
                 PeriodicalsCount = this.periodicalService.GetCount(),
-                Periodicals = this.periodicalService.GetAll<PeriodicalInListViewModel>(id, 100),
+                Periodicals = this.periodicalService.GetAll<PeriodicalInListViewModel>(id, ItemsPerPage),
             });
         }
 

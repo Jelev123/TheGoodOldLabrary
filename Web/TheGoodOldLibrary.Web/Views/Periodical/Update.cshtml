@@ -23,21 +23,6 @@
                 <select asp-for="TypeId" class="form-control" asp-items="typeItems"></select>
 
             </div>
-
-            <div class="form-group">
-                <label asp-for="AuthorId"></label>
-                <input asp-for="AuthorId" class="form-control" />
-            </div>
-            @*    <div class="form-group">
-            <label asp-for="@Model.AuthorId"></label>
-            <select asp-for="@Model.AuthorId" class="form-control">
-            @foreach (var author in Model.Authors)
-            {
-            <option value="@author.Id">@author.FirstName @author.LastName</option>
-            }
-            </select>
-            </div>*@
-
             <div class="form-group">
                 <label asp-for="PeriodicalCount"></label>
                 <input asp-for="PeriodicalCount" class="form-control" />

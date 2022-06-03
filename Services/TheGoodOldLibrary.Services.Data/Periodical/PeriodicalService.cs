@@ -27,7 +27,6 @@
             {
                 Name = model.Name,
                 TypeId = model.TypeId,
-                AuthorId = model.AuthorId,
                 OriginalUrl = model.OriginalUrl,
                 PeriodicalCount = model.PeriodicalCount,
             };
@@ -43,7 +42,6 @@
             periodical.OriginalUrl = model.OriginalUrl;
             periodical.PeriodicalCount = model.PeriodicalCount;
             periodical.TypeId = model.TypeId;
-            periodical.AuthorId = model.AuthorId;
 
             this.periodicalRepository.Update(periodical);
             await this.periodicalRepository.SaveChangesAsync();
