@@ -95,14 +95,14 @@
                 return this.NotFound();
             }
 
-            const int ItemsPerPage = 9;
+            const int ItemsPerPage = 6;
 
             return this.View(new BookListViewModel()
             {
                 ItemsPerPage = ItemsPerPage,
                 PageNumber = id,
                 BooksCount = this.bookService.GetCount(),
-                Books = this.bookService.GetMostOrdered<BookInListViewModel>(),
+                Books = this.bookService.GetMostOrdered<BookInListViewModel>(id, ItemsPerPage),
             });
         }
 
@@ -113,14 +113,14 @@
                 return this.NotFound();
             }
 
-            const int ItemsPerPage = 9;
+            const int ItemsPerPage = 6;
 
             return this.View(new BookListViewModel()
             {
                 ItemsPerPage = ItemsPerPage,
                 PageNumber = id,
                 BooksCount = this.bookService.GetCount(),
-                Books = this.bookService.GetLessOrdered<BookInListViewModel>(),
+                Books = this.bookService.GetLessOrdered<BookInListViewModel>(id, ItemsPerPage),
             });
         }
     }

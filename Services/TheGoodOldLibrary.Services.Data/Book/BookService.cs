@@ -82,20 +82,22 @@
             return this.bookRepository.AllAsNoTracking().Count();
         }
 
-        public IEnumerable<T> GetMostOrdered<T>()
+        public IEnumerable<T> GetMostOrdered<T>(int page, int itemsPerPage = 6)
         {
             var ordered = (IEnumerable<T>)this.bookRepository.AllAsNoTracking()
                  .OrderByDescending(s => s.OrderedTimes)
+                  .Skip((page - 1) * itemsPerPage).Take(itemsPerPage)
                 .ProjectTo<T>(this.mapper.ConfigurationProvider)
                  .ToList();
 
             return ordered;
         }
 
-        public IEnumerable<T> GetLessOrdered<T>()
+        public IEnumerable<T> GetLessOrdered<T>(int page, int itemsPerPage = 6)
         {
             var ordered = (IEnumerable<T>)this.bookRepository.AllAsNoTracking()
                 .OrderBy(s => s.OrderedTimes)
+                .Skip((page - 1) * itemsPerPage).Take(itemsPerPage)
                .ProjectTo<T>(this.mapper.ConfigurationProvider)
                 .ToList();
 

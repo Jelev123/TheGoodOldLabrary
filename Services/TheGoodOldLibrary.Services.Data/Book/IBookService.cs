@@ -17,9 +17,9 @@
 
         IEnumerable<T> GetAll<T>(int page, int itemsPerPage = 6);
 
-        IEnumerable<T> GetMostOrdered<T>();
+        IEnumerable<T> GetMostOrdered<T>(int page, int itemsPerPage = 6);
 
-        IEnumerable<T> GetLessOrdered<T>();
+        IEnumerable<T> GetLessOrdered<T>(int page, int itemsPerPage = 6);
 
         int GetCount();
     }

@@ -3,7 +3,7 @@
 
 
 @{
-    this.ViewData["Title"] = "Most Ordered, page " + Model.PageNumber;
+    this.ViewData["Title"] = "Less Ordered, page " + Model.PageNumber;
 }
 
 <h2 style="color : Black">@this.ViewData["Title"]</h2>
@@ -42,7 +42,7 @@
 
     }
 </div>
-<partial name="_GetMostOrderedBooksPagingPartialView" model="@Model" />
+<partial name="_GetLessOrderedBooksPartialView" model="@Model" />
 
 
 

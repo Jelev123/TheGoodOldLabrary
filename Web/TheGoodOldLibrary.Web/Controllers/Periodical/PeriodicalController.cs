@@ -113,7 +113,7 @@
                 ItemsPerPage = ItemsPerPage,
                 PageNumber = id,
                 PeriodicalsCount = this.periodicalService.GetCount(),
-                Periodicals = this.periodicalService.GetMostOrdered<PeriodicalInListViewModel>(),
+                Periodicals = this.periodicalService.GetMostOrdered<PeriodicalInListViewModel>(id, ItemsPerPage),
             });
         }
 
@@ -131,7 +131,7 @@
                 ItemsPerPage = ItemsPerPage,
                 PageNumber = id,
                 PeriodicalsCount = this.periodicalService.GetCount(),
-                Periodicals = this.periodicalService.GetLessOrdered<PeriodicalInListViewModel>(),
+                Periodicals = this.periodicalService.GetLessOrdered<PeriodicalInListViewModel>(id, ItemsPerPage),
             });
 
         }
