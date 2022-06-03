@@ -14,7 +14,5 @@
         public virtual ApplicationUser User { get; set; }
 
         public bool IsTaken { get; set; }
-
-        public DateTime ReturnAt { get; set; }
     }
 }

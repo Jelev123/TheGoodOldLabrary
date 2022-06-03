@@ -1,6 +1,5 @@
 ﻿namespace TheGoodOldLibrary.Data.Models
 {
-    using System;
     using TheGoodOldLibrary.Data.Common.Models;
 
     public class PeriodicalTaking : BaseDeletableModel<string>
@@ -14,7 +13,5 @@
         public virtual ApplicationUser User { get; set; }
 
         public bool IsTaken { get; set; }
-
-        public DateTime ReturnAt { get; set; }
     }
 }

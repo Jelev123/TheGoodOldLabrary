@@ -304,9 +304,6 @@ namespace TheGoodOldLibrary.Data.Migrations
                     b.Property<DateTime?>("DeletedOn")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("EndDate")
-                        .HasColumnType("datetime2");
-
                     b.Property<int>("GenreId")
                         .HasColumnType("int");
 
@@ -324,9 +321,6 @@ namespace TheGoodOldLibrary.Data.Migrations
 
                     b.Property<string>("OriginalUrl")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("StartDate")
-                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
@@ -360,12 +354,6 @@ namespace TheGoodOldLibrary.Data.Migrations
                         .HasColumnType("bit");
 
                     b.Property<DateTime?>("ModifiedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("ReturnAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("TakeAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("UserId")
@@ -427,9 +415,6 @@ namespace TheGoodOldLibrary.Data.Migrations
                     b.Property<DateTime?>("DeletedOn")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("EndDate")
-                        .HasColumnType("datetime2");
-
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
@@ -447,12 +432,6 @@ namespace TheGoodOldLibrary.Data.Migrations
 
                     b.Property<int>("PeriodicalCount")
                         .HasColumnType("int");
-
-                    b.Property<DateTime>("PublicDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("StartDate")
-                        .HasColumnType("datetime2");
 
                     b.Property<int>("TypeId")
                         .HasColumnType("int");
@@ -490,12 +469,6 @@ namespace TheGoodOldLibrary.Data.Migrations
 
                     b.Property<int>("PeriodicalId")
                         .HasColumnType("int");
-
-                    b.Property<DateTime>("ReturnAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("TakeAt")
-                        .HasColumnType("datetime2");
 
                     b.Property<string>("UserId")
                         .HasColumnType("nvarchar(450)");
