@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "wSuoFlGToGVH9sd/8IngHJZzFKvbFyRMUlgZR+9WG6s=",
+  "Hash": "I8VDZSqs5scZ8G6ITSrHLV31l72XeamJjR9pABKN1do=",
   "Source": "TheGoodOldLibrary.Web.Tests",
   "BasePath": "_content/TheGoodOldLibrary.Web.Tests",
   "Mode": "Default",
@@ -692,6 +692,23 @@
       "OriginalItemSpec": "wwwroot\\css\\css.css"
     },
     {
+      "Identity": "C:\\Users\\Owner\\Desktop\\Global Consulting\\Web\\TheGoodOldLibrary.Web\\wwwroot\\css\\css__NroGLBrtGcYlMe17_YsfAl0UDDyAlgCkjHlJtluaXI.css",
+      "SourceId": "TheGoodOldLibrary.Web",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\Owner\\Desktop\\Global Consulting\\Web\\TheGoodOldLibrary.Web\\wwwroot\\",
+      "BasePath": "_content/TheGoodOldLibrary.Web",
+      "RelativePath": "css/css__NroGLBrtGcYlMe17_YsfAl0UDDyAlgCkjHlJtluaXI.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\css__NroGLBrtGcYlMe17_YsfAl0UDDyAlgCkjHlJtluaXI.css"
+    },
+    {
       "Identity": "C:\\Users\\Owner\\Desktop\\Global Consulting\\Web\\TheGoodOldLibrary.Web\\wwwroot\\css\\css123.css",
       "SourceId": "TheGoodOldLibrary.Web",
       "SourceType": "Project",
@@ -1032,12 +1049,12 @@
       "OriginalItemSpec": "wwwroot\\css\\xts-theme_settings_default-1606329589.css"
     },
     {
-      "Identity": "C:\\Users\\Owner\\Desktop\\Global Consulting\\Web\\TheGoodOldLibrary.Web\\wwwroot\\favicon.ico",
+      "Identity": "C:\\Users\\Owner\\Desktop\\Global Consulting\\Web\\TheGoodOldLibrary.Web\\wwwroot\\favicon-32x32.png",
       "SourceId": "TheGoodOldLibrary.Web",
       "SourceType": "Project",
       "ContentRoot": "C:\\Users\\Owner\\Desktop\\Global Consulting\\Web\\TheGoodOldLibrary.Web\\wwwroot\\",
       "BasePath": "_content/TheGoodOldLibrary.Web",
-      "RelativePath": "favicon.ico",
+      "RelativePath": "favicon-32x32.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1046,15 +1063,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\favicon.ico"
+      "OriginalItemSpec": "wwwroot\\favicon-32x32.png"
     },
     {
-      "Identity": "C:\\Users\\Owner\\Desktop\\Global Consulting\\Web\\TheGoodOldLibrary.Web\\wwwroot\\images\\book\\istockphoto-157482029-612x612.jpg",
+      "Identity": "C:\\Users\\Owner\\Desktop\\Global Consulting\\Web\\TheGoodOldLibrary.Web\\wwwroot\\images\\book\\book.jpg",
       "SourceId": "TheGoodOldLibrary.Web",
       "SourceType": "Project",
       "ContentRoot": "C:\\Users\\Owner\\Desktop\\Global Consulting\\Web\\TheGoodOldLibrary.Web\\wwwroot\\",
       "BasePath": "_content/TheGoodOldLibrary.Web",
-      "RelativePath": "images/book/istockphoto-157482029-612x612.jpg",
+      "RelativePath": "images/book/book.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1063,7 +1080,41 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\book\\istockphoto-157482029-612x612.jpg"
+      "OriginalItemSpec": "wwwroot\\images\\book\\book.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Owner\\Desktop\\Global Consulting\\Web\\TheGoodOldLibrary.Web\\wwwroot\\images\\book\\download.jpg",
+      "SourceId": "TheGoodOldLibrary.Web",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\Owner\\Desktop\\Global Consulting\\Web\\TheGoodOldLibrary.Web\\wwwroot\\",
+      "BasePath": "_content/TheGoodOldLibrary.Web",
+      "RelativePath": "images/book/download.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\book\\download.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Owner\\Desktop\\Global Consulting\\Web\\TheGoodOldLibrary.Web\\wwwroot\\images\\book\\images.jpg",
+      "SourceId": "TheGoodOldLibrary.Web",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\Owner\\Desktop\\Global Consulting\\Web\\TheGoodOldLibrary.Web\\wwwroot\\",
+      "BasePath": "_content/TheGoodOldLibrary.Web",
+      "RelativePath": "images/book/images.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\book\\images.jpg"
     },
     {
       "Identity": "C:\\Users\\Owner\\Desktop\\Global Consulting\\Web\\TheGoodOldLibrary.Web\\wwwroot\\images\\periodical\\periodicals1.jpg",

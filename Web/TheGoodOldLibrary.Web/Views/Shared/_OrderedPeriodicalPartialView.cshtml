@@ -20,7 +20,7 @@
         <div class="col-md-4">
             <div class="col-md-10">
                 <div class="card-body">
-                    <a class="col-md-4" asp-controller="Periodical" asp-action="GetById" asp-route-id="@periodical.Id">
+                    <a class="col-md-4" asp-controller="Books" asp-action="GetById" asp-route-id="@periodical.Id">
                         <img width="200" src="@periodical.OriginalUrl" />
                     </a>
                     <h4 style="color: orange" class="card-title">@periodical.Name</h4>
@@ -42,7 +42,7 @@
 
     }
 </div>
-<partial name="_PaginPeriodicalPartialView" model="@Model" />
+<partial name="_MostPaginPeriodicalPartialView" model="@Model" />
 
 
 
