@@ -3,57 +3,61 @@
 
 
 
-    <a href="@Model.OriginalUrl">
-        <img src="@Model.OriginalUrl" width="400" alt="@Model.Name">
-    </a>
-    <h2>@Model.Name</h2>
-    <h2>@Model.GenreName</h2>
-    <h2>@Model.AuthorFirstName @Model.AuthorLastName</h2>
+<a href="@Model.OriginalUrl">
+    <img src="@Model.OriginalUrl" width="400" alt="@Model.Name">
+</a>
+<h5>Name: @Model.Name</h5>
+<h5>Genre: @Model.GenreName</h5>
+<h5>Author: @Model.AuthorFirstName @Model.AuthorLastName</h5>
 
-
+@if (User.IsInRole("Administrator"))
+{
     <a asp-controller="Books" asp-action="Update" asp-route-id="@Model.Id" class="btn btn-info">Edit</a>
 
     <a asp-controller="Books" asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-info">Delete</a>
+}
 
 
 
 
 
 
-    @if (Model.BookCount > 0)
-    {
-        <div class="modal fade" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="orderModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 style="color : green" class="modal-title" id="orderModalLabel">Order - @Model.Name</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <form id="order-form" asp-controller="BookTakingg" asp-action="BookTaking" method="post">
-                            <div class="form-group">
-                            </div>
-                            <input type="hidden" value="@Model.Id" name="bookId" />
-                            <input type="hidden" value="@Model.BookStatusId" name="bookId" />
 
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" id="complete-order-button">Complete</button>
-                    </div>
+
+@if (Model.BookCount > 0)
+{
+    <div class="modal fade" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="orderModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 style="color : green" class="modal-title" id="orderModalLabel">Order - @Model.Name</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="order-form" asp-controller="BookTakingg" asp-action="BookTaking" method="post">
+                        <div class="form-group">
+                        </div>
+                        <input type="hidden" value="@Model.Id" name="bookId" />
+                        <input type="hidden" value="@Model.BookStatusId" name="bookId" />
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="complete-order-button">Complete</button>
                 </div>
             </div>
+        </div>
     </div>
 
     if (User.Identity.IsAuthenticated)
     {
         <button class="btn btn-primary text-black font-weight-bold" data-toggle="modal" data-target="#orderModal">Purchase</button>
-        
+
     }
-   
+
 
 
     @if (Model.BookCount == 0)

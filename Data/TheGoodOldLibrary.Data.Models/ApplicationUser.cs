@@ -36,5 +36,6 @@ namespace TheGoodOldLibrary.Data.Models
 
         public virtual ICollection<BookTaking> BookTakings { get; set; } = new HashSet<BookTaking>();
 
+        public virtual ICollection<PeriodicalTaking> PeriodicalTakings { get; set; } = new HashSet<PeriodicalTaking>();
     }
 }

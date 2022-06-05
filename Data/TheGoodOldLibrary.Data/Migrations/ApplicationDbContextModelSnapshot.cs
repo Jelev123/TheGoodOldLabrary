@@ -667,7 +667,7 @@ namespace TheGoodOldLibrary.Data.Migrations
                         .IsRequired();
 
                     b.HasOne("TheGoodOldLibrary.Data.Models.ApplicationUser", "User")
-                        .WithMany()
+                        .WithMany("PeriodicalTakings")
                         .HasForeignKey("UserId");
 
                     b.Navigation("Periodical");
@@ -682,6 +682,8 @@ namespace TheGoodOldLibrary.Data.Migrations
                     b.Navigation("Claims");
 
                     b.Navigation("Logins");
+
+                    b.Navigation("PeriodicalTakings");
 
                     b.Navigation("Roles");
                 });

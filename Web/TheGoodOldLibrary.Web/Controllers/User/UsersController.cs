@@ -17,11 +17,9 @@
 
         public async Task<IActionResult> Delete(AllUsersViewModel model)
         {
-            model.Id = this.User.FindFirst(ClaimTypes.NameIdentifier).Value;
-
             await this.usersService.DeleteAsync(model);
 
-            return this.Redirect("/");
+            return this.RedirectToAction("AllUsers");
         }
 
         public async Task<IActionResult> AllUsers()

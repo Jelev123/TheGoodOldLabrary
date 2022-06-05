@@ -1,6 +1,8 @@
 ﻿namespace TheGoodOldLibrary.Data.Models.ViewModel.User
 {
-    public class AllUsersViewModel
+    using TheGoodOldLibrary.Data.Common.Models;
+
+    public class AllUsersViewModel : BaseDeletableModel<string>
     {
         public string Id { get; set; }
 

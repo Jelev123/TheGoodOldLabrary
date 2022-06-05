@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "3FerfWv0Ez3f30FR0lERY+TnwP0VKq/dZX9DMJTfIL0=",
+  "Hash": "qU57NZssUD4rKFKt5WxuuHcwlk0FGEoMwtbFMG9+yO8=",
   "Source": "TheGoodOldLibrary.Web",
   "BasePath": "_content/TheGoodOldLibrary.Web",
   "Mode": "Default",
@@ -1071,12 +1071,12 @@
       "OriginalItemSpec": "wwwroot\\images\\book\\book.jpg"
     },
     {
-      "Identity": "C:\\Users\\Owner\\Desktop\\Global Consulting\\Web\\TheGoodOldLibrary.Web\\wwwroot\\images\\book\\download.jpg",
+      "Identity": "C:\\Users\\Owner\\Desktop\\Global Consulting\\Web\\TheGoodOldLibrary.Web\\wwwroot\\images\\book\\images.jpg.jpg",
       "SourceId": "TheGoodOldLibrary.Web",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Owner\\Desktop\\Global Consulting\\Web\\TheGoodOldLibrary.Web\\wwwroot\\",
       "BasePath": "_content/TheGoodOldLibrary.Web",
-      "RelativePath": "images/book/download.jpg",
+      "RelativePath": "images/book/images.jpg.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1085,24 +1085,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\book\\download.jpg"
-    },
-    {
-      "Identity": "C:\\Users\\Owner\\Desktop\\Global Consulting\\Web\\TheGoodOldLibrary.Web\\wwwroot\\images\\book\\images.jpg",
-      "SourceId": "TheGoodOldLibrary.Web",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Owner\\Desktop\\Global Consulting\\Web\\TheGoodOldLibrary.Web\\wwwroot\\",
-      "BasePath": "_content/TheGoodOldLibrary.Web",
-      "RelativePath": "images/book/images.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\book\\images.jpg"
+      "OriginalItemSpec": "wwwroot\\images\\book\\images.jpg.jpg"
     },
     {
       "Identity": "C:\\Users\\Owner\\Desktop\\Global Consulting\\Web\\TheGoodOldLibrary.Web\\wwwroot\\images\\periodical\\periodicals1.jpg",

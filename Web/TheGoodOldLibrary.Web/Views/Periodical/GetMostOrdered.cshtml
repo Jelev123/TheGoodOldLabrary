@@ -1,6 +1,69 @@
 ﻿@using TheGoodOldLibrary.Data.Models.ViewModel.Periodical
 @model PeriodicalListViewModel
 
-<partial name="_OrderedPeriodicalPartialView" model="@Model" />
+
+@{
+    this.ViewData["Title"] = "Most Ordered , page " + Model.PageNumber;
+}
+
+<h2 style="color : Black">@this.ViewData["Title"]</h2>
+
+
+
+<div id="products-search-bar-holder" class="form-group d-flex justify-content-between w-50">
+    <input type="text" class="form-control text-black" id="products-search-bar" name="search" placeholder="Search..." />
+</div>
+
+<div class="row">
+    @foreach (var periodical in this.Model.Periodicals)
+    {
+        <div class="col-md-4">
+            <div class="col-md-10">
+                <div class="card-body">
+                    <a class="col-md-4" asp-controller="Books" asp-action="GetById" asp-route-id="@periodical.Id">
+                        <img width="200" src="@periodical.OriginalUrl" />
+                    </a>
+                    <h4 style="color: orange" class="card-title">@periodical.Name</h4>
+                    <h4 style="color: orange" class="card-title">@periodical.TypeName</h4>
+                    <h4 style="color: orange" class="card-title">Ordered: @periodical.OrderedTimes</h4>
+                    @if (periodical.PeriodicalCount > 0)
+                    {
+                        <h4 style="color: black" class="card-title">Books Left: @periodical.PeriodicalCount</h4>
+
+                    }
+                    @if (periodical.PeriodicalCount <= 0)
+                    {
+                        <h5>No More Books Left</h5>
+                    }
+
+                </div>
+            </div>
+        </div>
+
+    }
+</div>
+<partial name="_MostPaginPeriodicalPartialView" model="@Model" />
+
+
+
+<script>
+    $('#sort').change(function() {
+        $('#order-form').submit();
+    });
+
+    $('#products-search-bar').on("change paste keyup", function() {
+        $('.card-body').show();
+
+        let searchValue = $('#products-search-bar').val();
+
+        for (let name of $('.card-body')) {
+            let productName = $($(name).children()[1]).text();
+
+            if (!productName.toLowerCase().includes(searchValue.toLowerCase())) {
+                $(name).hide();
+            }
+        }
+    });
+</script>
 
 
