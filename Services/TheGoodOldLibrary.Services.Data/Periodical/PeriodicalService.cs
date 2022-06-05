@@ -81,7 +81,7 @@
         public IEnumerable<T> GetMostOrdered<T>(int page, int itemsPerPage = 6)
         {
             return this.periodicalRepository.AllAsNoTracking()
-                .Where(s => s.OrderedTimes > 5)
+                .OrderByDescending(s => s.OrderedTimes)
                 .Skip((page - 1) * itemsPerPage).Take(itemsPerPage)
                 .ProjectTo<T>(this.mapper.ConfigurationProvider)
                 .ToList();
@@ -90,7 +90,7 @@
         public IEnumerable<T> GetLessOrdered<T>(int page, int itemsPerPage = 6)
         {
             return this.periodicalRepository.AllAsNoTracking()
-               .Where(s => s.OrderedTimes < 5)
+               .OrderBy(s => s.OrderedTimes)
                .Skip((page - 1) * itemsPerPage).Take(itemsPerPage)
                .ProjectTo<T>(this.mapper.ConfigurationProvider)
                .ToList();
