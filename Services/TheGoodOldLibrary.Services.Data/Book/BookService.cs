@@ -13,12 +13,14 @@
     public class BookService : IBookService
     {
         private readonly IDeletableEntityRepository<Book> bookRepository;
+        private readonly IDeletableEntityRepository<BookTaking> bookTakingRepository;
         private readonly IMapper mapper;
 
-        public BookService(IDeletableEntityRepository<Book> bookRepository, IMapper mapper)
+        public BookService(IDeletableEntityRepository<Book> bookRepository, IMapper mapper, IDeletableEntityRepository<BookTaking> bookTakingRepository)
         {
             this.bookRepository = bookRepository;
             this.mapper = mapper;
+            this.bookTakingRepository = bookTakingRepository;
         }
 
         public async Task CreateAsync(CreateBooksViewModel model)
@@ -101,6 +103,32 @@
                 .ToList();
 
             return ordered;
+        }
+
+        public IEnumerable<KeyValuePair<int, int>> GetMostOrdered2(int page, int itemsPerPage = 6)
+        {
+            var top = new Dictionary<int, int>();
+
+            var orders = this.bookTakingRepository.AllAsNoTracking()
+                .ToList();
+
+            foreach (var order in orders)
+            {
+                if (!top.ContainsKey(order.BookId))
+                {
+                    top.Add(order.BookId, 0);
+                }
+
+                top[order.BookId] += 1;
+            }
+
+            return top.OrderByDescending(s => s.Value).Skip((page - 1) * itemsPerPage).Take(itemsPerPage);
+
+
+            // Other solution
+            //var topOrders = this.bookRepository.AllAsNoTracking().GroupBy(x => x)
+            //.Select(g => new { Value = g.Key, Count = g.Count() })
+            //.OrderByDescending(x => x.Count);
         }
     }
 }

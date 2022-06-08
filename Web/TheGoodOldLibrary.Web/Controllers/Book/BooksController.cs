@@ -120,5 +120,24 @@
                 Books = this.bookService.GetLessOrdered<BookInListViewModel>(id, ItemsPerPage),
             });
         }
+
+          public async Task<IActionResult> GetMostOrdered2(int id = 1)
+        {
+            if (id <= 0)
+            {
+                return this.NotFound();
+            }
+
+            const int ItemsPerPage = 6;
+
+            return this.View(new BookListViewModel()
+            {
+                ItemsPerPage = ItemsPerPage,
+                PageNumber = id,
+                BooksCount = this.bookService.GetCount(),
+                Books = this.bookService.GetAll<BookInListViewModel>(id, ItemsPerPage),
+                TopOrders = this.bookService.GetMostOrdered2(id, ItemsPerPage),
+            });
+        }
     }
 }
