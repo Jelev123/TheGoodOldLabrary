@@ -11,7 +11,12 @@
             <th scope="col"></th>
             <th style="color : white" scope="col">Periodicals</th>
             <th style="color : white" scope="col">Books</th>
-            <th style="color : white" scope="col">Users</th>
+             @if (User.IsInRole("Administrator"))
+            {
+                            <th style="color : white" scope="col">Users</th>
+
+
+            } 
         </tr>
     </thead>
     <tbody>
@@ -19,7 +24,7 @@
             <th scope="row"></th>
             <td>@Model.PerodicalsCount</td>
             <td>@Model.BooksCount</td>
-            @if (!User.IsInRole("Administrator"))
+            @if (User.IsInRole("Administrator"))
             {
                 <td>@Model.UsersCount</td>
 
