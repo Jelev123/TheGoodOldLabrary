@@ -23,17 +23,26 @@
                     <a class="col-md-4" asp-controller="Books" asp-action="GetById" asp-route-id="@book.Id">
                         <img width="200" src="@book.OriginalUrl" />
                     </a>
-                    <h4 style="color: orange" class="card-title">@book.Name</h4>
-                    <h4 style="color: orange" class="card-title">@book.GenreName</h4>
-                    <h4 style="color: orange" class="card-title">Ordered: @book.OrderedTimes</h4>
+                    <h6 style="color: black" class="card-title">Name: @book.Name</h6>
+                    <h6 style="color: black" class="card-title">Genre: @book.GenreName</h6>
+                    <h6 style="color: black" class="card-title">Ordered: @book.OrderedTimes</h6>
                     @if (book.BookCount > 0)
                     {
-                        <h4 style="color: black" class="card-title">Books Left: @book.BookCount</h4>
+                        @if (book.BookCount < 5)
+                        {
+                            <h6 style="color: red" class="card-title">Books Left: @book.BookCount</h6>
+
+                        }  @if (book.BookCount >= 5)
+                        {
+                            <h6 style="color: black" class="card-title">Books Left: @book.BookCount</h6>
+
+
+                        }
 
                     }
                     @if (book.BookCount <= 0)
                     {
-                        <h5>No More Books Left</h5>
+                        <h6 style="color:red">No More Books Left</h6>
                     }
 
                 </div>

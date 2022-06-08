@@ -8,7 +8,6 @@
     using TheGoodOldLibrary.Data.Common.Repositories;
     using TheGoodOldLibrary.Data.Models;
     using TheGoodOldLibrary.Data.Models.ViewModel.BookTaking;
-    using TheGoodOldLibrary.Data.Models.ViewModel.Periodical;
 
     public class PeriodicalTakingService : IPeriodicalTakingService
     {

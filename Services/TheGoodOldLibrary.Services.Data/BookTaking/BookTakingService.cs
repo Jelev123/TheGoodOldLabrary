@@ -1,7 +1,5 @@
 ﻿namespace TheGoodOldLibrary.Services.Data.BookTaking
 {
-    using AutoMapper;
-    using AutoMapper.QueryableExtensions;
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -15,13 +13,11 @@
     {
         private readonly IDeletableEntityRepository<BookTaking> bookTakingRepository;
         private readonly IDeletableEntityRepository<Book> bookRepository;
-        private readonly IMapper mapper;
 
-        public BookTakingService(IDeletableEntityRepository<BookTaking> bookTakingRepository, IDeletableEntityRepository<Book> bookRepository, IMapper mapper)
+        public BookTakingService(IDeletableEntityRepository<BookTaking> bookTakingRepository, IDeletableEntityRepository<Book> bookRepository)
         {
             this.bookTakingRepository = bookTakingRepository;
             this.bookRepository = bookRepository;
-            this.mapper = mapper;
         }
 
         public async Task Create(TakingServiceModel takingServiceModel)
@@ -83,8 +79,6 @@
 
             this.bookRepository.SaveChangesAsync();
             this.bookTakingRepository.SaveChangesAsync();
-
-           
         }
     }
 }

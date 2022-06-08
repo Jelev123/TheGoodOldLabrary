@@ -2,6 +2,7 @@
 {
     using System.Collections.Generic;
     using System.Threading.Tasks;
+
     using TheGoodOldLibrary.Data.Models.ViewModel.User;
 
     public interface IUserService

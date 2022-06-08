@@ -1,16 +1,13 @@
 ﻿namespace TheGoodOldLibrary.Web.Controllers.Book
 {
-    using System.Security.Claims;
     using System.Threading.Tasks;
 
     using Microsoft.AspNetCore.Mvc;
     using TheGoodOldLibrary.Data.Models.ViewModel.Book;
-    using TheGoodOldLibrary.Data.Models.ViewModel.BookTaking;
     using TheGoodOldLibrary.Services.Data.Author;
     using TheGoodOldLibrary.Services.Data.Book;
     using TheGoodOldLibrary.Services.Data.BookTaking;
     using TheGoodOldLibrary.Services.Data.Genre;
-    using TheGoodOldLibrary.Services.Data.Library;
 
     public class BooksController : Controller
     {

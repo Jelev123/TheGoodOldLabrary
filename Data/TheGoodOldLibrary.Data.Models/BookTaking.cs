@@ -1,6 +1,5 @@
 ﻿namespace TheGoodOldLibrary.Data.Models
 {
-    using System;
     using TheGoodOldLibrary.Data.Common.Models;
 
     public class BookTaking : BaseDeletableModel<string>

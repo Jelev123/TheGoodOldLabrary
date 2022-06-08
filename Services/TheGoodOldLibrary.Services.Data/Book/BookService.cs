@@ -1,15 +1,14 @@
 ﻿namespace TheGoodOldLibrary.Services.Data.Book
 {
-    using AutoMapper;
-    using AutoMapper.QueryableExtensions;
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
 
+    using AutoMapper;
+    using AutoMapper.QueryableExtensions;
     using TheGoodOldLibrary.Data.Common.Repositories;
     using TheGoodOldLibrary.Data.Models;
     using TheGoodOldLibrary.Data.Models.ViewModel.Book;
-    using TheGoodOldLibrary.Services.Data.Library;
 
     public class BookService : IBookService
     {

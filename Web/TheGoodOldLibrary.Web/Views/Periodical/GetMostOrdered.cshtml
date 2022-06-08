@@ -23,17 +23,26 @@
                     <a class="col-md-4" asp-controller="Books" asp-action="GetById" asp-route-id="@periodical.Id">
                         <img width="200" src="@periodical.OriginalUrl" />
                     </a>
-                    <h4 style="color: orange" class="card-title">@periodical.Name</h4>
-                    <h4 style="color: orange" class="card-title">@periodical.TypeName</h4>
-                    <h4 style="color: orange" class="card-title">Ordered: @periodical.OrderedTimes</h4>
+                     <h6 style="color: black" class="card-title">Name: @periodical.Name</h6>
+                    <h6 style="color: black" class="card-title">Genre: @periodical.TypeName</h6>
+                    <h6 style="color: black" class="card-title">Ordered: @periodical.OrderedTimes</h6>
                     @if (periodical.PeriodicalCount > 0)
                     {
-                        <h4 style="color: black" class="card-title">Books Left: @periodical.PeriodicalCount</h4>
+                        @if (periodical.PeriodicalCount < 5)
+                        {
+                            <h6 style="color: red" class="card-title">Books Left: @periodical.PeriodicalCount</h6>
+
+                        }  @if (periodical.PeriodicalCount >= 5)
+                        {
+                            <h6 style="color: black" class="card-title">Books Left: @periodical.PeriodicalCount</h6>
+
+
+                        }
 
                     }
                     @if (periodical.PeriodicalCount <= 0)
                     {
-                        <h5>No More Books Left</h5>
+                        <h6 style="color:red">No More Books Left</h6>
                     }
 
                 </div>

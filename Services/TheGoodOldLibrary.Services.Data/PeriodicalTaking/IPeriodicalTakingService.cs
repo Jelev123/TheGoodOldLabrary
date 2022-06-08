@@ -2,8 +2,8 @@
 {
     using System.Collections.Generic;
     using System.Threading.Tasks;
+
     using TheGoodOldLibrary.Data.Models.ViewModel.BookTaking;
-    using TheGoodOldLibrary.Data.Models.ViewModel.Periodical;
 
     public interface IPeriodicalTakingService
     {
@@ -12,6 +12,5 @@
         List<AllTakings> GetOrders<T>(string id, bool isTaken);
 
         void Return<T>(string orderedId);
-
     }
 }
