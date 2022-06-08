@@ -16,8 +16,17 @@
 <h5>Name: @Model.Name</h5>
 <hr/>
 <h5>Type: @Model.TypeName</h5>
-<h5>Periodicals Left: @Model.PeriodicalCount</h5>
 
+@if (@Model.PeriodicalCount == 0)
+{
+<h5 style="color:red">Periodicals Left: @Model.PeriodicalCount</h5>
+    
+}
+@if (@Model.PeriodicalCount > 0)
+{
+<h5 style="color:green">Periodicals Left: @Model.PeriodicalCount</h5>
+    
+}
 
 
 
@@ -50,7 +59,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 style="color : green" class="modal-title" id="orderModalLabel">Order - @Model.Name</h5>
+                    <h5 style="color : green" class="modal-title" id="orderModalLabel">Purchace - @Model.Name</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -77,11 +86,7 @@
     <button class="btn btn-primary text-black font-weight-bold" data-toggle="modal" data-target="#orderModal">Purchace</button>
 
 }
-@if (Model.PeriodicalCount == 0)
-{
-    <h3 style="color: red">No Periodical Available</h3>
 
-}
 
 
 

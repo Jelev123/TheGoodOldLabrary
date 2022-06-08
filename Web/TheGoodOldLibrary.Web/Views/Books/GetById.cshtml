@@ -16,7 +16,16 @@
 <h5>Name: @Model.Name</h5>
 <h5>Genre: @Model.GenreName</h5>
 <h5>Author: @Model.AuthorFirstName @Model.AuthorLastName</h5>
-<h5>Books Left: @Model.BookCount</h5>
+@if (@Model.BookCount == 0)
+{
+<h5 style="color:red">Books Left: @Model.BookCount</h5>
+    
+}
+@if (@Model.BookCount > 0)
+{
+<h5 style="color:green">Books Left: @Model.BookCount</h5>
+    
+}
 
 
 
@@ -51,7 +60,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 style="color : green" class="modal-title" id="orderModalLabel">Order - @Model.Name</h5>
+                    <h5 style="color : green" class="modal-title" id="orderModalLabel">Purchase - @Model.Name</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -80,11 +89,7 @@
 
 
 
-    @if (Model.BookCount == 0)
-    {
-        <h3 style="color: red">No Book Available</h3>
-    }
-
+   
 
 
 }
