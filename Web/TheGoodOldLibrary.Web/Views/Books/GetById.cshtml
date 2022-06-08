@@ -1,7 +1,14 @@
 ﻿@using TheGoodOldLibrary.Data.Models.ViewModel.Book
 @model BookViewModel
 
-
+<div>
+@if (User.IsInRole("Administrator"))
+{
+    <a asp-controller="Books" asp-action="Update" asp-route-id="@Model.Id" class="btn btn-info">Edit</a>
+    <a asp-controller="Books" asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-info">Delete</a>
+}
+</div>
+<hr/>
 
 <a href="@Model.OriginalUrl">
     <img src="@Model.OriginalUrl" width="400" alt="@Model.Name">
@@ -9,19 +16,33 @@
 <h5>Name: @Model.Name</h5>
 <h5>Genre: @Model.GenreName</h5>
 <h5>Author: @Model.AuthorFirstName @Model.AuthorLastName</h5>
+<h5>Books Left: @Model.BookCount</h5>
 
-@if (User.IsInRole("Administrator"))
+
+
+
+
+
+@if (!User.Identity.IsAuthenticated)
 {
-    <a asp-controller="Books" asp-action="Update" asp-route-id="@Model.Id" class="btn btn-info">Edit</a>
+    <div class="modal fade" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="orderModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 style="color : red">You have to login</h4>
 
-    <a asp-controller="Books" asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-info">Delete</a>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-footer">
+                    <a style="color: black" class="btn btn-light" asp-area="Identity" asp-page="/Account/Login">Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
 }
-
-
-
-
-
-
 
 
 @if (Model.BookCount > 0)
@@ -52,11 +73,10 @@
         </div>
     </div>
 
-    if (User.Identity.IsAuthenticated)
-    {
+    
         <button class="btn btn-primary text-black font-weight-bold" data-toggle="modal" data-target="#orderModal">Purchase</button>
 
-    }
+    
 
 
 
