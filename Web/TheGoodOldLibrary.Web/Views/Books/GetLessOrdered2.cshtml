@@ -19,7 +19,9 @@
     {
         var book = this.Model.Books.Where(s => s.Id == item.Key).FirstOrDefault();
 
-        <div class="col-md-4">
+        @if (book != null)
+        {
+             <div class="col-md-4">
             <div class="col-md-10">
                 <div class="card-body">
                     <a class="col-md-4" asp-controller="Books" asp-action="GetById" asp-route-id="@book.Id">
@@ -50,6 +52,9 @@
                 </div>
             </div>
         </div>
+        }
+
+       
 
     }
 </div>
