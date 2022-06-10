@@ -121,7 +121,26 @@
             });
         }
 
-          public async Task<IActionResult> GetMostOrdered2(int id = 1)
+        public async Task<IActionResult> GetMostOrdered2(int id = 1)
+        {
+            if (id <= 0)
+            {
+                return this.NotFound();
+            }
+
+            const int ItemsPerPage = 6;
+            var or = this.bookService.GetMostOrdered2(id, ItemsPerPage);
+            return this.View(new BookListViewModel()
+            {
+                ItemsPerPage = ItemsPerPage,
+                PageNumber = id,
+                BooksCount = this.bookService.GetCount(),
+                Books = this.bookService.GetAll<BookInListViewModel>(id, ItemsPerPage),
+                Orders = this.bookService.GetMostOrdered2(id, ItemsPerPage),
+            });
+        }
+
+        public async Task<IActionResult> GetLessOrdered2(int id = 1)
         {
             if (id <= 0)
             {
@@ -136,7 +155,7 @@
                 PageNumber = id,
                 BooksCount = this.bookService.GetCount(),
                 Books = this.bookService.GetAll<BookInListViewModel>(id, ItemsPerPage),
-                TopOrders = this.bookService.GetMostOrdered2(id, ItemsPerPage),
+                Orders = this.bookService.GetLessOrdered2(id, ItemsPerPage),
             });
         }
     }

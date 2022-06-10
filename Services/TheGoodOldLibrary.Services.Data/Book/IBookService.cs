@@ -24,6 +24,8 @@
 
         IEnumerable<KeyValuePair<int, int>> GetMostOrdered2(int page, int itemsPerPage = 6);
 
+        IEnumerable<KeyValuePair<int, int>> GetLessOrdered2(int page, int itemsPerPage = 6);
+
         int GetCount();
     }
 }

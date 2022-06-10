@@ -16,9 +16,7 @@
 </div>
 
 <div class="row">
-
-
-    @foreach (var item in Model.TopOrders)
+    @foreach (var item in Model.Orders)
     {
         var book = this.Model.Books.Where(s => s.Id == item.Key).FirstOrDefault();
 
@@ -54,11 +52,7 @@
             </div>
         </div>
     }
-   @* @foreach (var book in this.Model.Books)
-    {
-      
-       
-    }*@
+   
 </div>
 <partial name="_GetMostOrderedBooksPagingPartialView2" model="@Model" />
 

@@ -1,0 +1,83 @@
+﻿@using TheGoodOldLibrary.Data.Models.ViewModel.Periodical
+@model PeriodicalListViewModel
+
+
+@{
+    this.ViewData["Title"] = "Most Ordered, page " + Model.PageNumber;
+}
+
+<h2 style="color : Black">@this.ViewData["Title"]</h2>
+
+
+
+<div id="products-search-bar-holder" class="form-group d-flex justify-content-between w-50">
+    <input type="text" class="form-control text-black" id="products-search-bar" name="search" placeholder="Search..." />
+</div>
+
+<div class="row">
+    @foreach (var item in this.Model.Orders)
+    {
+        var periodical = this.Model.Periodicals.Where(s => s.Id == item.Key).FirstOrDefault();
+
+        @if (periodical != null)
+        {
+            <div class="col-md-4">
+            <div class="col-md-10">
+                <div class="card-body">
+                    <a class="col-md-4" asp-controller="Periodical" asp-action="GetById" asp-route-id="@periodical.Id">
+                        <img width="200" src="@periodical.OriginalUrl" />
+                    </a>
+                      <h6 style="color: black" class="card-title">Name: @periodical.Name</h6>
+                    <h6 style="color: black" class="card-title">Genre: @periodical.TypeName</h6>
+                    <h6 style="color: black" class="card-title">Ordered: @item.Value</h6>
+                    @if (periodical.PeriodicalCount > 0)
+                    {
+                        @if (periodical.PeriodicalCount < 5)
+                        {
+                            <h6 style="color: red" class="card-title">Books Left: @periodical.PeriodicalCount</h6>
+
+                        }  @if (periodical.PeriodicalCount >= 5)
+                        {
+                            <h6 style="color: black" class="card-title">Books Left: @periodical.PeriodicalCount</h6>
+
+
+                        }
+
+                    }
+                    @if (periodical.PeriodicalCount <= 0)
+                    {
+                        <h6 style="color:red">No More Books Left</h6>
+                    }
+
+                </div>
+            </div>
+        </div>
+        }
+
+        
+
+    }
+</div>
+<partial name="_MostPaginPeriodicalPartialView2" model="@Model" />
+
+
+
+<script>
+    $('#sort').change(function() {
+        $('#order-form').submit();
+    });
+
+    $('#products-search-bar').on("change paste keyup", function() {
+        $('.card-body').show();
+
+        let searchValue = $('#products-search-bar').val();
+
+        for (let name of $('.card-body')) {
+            let productName = $($(name).children()[1]).text();
+
+            if (!productName.toLowerCase().includes(searchValue.toLowerCase())) {
+                $(name).hide();
+            }
+        }
+    });
+</script>

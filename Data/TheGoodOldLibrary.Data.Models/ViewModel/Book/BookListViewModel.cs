@@ -9,7 +9,7 @@
     {
         public virtual IEnumerable<BookInListViewModel> Books { get; set; }
 
-        public IEnumerable<KeyValuePair<int, int>> TopOrders { get; set; }
+        public IEnumerable<KeyValuePair<int, int>> Orders { get; set; }
 
     }
 }

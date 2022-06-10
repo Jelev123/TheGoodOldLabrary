@@ -23,6 +23,5 @@
         public int OrderedTimes { get; set; }
 
         public IEnumerable<KeyValuePair<string, string>> TypeItems { get; set; }
-
     }
 }

@@ -133,7 +133,44 @@
                 PeriodicalsCount = this.periodicalService.GetCount(),
                 Periodicals = this.periodicalService.GetLessOrdered<PeriodicalInListViewModel>(id, ItemsPerPage),
             });
+        }
 
+        public async Task<IActionResult> GetMostOrdered2(int id = 1)
+        {
+            if (id <= 0)
+            {
+                return this.NotFound();
+            }
+
+            const int ItemsPerPage = 6;
+
+            return this.View(new PeriodicalListViewModel()
+            {
+                ItemsPerPage = ItemsPerPage,
+                PageNumber = id,
+                PeriodicalsCount = this.periodicalService.GetCount(),
+                Periodicals = this.periodicalService.GetAll<PeriodicalInListViewModel>(id, ItemsPerPage),
+                Orders = this.periodicalService.GetMostOrdered2(id, ItemsPerPage),
+            });
+        }
+
+        public async Task<IActionResult> GetLessOrdered2(int id = 1)
+        {
+            if (id <= 0)
+            {
+                return this.NotFound();
+            }
+
+            const int ItemsPerPage = 6;
+
+            return this.View(new PeriodicalListViewModel()
+            {
+                ItemsPerPage = ItemsPerPage,
+                PageNumber = id,
+                PeriodicalsCount = this.periodicalService.GetCount(),
+                Periodicals = this.periodicalService.GetAll<PeriodicalInListViewModel>(id, ItemsPerPage),
+                Orders = this.periodicalService.GetLessOrdered2(id, ItemsPerPage),
+            });
         }
     }
 }

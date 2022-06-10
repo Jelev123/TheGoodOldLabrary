@@ -122,13 +122,27 @@
                 top[order.BookId] += 1;
             }
 
-            return top.OrderByDescending(s => s.Value).Skip((page - 1) * itemsPerPage).Take(itemsPerPage);
+            return top.Skip((page - 1) * itemsPerPage).Take(itemsPerPage).OrderByDescending(s => s.Value);
+        }
 
+        public IEnumerable<KeyValuePair<int, int>> GetLessOrdered2(int page, int itemsPerPage = 6)
+        {
+            var top = new Dictionary<int, int>();
 
-            // Other solution
-            //var topOrders = this.bookRepository.AllAsNoTracking().GroupBy(x => x)
-            //.Select(g => new { Value = g.Key, Count = g.Count() })
-            //.OrderByDescending(x => x.Count);
+            var orders = this.bookTakingRepository.AllAsNoTracking()
+                .ToList();
+
+            foreach (var order in orders)
+            {
+                if (!top.ContainsKey(order.BookId))
+                {
+                    top.Add(order.BookId, 0);
+                }
+
+                top[order.BookId] += 1;
+            }
+
+            return top.Skip((page - 1) * itemsPerPage).Take(itemsPerPage).OrderBy(s => s.Value);
         }
     }
 }

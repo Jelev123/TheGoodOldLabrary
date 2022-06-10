@@ -13,12 +13,14 @@
     public class PeriodicalService : IPeriodicalService
     {
         private readonly IDeletableEntityRepository<Periodical> periodicalRepository;
+        private readonly IDeletableEntityRepository<PeriodicalTaking> periodicalTakingRepository;
         private readonly IMapper mapper;
 
-        public PeriodicalService(IDeletableEntityRepository<Periodical> periodicalRepository, IMapper mapper)
+        public PeriodicalService(IDeletableEntityRepository<Periodical> periodicalRepository, IMapper mapper, IDeletableEntityRepository<PeriodicalTaking> periodicalTakingRepository)
         {
             this.periodicalRepository = periodicalRepository;
             this.mapper = mapper;
+            this.periodicalTakingRepository = periodicalTakingRepository;
         }
 
         public async Task CreateAsync(CreatePeridiocalViewModel model)
@@ -94,6 +96,46 @@
                .Skip((page - 1) * itemsPerPage).Take(itemsPerPage)
                .ProjectTo<T>(this.mapper.ConfigurationProvider)
                .ToList();
+        }
+
+        public IEnumerable<KeyValuePair<int, int>> GetMostOrdered2(int page, int itemsPerPage = 6)
+        {
+            var top = new Dictionary<int, int>();
+
+            var orders = this.periodicalTakingRepository.AllAsNoTracking()
+                .ToList();
+
+            foreach (var order in orders)
+            {
+                if (!top.ContainsKey(order.PeriodicalId))
+                {
+                    top.Add(order.PeriodicalId, 0);
+                }
+
+                top[order.PeriodicalId] += 1;
+            }
+
+            return top.Skip((page - 1) * itemsPerPage).Take(itemsPerPage).OrderByDescending(s => s.Value);
+        }
+
+        public IEnumerable<KeyValuePair<int, int>> GetLessOrdered2(int page, int itemsPerPage = 6)
+        {
+            var top = new Dictionary<int, int>();
+
+            var orders = this.periodicalTakingRepository.AllAsNoTracking()
+                .ToList();
+
+            foreach (var order in orders)
+            {
+                if (!top.ContainsKey(order.PeriodicalId))
+                {
+                    top.Add(order.PeriodicalId, 0);
+                }
+
+                top[order.PeriodicalId] += 1;
+            }
+
+            return top.Skip((page - 1) * itemsPerPage).Take(itemsPerPage).OrderBy(s => s.Value);
         }
     }
 }

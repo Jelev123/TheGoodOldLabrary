@@ -6,6 +6,6 @@
     {
         public virtual IEnumerable<PeriodicalInListViewModel> Periodicals { get; set; }
 
-
+        public IEnumerable<KeyValuePair<int, int>> Orders { get; set; }
     }
 }

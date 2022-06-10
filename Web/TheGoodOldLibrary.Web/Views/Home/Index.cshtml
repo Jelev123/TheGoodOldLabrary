@@ -11,12 +11,10 @@
             <th scope="col"></th>
             <th style="color : white" scope="col">Periodicals</th>
             <th style="color : white" scope="col">Books</th>
-             @if (User.IsInRole("Administrator"))
+            @if (User.IsInRole("Administrator"))
             {
-                            <th style="color : white" scope="col">Users</th>
-
-
-            } 
+                <th style="color : white" scope="col">Users</th>
+            }
         </tr>
     </thead>
     <tbody>
@@ -28,7 +26,7 @@
             {
                 <td>@Model.UsersCount</td>
 
-            } 
+            }
         </tr>
     </tbody>
 </table>
@@ -44,6 +42,7 @@
             <a asp-controller="Books" asp-action="GetLessOrdered" method="post" class="btn btn-info">Lesss Ordered Books</a>
 
             <a asp-controller="Books" asp-action="GetMostOrdered2" method="post" class="btn btn-info">Most Ordered Books 2</a>
+            <a asp-controller="Books" asp-action="GetLessOrdered2" method="post" class="btn btn-info">Less Ordered Books 2</a>
 
         </div>
     </div>
@@ -57,6 +56,9 @@
         <div>
             <a asp-controller="Periodical" asp-action="GetMostOrdered" method="post" class="btn btn-info">Most Ordered Periodicals</a>
             <a asp-controller="Periodical" asp-action="GetLessOrdered" method="post" class="btn btn-info">Less Ordered Periodicals</a>
+
+            <a asp-controller="Periodical" asp-action="GetMostOrdered2" method="post" class="btn btn-info">Most Ordered Periodicals 2</a>
+            <a asp-controller="Periodical" asp-action="GetLessOrdered2" method="post" class="btn btn-info">Less Ordered Periodicals 2</a>
         </div>
     </div>
 </div>

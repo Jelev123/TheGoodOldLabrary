@@ -1,0 +1,80 @@
+﻿@using TheGoodOldLibrary.Data.Models.ViewModel.Book
+@model BookListViewModel
+
+
+@{
+    this.ViewData["Title"] = "Less Ordered, page " + Model.PageNumber;
+}
+
+<h2 style="color : Black">@this.ViewData["Title"]</h2>
+
+
+
+<div id="products-search-bar-holder" class="form-group d-flex justify-content-between w-50">
+    <input type="text" class="form-control text-black" id="products-search-bar" name="search" placeholder="Search..." />
+</div>
+
+<div class="row">
+    @foreach (var item in this.Model.Orders)
+    {
+        var book = this.Model.Books.Where(s => s.Id == item.Key).FirstOrDefault();
+
+        <div class="col-md-4">
+            <div class="col-md-10">
+                <div class="card-body">
+                    <a class="col-md-4" asp-controller="Books" asp-action="GetById" asp-route-id="@book.Id">
+                        <img width="200" src="@book.OriginalUrl" />
+                    </a>
+                      <h6 style="color: black" class="card-title">Name: @book.Name</h6>
+                    <h6 style="color: black" class="card-title">Genre: @book.GenreName</h6>
+                    <h6 style="color: black" class="card-title">Ordered: @item.Value</h6>
+                    @if (book.BookCount > 0)
+                    {
+                        @if (book.BookCount < 5)
+                        {
+                            <h6 style="color: red" class="card-title">Books Left: @book.BookCount</h6>
+
+                        }  @if (book.BookCount >= 5)
+                        {
+                            <h6 style="color: black" class="card-title">Books Left: @book.BookCount</h6>
+
+
+                        }
+
+                    }
+                    @if (book.BookCount <= 0)
+                    {
+                        <h6 style="color:red">No More Books Left</h6>
+                    }
+
+                </div>
+            </div>
+        </div>
+
+    }
+</div>
+<partial name="_GetLessOrderedBooksPartialView2" model="@Model" />
+
+
+
+<script>
+    $('#sort').change(function() {
+        $('#order-form').submit();
+    });
+
+    $('#products-search-bar').on("change paste keyup", function() {
+        $('.card-body').show();
+
+        let searchValue = $('#products-search-bar').val();
+
+        for (let name of $('.card-body')) {
+            let productName = $($(name).children()[1]).text();
+
+            if (!productName.toLowerCase().includes(searchValue.toLowerCase())) {
+                $(name).hide();
+            }
+        }
+    });
+</script>
+
+
