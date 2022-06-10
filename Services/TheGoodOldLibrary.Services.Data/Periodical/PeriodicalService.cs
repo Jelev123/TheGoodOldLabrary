@@ -98,7 +98,7 @@
                .ToList();
         }
 
-        public IEnumerable<KeyValuePair<int, int>> GetMostOrdered2(int page, int itemsPerPage = 6)
+        public IEnumerable<KeyValuePair<int, int>> GetMostOrdered2(int page, int itemsPerPage)
         {
             var top = new Dictionary<int, int>();
 
@@ -118,7 +118,7 @@
             return top.Skip((page - 1) * itemsPerPage).Take(itemsPerPage).OrderByDescending(s => s.Value);
         }
 
-        public IEnumerable<KeyValuePair<int, int>> GetLessOrdered2(int page, int itemsPerPage = 6)
+        public IEnumerable<KeyValuePair<int, int>> GetLessOrdered2(int page, int itemsPerPage)
         {
             var top = new Dictionary<int, int>();
 
@@ -136,6 +136,7 @@
             }
 
             return top.Skip((page - 1) * itemsPerPage).Take(itemsPerPage).OrderBy(s => s.Value);
+
         }
     }
 }

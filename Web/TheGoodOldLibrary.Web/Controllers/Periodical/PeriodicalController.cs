@@ -142,7 +142,7 @@
                 return this.NotFound();
             }
 
-            const int ItemsPerPage = 6;
+            const int ItemsPerPage = 10;
 
             return this.View(new PeriodicalListViewModel()
             {
@@ -161,7 +161,7 @@
                 return this.NotFound();
             }
 
-            const int ItemsPerPage = 6;
+            const int ItemsPerPage = 10;
 
             return this.View(new PeriodicalListViewModel()
             {
